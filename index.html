@@ -5,31 +5,69 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Paulo Amaral | Digital Transformation Consultant</title>
   <meta name="description" content="Senior ICT and Digital Transformation Consultant with 20+ years of experience delivering national-scale digital systems.">
+  <meta name="author" content="Paulo Amaral">
+  <meta name="theme-color" content="#040714">
+  <link rel="canonical" href="https://paulo-amaral.github.io/">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Paulo Amaral | Digital Transformation Consultant">
   <meta property="og:description" content="Using technology to make a difference. 20+ years transforming public sector and international development.">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://paulo-amaral.github.io/">
+  <meta property="og:image" content="https://paulo-amaral.github.io/Paulo_mew.png">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Paulo Amaral | Digital Transformation Consultant">
+  <meta name="twitter:description" content="Senior ICT and Digital Transformation Consultant using technology to make a difference in public sector and international development.">
+  <meta name="twitter:image" content="https://paulo-amaral.github.io/Paulo_mew.png">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
   <style>
     :root {
-      --bg-primary: #ffffff;
-      --bg-secondary: #f7f6f3;
-      --bg-tertiary: #f1f1ef;
-      --text-primary: #37352f;
-      --text-secondary: #6b6b6b;
-      --text-muted: #9b9a97;
-      --accent: #2383e2;
-      --accent-hover: #1a73d1;
-      --border: #e3e2de;
-      --card-shadow: rgba(15, 15, 15, 0.05);
-      --tag-bg: #e3e2de;
-      --tag-text: #37352f;
+      /* Riyadh-style dark theme */
+      --bg-primary: #040714;
+      --bg-secondary: #0b1020;
+      --bg-tertiary: #151b2f;
+      --bg-card: #0a0f1e;
+      --overlay: rgba(9, 13, 30, 0.85);
+
+      --text-primary: #f5f7ff;
+      --text-secondary: #c0c4d7;
+      --text-muted: #8d93aa;
+
+      --accent: #e4b045;
+      --accent-soft: rgba(228, 176, 69, 0.12);
+      --accent-hover: #f0c35b;
+      --accent-glow: rgba(228, 176, 69, 0.25);
+
+      --border: rgba(255, 255, 255, 0.06);
+      --border-hover: rgba(228, 176, 69, 0.4);
+      --card-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+      --card-shadow-hover: 0 25px 60px rgba(0, 0, 0, 0.7);
+
+      --tag-bg: rgba(255, 255, 255, 0.04);
+      --tag-text: #e2e6ff;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-xl: 20px;
+      --radius-pill: 999px;
+
+      --hero-gradient: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(228, 176, 69, 0.08) 0%, transparent 50%),
+                       radial-gradient(circle at top left, #1b2344 0%, #040714 55%, #02030a 100%);
+      --section-gradient: linear-gradient(180deg, #060918 0%, #0a0f1e 100%);
     }
 
     * {
@@ -38,73 +76,104 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       background: var(--bg-primary);
       color: var(--text-primary);
       line-height: 1.6;
       font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
 
-    /* Notion-style page container */
-    .page {
-      max-width: 900px;
+    /* Skip link for keyboard users */
+    .skip-link {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: -60px;
+      padding: 12px 24px;
+      background: var(--accent);
+      color: var(--bg-primary);
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      z-index: 110;
+      transition: top 0.2s ease;
+    }
+
+    .skip-link:focus-visible {
+      top: 16px;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1100px;
       margin: 0 auto;
-      padding: 0 96px;
+      padding: 0 24px;
     }
 
-    @media (max-width: 768px) {
-      .page {
-        padding: 0 24px;
+    @media (min-width: 768px) {
+      .container {
+        padding: 0 48px;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .container {
+        padding: 0 64px;
       }
     }
 
     /* Header */
     .header {
-      position: sticky;
+      position: fixed;
       top: 0;
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(12px);
+      left: 0;
+      right: 0;
+      background: rgba(4, 7, 20, 0.8);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border);
       z-index: 100;
     }
 
-    .header-content {
-      max-width: 900px;
+    .header-inner {
+      max-width: 1100px;
       margin: 0 auto;
-      padding: 12px 96px;
+      padding: 0 24px;
+      height: 64px;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
 
-    @media (max-width: 768px) {
-      .header-content {
-        padding: 12px 24px;
+    @media (min-width: 768px) {
+      .header-inner {
+        padding: 0 48px;
       }
     }
 
     .logo {
-      font-weight: 600;
-      font-size: 14px;
-      color: var(--text-primary);
-      text-decoration: none;
       display: flex;
       align-items: center;
-      gap: 8px;
+      text-decoration: none;
     }
 
-    .logo-icon {
-      width: 24px;
-      height: 24px;
-      background: var(--text-primary);
-      border-radius: 4px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 12px;
-      font-weight: 700;
+    .logo-img {
+      height: 28px;
+      width: auto;
+    }
+
+    @media (max-width: 480px) {
+      .logo-img {
+        height: 24px;
+      }
     }
 
     .nav {
@@ -113,94 +182,200 @@
       gap: 4px;
     }
 
-    .nav a {
-      padding: 6px 12px;
+    .nav-link {
+      padding: 8px 14px;
       color: var(--text-secondary);
       text-decoration: none;
       font-size: 14px;
-      border-radius: 4px;
-      transition: all 0.15s ease;
+      font-weight: 500;
+      border-radius: var(--radius-sm);
+      transition: all 0.2s ease;
     }
 
-    .nav a:hover {
-      background: var(--bg-secondary);
+    .nav-link:hover {
       color: var(--text-primary);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .nav-link.active {
+      color: var(--accent);
     }
 
     .lang-selector {
       display: flex;
       align-items: center;
-      gap: 2px;
-      margin-left: 12px;
+      margin-left: 8px;
       padding-left: 12px;
       border-left: 1px solid var(--border);
     }
 
     .lang-btn {
-      padding: 4px 8px;
+      padding: 6px 10px;
       font-size: 12px;
+      font-weight: 500;
       color: var(--text-muted);
-      background: none;
+      background: transparent;
       border: none;
-      border-radius: 4px;
+      border-radius: var(--radius-sm);
       cursor: pointer;
-      transition: all 0.15s ease;
+      transition: all 0.2s ease;
     }
 
     .lang-btn:hover {
-      background: var(--bg-secondary);
       color: var(--text-primary);
+      background: rgba(255, 255, 255, 0.04);
     }
 
     .lang-btn.active {
-      background: var(--bg-tertiary);
+      background: var(--accent);
+      color: var(--bg-primary);
+    }
+
+    .mobile-nav-toggle {
+      display: none;
+      width: 40px;
+      height: 40px;
+      padding: 0;
+      background: transparent;
+      border: none;
+      border-radius: var(--radius-sm);
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .mobile-nav-toggle:hover {
+      background: rgba(255, 255, 255, 0.04);
       color: var(--text-primary);
-      font-weight: 500;
+    }
+
+    @media (max-width: 768px) {
+      .nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        padding: 16px 24px 24px;
+        background: rgba(4, 7, 20, 0.98);
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav.open {
+        display: flex;
+      }
+
+      .nav-link {
+        width: 100%;
+        padding: 12px 16px;
+      }
+
+      .lang-selector {
+        margin: 16px 0 0;
+        padding: 16px 0 0;
+        border-left: none;
+        border-top: 1px solid var(--border);
+        width: 100%;
+        justify-content: center;
+      }
+
+      .mobile-nav-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
     }
 
     /* Hero Section */
     .hero {
-      padding: 80px 0 60px;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 120px 0 80px;
+      background: var(--hero-gradient);
+      position: relative;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 200px;
+      background: linear-gradient(to bottom, transparent, var(--bg-primary));
+      pointer-events: none;
+    }
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 48px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    @media (min-width: 768px) {
+      .hero-content {
+        grid-template-columns: 1fr auto;
+        gap: 64px;
+      }
+    }
+
+    .hero-text {
+      max-width: 600px;
     }
 
     .hero-badge {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      padding: 4px 10px;
-      background: var(--bg-secondary);
-      border-radius: 4px;
+      gap: 8px;
+      padding: 6px 14px 6px 10px;
+      background: rgba(54, 226, 159, 0.1);
+      border: 1px solid rgba(54, 226, 159, 0.2);
+      border-radius: var(--radius-pill);
       font-size: 13px;
-      color: var(--text-secondary);
-      margin-bottom: 16px;
+      font-weight: 500;
+      color: #36e29f;
+      margin-bottom: 24px;
     }
 
     .hero-badge-dot {
       width: 8px;
       height: 8px;
-      background: #00c853;
+      background: #36e29f;
       border-radius: 50%;
       animation: pulse 2s infinite;
     }
 
     @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.5; }
+      0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(54, 226, 159, 0.4); }
+      50% { opacity: 0.8; box-shadow: 0 0 0 6px rgba(54, 226, 159, 0); }
     }
 
     .hero h1 {
-      font-size: 40px;
+      font-size: clamp(36px, 6vw, 56px);
       font-weight: 700;
-      line-height: 1.2;
-      margin-bottom: 16px;
-      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      letter-spacing: -0.03em;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(135deg, var(--accent) 0%, #f0c35b 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
     .hero-subtitle {
-      font-size: 20px;
+      font-size: clamp(16px, 2.5vw, 20px);
       color: var(--text-secondary);
-      margin-bottom: 24px;
-      max-width: 600px;
+      margin-bottom: 32px;
+      line-height: 1.7;
     }
 
     .hero-actions {
@@ -209,225 +384,369 @@
       flex-wrap: wrap;
     }
 
+    .hero-avatar-wrapper {
+      position: relative;
+    }
+
+    .hero-avatar {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+      border: 3px solid rgba(255, 255, 255, 0.1);
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-avatar-glow {
+      position: absolute;
+      inset: -20px;
+      background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+      border-radius: 50%;
+      z-index: 0;
+      animation: glow 4s ease-in-out infinite;
+    }
+
+    @keyframes glow {
+      0%, 100% { opacity: 0.5; transform: scale(1); }
+      50% { opacity: 0.8; transform: scale(1.05); }
+    }
+
+    @media (max-width: 768px) {
+      .hero-content {
+        text-align: center;
+      }
+
+      .hero-avatar-wrapper {
+        order: -1;
+        margin: 0 auto;
+      }
+
+      .hero-avatar {
+        width: 180px;
+        height: 180px;
+      }
+
+      .hero-actions {
+        justify-content: center;
+      }
+    }
+
+    /* Buttons */
     .btn {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      padding: 10px 16px;
-      border-radius: 4px;
-      font-size: 14px;
-      font-weight: 500;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 24px;
+      border-radius: var(--radius-md);
+      font-size: 15px;
+      font-weight: 600;
       text-decoration: none;
-      transition: all 0.15s ease;
+      transition: all 0.2s ease;
       cursor: pointer;
       border: none;
     }
 
+    .btn i {
+      font-size: 14px;
+    }
+
     .btn-primary {
-      background: var(--accent);
-      color: white;
+      background: linear-gradient(135deg, var(--accent) 0%, #d99932 100%);
+      color: var(--bg-primary);
+      box-shadow: 0 8px 30px rgba(228, 176, 69, 0.3);
     }
 
     .btn-primary:hover {
-      background: var(--accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(228, 176, 69, 0.4);
     }
 
     .btn-secondary {
-      background: var(--bg-secondary);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.12);
       color: var(--text-primary);
     }
 
     .btn-secondary:hover {
-      background: var(--bg-tertiary);
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
     }
 
-    .btn svg {
-      width: 16px;
-      height: 16px;
+    /* Accessible focus styles */
+    a:focus-visible,
+    button:focus-visible,
+    .btn:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
     }
 
-    /* Section */
+    /* Sections */
     .section {
-      padding: 48px 0;
-      border-top: 1px solid var(--border);
+      padding: 80px 0;
+      position: relative;
+    }
+
+    @media (min-width: 768px) {
+      .section {
+        padding: 100px 0;
+      }
     }
 
     .section-header {
       display: flex;
       align-items: center;
-      gap: 8px;
-      margin-bottom: 24px;
+      gap: 16px;
+      margin-bottom: 48px;
     }
 
     .section-icon {
-      width: 24px;
-      height: 24px;
+      width: 48px;
+      height: 48px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 18px;
+      background: var(--accent-soft);
+      border-radius: var(--radius-md);
+      color: var(--accent);
+      font-size: 20px;
     }
 
-    .section h2 {
-      font-size: 24px;
-      font-weight: 600;
-      letter-spacing: -0.01em;
+    .section-title {
+      font-size: clamp(24px, 4vw, 32px);
+      font-weight: 700;
+      letter-spacing: -0.02em;
     }
 
-    /* About */
-    .about-content {
+    .section-divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+      margin: 0;
+    }
+
+    /* About Section */
+    .about-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 32px;
+      grid-template-columns: 1fr;
+      gap: 48px;
     }
 
-    @media (max-width: 768px) {
-      .about-content {
-        grid-template-columns: 1fr;
+    @media (min-width: 768px) {
+      .about-grid {
+        grid-template-columns: 1.2fr 1fr;
+        gap: 64px;
       }
     }
 
     .about-text p {
       color: var(--text-secondary);
-      margin-bottom: 16px;
+      margin-bottom: 20px;
+      font-size: 16px;
+      line-height: 1.8;
     }
 
-    .about-stats {
+    .about-text p:last-child {
+      margin-bottom: 0;
+    }
+
+    .stats-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 16px;
     }
 
     .stat-card {
-      background: var(--bg-secondary);
-      padding: 20px;
-      border-radius: 8px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .stat-card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-4px);
+      box-shadow: var(--card-shadow);
     }
 
     .stat-number {
-      font-size: 32px;
+      font-size: 36px;
       font-weight: 700;
-      color: var(--text-primary);
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 8px;
     }
 
     .stat-label {
       font-size: 13px;
-      color: var(--text-secondary);
-      margin-top: 4px;
+      color: var(--text-muted);
+      font-weight: 500;
     }
 
-    /* Services */
+    /* Services Section */
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: 1fr;
       gap: 16px;
     }
 
-    @media (max-width: 768px) {
+    @media (min-width: 640px) {
       .services-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .services-grid {
+        grid-template-columns: repeat(3, 1fr);
       }
     }
 
     .service-card {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      padding: 16px;
-      background: var(--bg-secondary);
-      border-radius: 8px;
-      transition: all 0.15s ease;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.005) 100%);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      transition: all 0.3s ease;
     }
 
     .service-card:hover {
-      background: var(--bg-tertiary);
+      border-color: var(--border-hover);
+      transform: translateY(-4px);
+      box-shadow: var(--card-shadow);
     }
 
     .service-icon {
-      width: 32px;
-      height: 32px;
-      background: var(--bg-primary);
-      border-radius: 6px;
+      width: 48px;
+      height: 48px;
+      background: var(--accent-soft);
+      border-radius: var(--radius-md);
       display: flex;
       align-items: center;
       justify-content: center;
+      color: var(--accent);
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    .service-card h3 {
       font-size: 16px;
-      flex-shrink: 0;
-    }
-
-    .service-content h3 {
-      font-size: 14px;
       font-weight: 600;
-      margin-bottom: 4px;
+      margin-bottom: 8px;
+      color: var(--text-primary);
     }
 
-    .service-content p {
-      font-size: 13px;
+    .service-card p {
+      font-size: 14px;
       color: var(--text-secondary);
+      line-height: 1.6;
     }
 
-    /* Projects */
+    /* Projects Section */
+    .projects-filter {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+
+    .filter-btn {
+      padding: 8px 16px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-pill);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      color: var(--accent);
+      border-color: var(--accent);
+      background: var(--accent-soft);
+    }
+
     .projects-grid {
       display: grid;
-      gap: 16px;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    @media (min-width: 768px) {
+      .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
     .project-card {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.005) 100%);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      transition: all 0.3s ease;
       display: flex;
-      align-items: flex-start;
-      gap: 16px;
-      padding: 20px;
-      background: var(--bg-secondary);
-      border-radius: 8px;
-      transition: all 0.15s ease;
+      flex-direction: column;
     }
 
     .project-card:hover {
-      background: var(--bg-tertiary);
+      border-color: var(--border-hover);
+      transform: translateY(-4px);
+      box-shadow: var(--card-shadow);
+    }
+
+    .project-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 16px;
     }
 
     .project-icon {
       width: 48px;
       height: 48px;
       background: var(--bg-primary);
-      border-radius: 8px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 24px;
+      color: var(--accent);
+      font-size: 20px;
       flex-shrink: 0;
     }
 
-    .project-content {
+    .project-meta {
       flex: 1;
+      min-width: 0;
     }
 
-    .project-header {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 8px;
-    }
-
-    .project-content h3 {
+    .project-meta h3 {
       font-size: 15px;
       font-weight: 600;
+      margin-bottom: 4px;
+      color: var(--text-primary);
     }
 
     .project-org {
       font-size: 12px;
-      color: var(--text-muted);
-      background: var(--bg-primary);
-      padding: 2px 8px;
-      border-radius: 4px;
-      white-space: nowrap;
+      color: var(--accent);
+      font-weight: 500;
     }
 
-    .project-content p {
-      font-size: 13px;
+    .project-card p {
+      font-size: 14px;
       color: var(--text-secondary);
-      margin-bottom: 12px;
+      line-height: 1.6;
+      margin-bottom: 16px;
+      flex: 1;
     }
 
     .project-tags {
@@ -438,31 +757,33 @@
 
     .tag {
       font-size: 11px;
-      padding: 2px 8px;
-      background: var(--bg-primary);
-      color: var(--text-secondary);
-      border-radius: 4px;
+      font-weight: 500;
+      padding: 4px 10px;
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text-muted);
+      border-radius: var(--radius-sm);
     }
 
-    /* Experience */
+    /* Experience Section */
     .timeline {
       position: relative;
-      padding-left: 24px;
+      padding-left: 32px;
     }
 
     .timeline::before {
       content: '';
       position: absolute;
-      left: 0;
+      left: 6px;
       top: 8px;
       bottom: 8px;
       width: 2px;
-      background: var(--border);
+      background: linear-gradient(to bottom, var(--accent), var(--border));
+      border-radius: 1px;
     }
 
     .timeline-item {
       position: relative;
-      padding-bottom: 32px;
+      padding-bottom: 40px;
     }
 
     .timeline-item:last-child {
@@ -472,27 +793,28 @@
     .timeline-item::before {
       content: '';
       position: absolute;
-      left: -24px;
-      top: 8px;
-      width: 8px;
-      height: 8px;
+      left: -32px;
+      top: 6px;
+      width: 14px;
+      height: 14px;
       background: var(--bg-primary);
-      border: 2px solid var(--accent);
+      border: 3px solid var(--accent);
       border-radius: 50%;
+      z-index: 1;
     }
 
     .timeline-header {
       display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
+      flex-wrap: wrap;
+      align-items: baseline;
       gap: 12px;
       margin-bottom: 8px;
-      flex-wrap: wrap;
     }
 
     .timeline-title {
-      font-size: 15px;
+      font-size: 16px;
       font-weight: 600;
+      color: var(--text-primary);
     }
 
     .timeline-company {
@@ -500,111 +822,165 @@
     }
 
     .timeline-date {
-      font-size: 12px;
+      font-size: 13px;
       color: var(--text-muted);
-      white-space: nowrap;
+      font-weight: 500;
+      margin-left: auto;
     }
 
     .timeline-location {
+      display: flex;
+      align-items: center;
+      gap: 6px;
       font-size: 13px;
       color: var(--text-secondary);
-      margin-bottom: 8px;
+      margin-bottom: 12px;
+    }
+
+    .timeline-location i {
+      color: var(--text-muted);
+      font-size: 12px;
     }
 
     .timeline-desc {
-      font-size: 13px;
-      color: var(--text-secondary);
-      padding-left: 16px;
+      list-style: none;
+      padding: 0;
     }
 
     .timeline-desc li {
-      margin-bottom: 4px;
+      position: relative;
+      padding-left: 20px;
+      font-size: 14px;
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+      line-height: 1.6;
     }
 
-    /* Skills */
+    .timeline-desc li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 6px;
+      height: 1px;
+      background: var(--text-muted);
+    }
+
+    /* Skills Section */
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
     }
 
-    @media (max-width: 768px) {
+    @media (min-width: 768px) {
       .skills-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(4, 1fr);
       }
     }
 
     .skill-category h3 {
-      font-size: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
       font-weight: 600;
       text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 12px;
+      color: var(--accent);
+      margin-bottom: 16px;
       letter-spacing: 0.05em;
+    }
+
+    .skill-category h3 i {
+      font-size: 14px;
     }
 
     .skill-list {
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 8px;
     }
 
     .skill-item {
-      font-size: 13px;
+      font-size: 14px;
       color: var(--text-secondary);
-      padding: 4px 0;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
     }
 
-    /* Values */
+    .skill-item:last-child {
+      border-bottom: none;
+    }
+
+    /* Values Section */
     .values-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
+      grid-template-columns: 1fr;
+      gap: 20px;
     }
 
-    @media (max-width: 768px) {
+    @media (min-width: 768px) {
       .values-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(3, 1fr);
       }
     }
 
     .value-card {
-      padding: 20px;
-      background: var(--bg-secondary);
-      border-radius: 8px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.005) 100%);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px;
       text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .value-card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-4px);
+      box-shadow: var(--card-shadow);
     }
 
     .value-icon {
-      font-size: 24px;
-      margin-bottom: 12px;
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 20px;
+      background: var(--accent-soft);
+      border-radius: var(--radius-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      font-size: 28px;
     }
 
     .value-card h3 {
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 600;
-      margin-bottom: 4px;
+      margin-bottom: 8px;
+      color: var(--text-primary);
     }
 
     .value-card p {
-      font-size: 13px;
+      font-size: 14px;
       color: var(--text-secondary);
+      line-height: 1.6;
     }
 
-    /* Contact */
+    /* Contact Section */
     .contact-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
       gap: 32px;
     }
 
-    @media (max-width: 768px) {
+    @media (min-width: 768px) {
       .contact-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
       }
     }
 
-    .contact-info {
+    .contact-list {
       display: flex;
       flex-direction: column;
       gap: 16px;
@@ -613,275 +989,331 @@
     .contact-item {
       display: flex;
       align-items: center;
-      gap: 12px;
-      padding: 12px 16px;
-      background: var(--bg-secondary);
-      border-radius: 8px;
+      gap: 16px;
+      padding: 16px 20px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.005) 100%);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
       text-decoration: none;
       color: var(--text-primary);
-      transition: all 0.15s ease;
+      transition: all 0.3s ease;
     }
 
     .contact-item:hover {
-      background: var(--bg-tertiary);
+      border-color: var(--border-hover);
+      transform: translateX(4px);
+      box-shadow: var(--card-shadow);
     }
 
     .contact-icon {
-      width: 32px;
-      height: 32px;
-      background: var(--bg-primary);
-      border-radius: 6px;
+      width: 44px;
+      height: 44px;
+      background: var(--accent-soft);
+      border-radius: var(--radius-md);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 14px;
+      color: var(--accent);
+      font-size: 18px;
+      flex-shrink: 0;
     }
 
     .contact-text {
-      font-size: 13px;
+      flex: 1;
+      min-width: 0;
     }
 
     .contact-label {
-      color: var(--text-muted);
-      font-size: 11px;
       display: block;
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 2px;
+      font-weight: 500;
+    }
+
+    .contact-value {
+      font-size: 14px;
+      font-weight: 500;
     }
 
     .contact-cta {
-      background: var(--bg-secondary);
-      padding: 32px;
-      border-radius: 8px;
+      background: linear-gradient(135deg, rgba(228, 176, 69, 0.08) 0%, rgba(228, 176, 69, 0.02) 100%);
+      border: 1px solid rgba(228, 176, 69, 0.2);
+      border-radius: var(--radius-xl);
+      padding: 40px;
       text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     .contact-cta h3 {
-      font-size: 18px;
-      font-weight: 600;
-      margin-bottom: 8px;
-    }
-
-    .contact-cta p {
-      font-size: 14px;
-      color: var(--text-secondary);
-      margin-bottom: 20px;
-    }
-
-    /* Social */
-    .social-links {
-      display: flex;
-      gap: 8px;
-      justify-content: center;
-      margin-top: 16px;
-    }
-
-    .social-link {
-      width: 40px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--bg-primary);
-      border-radius: 8px;
-      color: var(--text-secondary);
-      text-decoration: none;
-      transition: all 0.15s ease;
-    }
-
-    .social-link:hover {
-      background: var(--bg-tertiary);
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 12px;
       color: var(--text-primary);
     }
 
-    .social-link svg {
-      width: 18px;
-      height: 18px;
+    .contact-cta p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      margin-bottom: 28px;
+      line-height: 1.7;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 24px;
+    }
+
+    .social-link {
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 18px;
+      transition: all 0.2s ease;
+    }
+
+    .social-link:hover {
+      background: var(--accent-soft);
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-2px);
     }
 
     /* Footer */
     .footer {
-      padding: 32px 0;
+      padding: 40px 0;
       border-top: 1px solid var(--border);
       text-align: center;
     }
 
     .footer p {
-      font-size: 13px;
+      font-size: 14px;
       color: var(--text-muted);
     }
 
-    /* Mobile nav */
-    .mobile-nav-toggle {
-      display: none;
-      padding: 8px;
-      background: none;
+    /* Scroll to top */
+    .scroll-top {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 48px;
+      height: 48px;
+      background: var(--accent);
+      color: var(--bg-primary);
       border: none;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
       cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 50;
+      box-shadow: 0 8px 30px rgba(228, 176, 69, 0.3);
     }
 
-    @media (max-width: 768px) {
-      .nav {
-        display: none;
-      }
+    .scroll-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
 
-      .mobile-nav-toggle {
-        display: block;
-      }
+    .scroll-top:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(228, 176, 69, 0.4);
+    }
 
-      .nav.open {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: var(--bg-primary);
-        padding: 16px;
-        border-bottom: 1px solid var(--border);
-      }
-
-      .lang-selector {
-        margin: 12px 0 0;
-        padding: 12px 0 0;
-        border-left: none;
-        border-top: 1px solid var(--border);
+    /* Respect reduced motion preferences */
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
       }
     }
   </style>
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Paulo Amaral",
+    "url": "https://paulo-amaral.github.io/",
+    "image": "https://paulo-amaral.github.io/Paulo_mew.png",
+    "jobTitle": "Digital Transformation Consultant",
+    "description": "Senior ICT and Digital Transformation Consultant with 20+ years of experience delivering national-scale digital systems.",
+    "sameAs": [
+      "https://linkedin.com/in/paulosergioamaral",
+      "https://github.com/paulo-amaral",
+      "https://x.com/askamaral",
+      "https://www.instagram.com/paulo_s_amaral"
+    ]
+  }
+  </script>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
   <!-- Header -->
   <header class="header">
-    <div class="header-content">
-      <a href="#" class="logo">
-        <div class="logo-icon">PA</div>
-        <span>Paulo Amaral</span>
+    <div class="header-inner">
+      <a href="#main-content" class="logo">
+        <img src="logo.png" alt="Paulo Amaral" class="logo-img">
       </a>
 
-      <button class="mobile-nav-toggle" onclick="toggleNav()">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M3 12h18M3 6h18M3 18h18"/>
-        </svg>
+      <button class="mobile-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav">
+        <i class="fa-solid fa-bars"></i>
       </button>
 
       <nav class="nav" id="nav">
-        <a href="#about" data-i18n="nav.about">About</a>
-        <a href="#services" data-i18n="nav.services">Services</a>
-        <a href="#projects" data-i18n="nav.projects">Projects</a>
-        <a href="#experience" data-i18n="nav.experience">Experience</a>
-        <a href="#contact" data-i18n="nav.contact">Contact</a>
+        <a href="#about" class="nav-link" data-i18n="nav.about">About</a>
+        <a href="#services" class="nav-link" data-i18n="nav.services">Services</a>
+        <a href="#projects" class="nav-link" data-i18n="nav.projects">Projects</a>
+        <a href="#experience" class="nav-link" data-i18n="nav.experience">Experience</a>
+        <a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
 
         <div class="lang-selector">
-          <button class="lang-btn active" data-lang="en" onclick="changeLanguage('en')">EN</button>
-          <button class="lang-btn" data-lang="pt" onclick="changeLanguage('pt')">PT</button>
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="pt">PT</button>
         </div>
       </nav>
     </div>
   </header>
 
-  <main class="page">
+  <main id="main-content" role="main">
     <!-- Hero -->
     <section class="hero">
-      <div class="hero-badge">
-        <span class="hero-badge-dot"></span>
-        <span data-i18n="hero.available">Available for consulting</span>
-      </div>
-      <h1 data-i18n="hero.greeting">Hi, I'm Paulo Amaral</h1>
-      <p class="hero-subtitle" data-i18n="hero.tagline">Senior ICT and Digital Transformation Consultant using technology to make a difference in international development and public sector.</p>
-      <div class="hero-actions">
-        <a href="https://calendly.com/pauloamaral" target="_blank" class="btn btn-primary">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="3" y="4" width="18" height="18" rx="2"/>
-            <path d="M16 2v4M8 2v4M3 10h18"/>
-          </svg>
-          <span data-i18n="hero.book">Book a Call</span>
-        </a>
-        <a href="#projects" class="btn btn-secondary">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
-            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
-          </svg>
-          <span data-i18n="hero.viewwork">View My Work</span>
-        </a>
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-text">
+            <div class="hero-badge">
+              <span class="hero-badge-dot"></span>
+              <span data-i18n="hero.available">Available for consulting</span>
+            </div>
+            <h1>Hi, I'm <span>Paulo Amaral</span></h1>
+            <p class="hero-subtitle" data-i18n="hero.tagline">Senior ICT and Digital Transformation Consultant using technology to make a difference in international development and public sector.</p>
+            <div class="hero-actions">
+              <a href="https://calendly.com/pauloamaral" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                <i class="fa-regular fa-calendar"></i>
+                <span data-i18n="hero.book">Book a Call</span>
+              </a>
+              <a href="#projects" class="btn btn-secondary">
+                <i class="fa-solid fa-folder-open"></i>
+                <span data-i18n="hero.viewwork">View My Work</span>
+              </a>
+            </div>
+          </div>
+          <div class="hero-avatar-wrapper">
+            <div class="hero-avatar-glow"></div>
+            <img src="Paulo_mew.png" alt="Portrait of Paulo Amaral" class="hero-avatar" loading="eager" width="220" height="220">
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- About -->
     <section class="section" id="about">
-      <div class="section-header">
-        <span class="section-icon">&#128100;</span>
-        <h2 data-i18n="about.title">About Me</h2>
-      </div>
-      <div class="about-content">
-        <div class="about-text">
-          <p data-i18n="about.p1">I'm a consultant passionate about transforming businesses and organizations through technology. With extensive engagement with UN agencies, governments, and donors, I specialize in digital governance, health, justice, civil registration, and social protection systems.</p>
-          <p data-i18n="about.p2">I believe in building products and solutions that make a difference from the very first delivery. My approach follows the UBUNTU philosophy - believing in a sustainable society built on respect and solidarity.</p>
+      <div class="container">
+        <div class="section-header">
+          <div class="section-icon">
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <h2 class="section-title" data-i18n="about.title">About Me</h2>
         </div>
-        <div class="about-stats">
-          <div class="stat-card">
-            <div class="stat-number">20+</div>
-            <div class="stat-label" data-i18n="about.stat1">Years of Experience</div>
+        <div class="about-grid">
+          <div class="about-text">
+            <p data-i18n="about.p1">I'm a consultant passionate about transforming businesses and organizations through technology. With extensive engagement with UN agencies, governments, and donors, I specialize in digital governance, health, justice, civil registration, and social protection systems.</p>
+            <p data-i18n="about.p2">I believe in building products and solutions that make a difference from the very first delivery. My approach follows the UBUNTU philosophy - believing in a sustainable society built on respect and solidarity.</p>
           </div>
-          <div class="stat-card">
-            <div class="stat-number">50+</div>
-            <div class="stat-label" data-i18n="about.stat2">Projects Delivered</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number">10+</div>
-            <div class="stat-label" data-i18n="about.stat3">Countries Impacted</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number">100M+</div>
-            <div class="stat-label" data-i18n="about.stat4">USD Systems Managed</div>
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-number">20+</div>
+              <div class="stat-label" data-i18n="about.stat1">Years of Experience</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">50+</div>
+              <div class="stat-label" data-i18n="about.stat2">Projects Delivered</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">10+</div>
+              <div class="stat-label" data-i18n="about.stat3">Countries Impacted</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">100M+</div>
+              <div class="stat-label" data-i18n="about.stat4">USD Systems Managed</div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
+    <hr class="section-divider">
+
     <!-- Services -->
     <section class="section" id="services">
-      <div class="section-header">
-        <span class="section-icon">&#9881;</span>
-        <h2 data-i18n="services.title">What I Do</h2>
-      </div>
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon">&#128187;</div>
-          <div class="service-content">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-icon">
+            <i class="fa-solid fa-gear"></i>
+          </div>
+          <h2 class="section-title" data-i18n="services.title">What I Do</h2>
+        </div>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fa-solid fa-code"></i>
+            </div>
             <h3 data-i18n="services.s1.title">Software Development</h3>
             <p data-i18n="services.s1.desc">End-to-end handmade products and solutions, crafted with expertise.</p>
           </div>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">&#129302;</div>
-          <div class="service-content">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fa-solid fa-brain"></i>
+            </div>
             <h3 data-i18n="services.s2.title">Machine Learning & Data Science</h3>
             <p data-i18n="services.s2.desc">AI-powered solutions for classification, analysis, and automation.</p>
           </div>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">&#127760;</div>
-          <div class="service-content">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fa-solid fa-rocket"></i>
+            </div>
             <h3 data-i18n="services.s3.title">Digital Transformation</h3>
             <p data-i18n="services.s3.desc">Strategic guidance for public sector and organizational modernization.</p>
           </div>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">&#128218;</div>
-          <div class="service-content">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </div>
             <h3 data-i18n="services.s4.title">Capacity Building</h3>
             <p data-i18n="services.s4.desc">Training and mentoring ICT teams for sustainable development.</p>
           </div>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">&#9729;</div>
-          <div class="service-content">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fa-solid fa-cloud"></i>
+            </div>
             <h3 data-i18n="services.s5.title">IT Infrastructure</h3>
             <p data-i18n="services.s5.desc">Cloud, DevOps, and enterprise infrastructure design and operations.</p>
           </div>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">&#128202;</div>
-          <div class="service-content">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fa-solid fa-chart-line"></i>
+            </div>
             <h3 data-i18n="services.s6.title">Business Intelligence</h3>
             <p data-i18n="services.s6.desc">Dashboards, analytics, and data-driven decision support systems.</p>
           </div>
@@ -889,20 +1321,28 @@
       </div>
     </section>
 
-    <!-- All Projects -->
+    <hr class="section-divider">
+
+    <!-- Projects -->
     <section class="section" id="projects">
-      <div class="section-header">
-        <span class="section-icon">&#128640;</span>
-        <h2 data-i18n="projects.title">Projects</h2>
-      </div>
-      <div class="projects-grid">
-        <!-- Elections & Governance -->
-        <div class="project-card">
-          <div class="project-icon">&#127860;</div>
-          <div class="project-content">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-icon">
+            <i class="fa-solid fa-diagram-project"></i>
+          </div>
+          <h2 class="section-title" data-i18n="projects.title">Projects</h2>
+        </div>
+        <div class="projects-grid">
+          <!-- Elections & Governance -->
+          <div class="project-card">
             <div class="project-header">
-              <h3>National Election Systems (2022-2023)</h3>
-              <span class="project-org">CNE / UNDP</span>
+              <div class="project-icon">
+                <i class="fa-solid fa-check-to-slot"></i>
+              </div>
+              <div class="project-meta">
+                <h3>National Election Systems (2022-2023)</h3>
+                <span class="project-org">CNE / UNDP</span>
+              </div>
             </div>
             <p>Developed and deployed national election tabulation systems for Presidential and Parliamentary elections, supporting 650,000+ voters across 1,400 voting centers.</p>
             <div class="project-tags">
@@ -911,14 +1351,16 @@
               <span class="tag">Real-time Analytics</span>
             </div>
           </div>
-        </div>
 
-        <div class="project-card">
-          <div class="project-icon">&#127974;</div>
-          <div class="project-content">
+          <div class="project-card">
             <div class="project-header">
-              <h3>DRBI Asset Declaration System</h3>
-              <span class="project-org">Court of Appeals</span>
+              <div class="project-icon">
+                <i class="fa-solid fa-landmark"></i>
+              </div>
+              <div class="project-meta">
+                <h3>DRBI Asset Declaration System</h3>
+                <span class="project-org">Court of Appeals</span>
+              </div>
             </div>
             <p>Built digital asset and interest declaration platform for anti-corruption bodies, serving 37,000+ public officials with secure data management.</p>
             <div class="project-tags">
@@ -927,14 +1369,16 @@
               <span class="tag">Database Design</span>
             </div>
           </div>
-        </div>
 
-        <div class="project-card">
-          <div class="project-icon">&#128196;</div>
-          <div class="project-content">
+          <div class="project-card">
             <div class="project-header">
-              <h3>Digital Maturity Assessment Platform</h3>
-              <span class="project-org">UNDP / EU</span>
+              <div class="project-icon">
+                <i class="fa-solid fa-clipboard-check"></i>
+              </div>
+              <div class="project-meta">
+                <h3>Digital Maturity Assessment Platform</h3>
+                <span class="project-org">UNDP / EU</span>
+              </div>
             </div>
             <p>Designed custom Digital Maturity Assessment web platform based on Deloitte framework, using AI-assisted rapid prototyping to automate scoring and analysis.</p>
             <div class="project-tags">
@@ -943,15 +1387,17 @@
               <span class="tag">Assessment Tools</span>
             </div>
           </div>
-        </div>
 
-        <!-- Social Protection & Development -->
-        <div class="project-card">
-          <div class="project-icon">&#128118;</div>
-          <div class="project-content">
+          <!-- Social Protection & Development -->
+          <div class="project-card">
             <div class="project-header">
-              <h3>Jerasaun Foun Social Protection</h3>
-              <span class="project-org">MSSI / Catalpa</span>
+              <div class="project-icon">
+                <i class="fa-solid fa-children"></i>
+              </div>
+              <div class="project-meta">
+                <h3>Jerasaun Foun Social Protection</h3>
+                <span class="project-org">MSSI / Catalpa</span>
+              </div>
             </div>
             <p>Led data analytics enabling $8M+ in payments to 40,000+ registrations, 50,000 children including 221 with disabilities, and 10,000+ pregnant women.</p>
             <div class="project-tags">
@@ -960,14 +1406,16 @@
               <span class="tag">Payment Systems</span>
             </div>
           </div>
-        </div>
 
-        <div class="project-card">
-          <div class="project-icon">&#128214;</div>
-          <div class="project-content">
+          <div class="project-card">
             <div class="project-header">
-              <h3>PNDS Rural Development Platform</h3>
-              <span class="project-org">Catalpa / Govt of TL</span>
+              <div class="project-icon">
+                <i class="fa-solid fa-seedling"></i>
+              </div>
+              <div class="project-meta">
+                <h3>PNDS Rural Development Platform</h3>
+                <span class="project-org">Catalpa / Govt of TL</span>
+              </div>
             </div>
             <p>Managed legacy data migration for 9,000+ projects totaling $100M+ supporting rural development through digital project management.</p>
             <div class="project-tags">
@@ -976,14 +1424,16 @@
               <span class="tag">Rural Development</span>
             </div>
           </div>
-        </div>
 
-        <div class="project-card">
-          <div class="project-icon">&#128179;</div>
-          <div class="project-content">
+          <div class="project-card">
             <div class="project-header">
-              <h3>Kartaun Bele Digital Cash Transfer</h3>
-              <span class="project-org">World Vision</span>
+              <div class="project-icon">
+                <i class="fa-solid fa-money-bill-transfer"></i>
+              </div>
+              <div class="project-meta">
+                <h3>Kartaun Bele Digital Cash Transfer</h3>
+                <span class="project-org">World Vision</span>
+              </div>
             </div>
             <p>Designed and delivered a digital cash transfer platform for low-income households, supporting social protection for 3,000+ beneficiaries in Ermera District.</p>
             <div class="project-tags">
@@ -992,15 +1442,17 @@
               <span class="tag">Mobile App</span>
             </div>
           </div>
-        </div>
 
-        <!-- Health & Child Protection -->
-        <div class="project-card">
-          <div class="project-icon">&#128137;</div>
-          <div class="project-content">
+          <!-- Health & Child Protection -->
+          <div class="project-card">
             <div class="project-header">
-              <h3>DHIS2 Health Analytics</h3>
-              <span class="project-org">UNICEF / MOH</span>
+              <div class="project-icon">
+                <i class="fa-solid fa-syringe"></i>
+              </div>
+              <div class="project-meta">
+                <h3>DHIS2 Health Analytics</h3>
+                <span class="project-org">UNICEF / MOH</span>
+              </div>
             </div>
             <p>Improved health data collection and validation with EPI dashboards for immunization monitoring, supporting national health information systems.</p>
             <div class="project-tags">
@@ -1009,14 +1461,16 @@
               <span class="tag">Immunization</span>
             </div>
           </div>
-        </div>
 
-        <div class="project-card">
-          <div class="project-icon">&#128107;</div>
-          <div class="project-content">
+          <div class="project-card">
             <div class="project-header">
-              <h3>PRIMERO CPIMS Dashboards</h3>
-              <span class="project-org">UNICEF / MSSI</span>
+              <div class="project-icon">
+                <i class="fa-solid fa-hand-holding-heart"></i>
+              </div>
+              <div class="project-meta">
+                <h3>PRIMERO CPIMS Dashboards</h3>
+                <span class="project-org">UNICEF / MSSI</span>
+              </div>
             </div>
             <p>Developed dashboards and analytics for child protection case management to support policy and operational decisions.</p>
             <div class="project-tags">
@@ -1025,14 +1479,16 @@
               <span class="tag">Power BI</span>
             </div>
           </div>
-        </div>
 
-        <div class="project-card">
-          <div class="project-icon">&#128195;</div>
-          <div class="project-content">
+          <div class="project-card">
             <div class="project-header">
-              <h3>CRVS Civil Registration Dashboard</h3>
-              <span class="project-org">UNICEF / MOJ</span>
+              <div class="project-icon">
+                <i class="fa-solid fa-id-card"></i>
+              </div>
+              <div class="project-meta">
+                <h3>CRVS Civil Registration Dashboard</h3>
+                <span class="project-org">UNICEF / MOJ</span>
+              </div>
             </div>
             <p>Delivered technical improvements and dashboards to strengthen birth registration systems and civil registration data quality.</p>
             <div class="project-tags">
@@ -1041,15 +1497,17 @@
               <span class="tag">Data Quality</span>
             </div>
           </div>
-        </div>
 
-        <!-- Justice Sector -->
-        <div class="project-card">
-          <div class="project-icon">&#128172;</div>
-          <div class="project-content">
+          <!-- Justice Sector -->
+          <div class="project-card">
             <div class="project-header">
-              <h3>ROSA Sexual Harassment Chatbot</h3>
-              <span class="project-org">UN Women</span>
+              <div class="project-icon">
+                <i class="fa-solid fa-comment-dots"></i>
+              </div>
+              <div class="project-meta">
+                <h3>ROSA Sexual Harassment Chatbot</h3>
+                <span class="project-org">UN Women</span>
+              </div>
             </div>
             <p>Developed secure digital reporting system for sexual harassment complaints in public sector via Facebook Messenger, strengthening accountability.</p>
             <div class="project-tags">
@@ -1058,14 +1516,16 @@
               <span class="tag">Accountability</span>
             </div>
           </div>
-        </div>
 
-        <div class="project-card">
-          <div class="project-icon">&#9878;</div>
-          <div class="project-content">
+          <div class="project-card">
             <div class="project-header">
-              <h3>IIMS Case Management System</h3>
-              <span class="project-org">Prosecutor's General</span>
+              <div class="project-icon">
+                <i class="fa-solid fa-scale-balanced"></i>
+              </div>
+              <div class="project-meta">
+                <h3>IIMS Case Management System</h3>
+                <span class="project-org">Prosecutor's General</span>
+              </div>
             </div>
             <p>Deployed and maintained Case Management System with dashboards using Metabase, supporting case tracking across prosecution offices.</p>
             <div class="project-tags">
@@ -1074,14 +1534,16 @@
               <span class="tag">Justice Sector</span>
             </div>
           </div>
-        </div>
 
-        <div class="project-card">
-          <div class="project-icon">&#127979;</div>
-          <div class="project-content">
+          <div class="project-card">
             <div class="project-header">
-              <h3>ICT Training Center</h3>
-              <span class="project-org">PGR / KOICA</span>
+              <div class="project-icon">
+                <i class="fa-solid fa-chalkboard-user"></i>
+              </div>
+              <div class="project-meta">
+                <h3>ICT Training Center</h3>
+                <span class="project-org">PGR / KOICA</span>
+              </div>
             </div>
             <p>Spearheaded the creation of the first ICT Training Center for the justice sector in collaboration with KOICA, bolstering organizational capacity.</p>
             <div class="project-tags">
@@ -1090,14 +1552,16 @@
               <span class="tag">KOICA</span>
             </div>
           </div>
-        </div>
 
-        <div class="project-card">
-          <div class="project-icon">&#128221;</div>
-          <div class="project-content">
+          <div class="project-card">
             <div class="project-header">
-              <h3>HR Management System</h3>
-              <span class="project-org">Prosecutor's General</span>
+              <div class="project-icon">
+                <i class="fa-solid fa-users-gear"></i>
+              </div>
+              <div class="project-meta">
+                <h3>HR Management System</h3>
+                <span class="project-org">Prosecutor's General</span>
+              </div>
             </div>
             <p>Developed HCM Human resources manager for the HR department, supporting workforce management and institutional governance.</p>
             <div class="project-tags">
@@ -1106,14 +1570,16 @@
               <span class="tag">Personnel Management</span>
             </div>
           </div>
-        </div>
 
-        <div class="project-card">
-          <div class="project-icon">&#128218;</div>
-          <div class="project-content">
+          <div class="project-card">
             <div class="project-header">
-              <h3>Courts Portal & Internal Systems</h3>
-              <span class="project-org">Court of Appeals</span>
+              <div class="project-icon">
+                <i class="fa-solid fa-globe"></i>
+              </div>
+              <div class="project-meta">
+                <h3>Courts Portal & Internal Systems</h3>
+                <span class="project-org">Court of Appeals</span>
+              </div>
             </div>
             <p>Developed new portal, internal systems, knowledgebase, SOP documentation, and GitLab repository for code management across 7 district courts.</p>
             <div class="project-tags">
@@ -1122,15 +1588,17 @@
               <span class="tag">Knowledge Management</span>
             </div>
           </div>
-        </div>
 
-        <!-- Police & Security -->
-        <div class="project-card">
-          <div class="project-icon">&#128110;</div>
-          <div class="project-content">
+          <!-- Police & Security -->
+          <div class="project-card">
             <div class="project-header">
-              <h3>National Police Systems (PNTL)</h3>
-              <span class="project-org">PNTL / AFP</span>
+              <div class="project-icon">
+                <i class="fa-solid fa-shield-halved"></i>
+              </div>
+              <div class="project-meta">
+                <h3>National Police Systems (PNTL)</h3>
+                <span class="project-org">PNTL / AFP</span>
+              </div>
             </div>
             <p>Scaled and operated 40+ servers and 20+ databases for police intelligence and case management systems, including infrastructure diagnosis and remodeling.</p>
             <div class="project-tags">
@@ -1139,14 +1607,16 @@
               <span class="tag">Database</span>
             </div>
           </div>
-        </div>
 
-        <div class="project-card">
-          <div class="project-icon">&#129516;</div>
-          <div class="project-content">
+          <div class="project-card">
             <div class="project-header">
-              <h3>BNCTL Iris Recognition Banking</h3>
-              <span class="project-org">EYETRUST / BNCTL</span>
+              <div class="project-icon">
+                <i class="fa-solid fa-eye"></i>
+              </div>
+              <div class="project-meta">
+                <h3>BNCTL Iris Recognition Banking</h3>
+                <span class="project-org">EYETRUST / BNCTL</span>
+              </div>
             </div>
             <p>Implemented biometric iris authentication to strengthen KYC, fraud prevention, and banking security for national financial institution.</p>
             <div class="project-tags">
@@ -1155,15 +1625,17 @@
               <span class="tag">KYC</span>
             </div>
           </div>
-        </div>
 
-        <!-- Education -->
-        <div class="project-card">
-          <div class="project-icon">&#127891;</div>
-          <div class="project-content">
+          <!-- Education -->
+          <div class="project-card">
             <div class="project-header">
-              <h3>Teacher Recruitment System</h3>
-              <span class="project-org">MOEYS</span>
+              <div class="project-icon">
+                <i class="fa-solid fa-user-graduate"></i>
+              </div>
+              <div class="project-meta">
+                <h3>Teacher Recruitment System</h3>
+                <span class="project-org">MOEYS</span>
+              </div>
             </div>
             <p>Built the first digital recruitment platform for the Ministry of Education, improving transparency, workforce planning, and process efficiency.</p>
             <div class="project-tags">
@@ -1172,14 +1644,16 @@
               <span class="tag">HR Platform</span>
             </div>
           </div>
-        </div>
 
-        <div class="project-card">
-          <div class="project-icon">&#128202;</div>
-          <div class="project-content">
+          <div class="project-card">
             <div class="project-header">
-              <h3>School Census System</h3>
-              <span class="project-org">MOEYS / World Bank</span>
+              <div class="project-icon">
+                <i class="fa-solid fa-school"></i>
+              </div>
+              <div class="project-meta">
+                <h3>School Census System</h3>
+                <span class="project-org">MOEYS / World Bank</span>
+              </div>
             </div>
             <p>Designed and implemented nationwide school census using CSPro, trained 70+ enumerators, and deployed cloud infrastructure for data collection.</p>
             <div class="project-tags">
@@ -1188,14 +1662,16 @@
               <span class="tag">Data Collection</span>
             </div>
           </div>
-        </div>
 
-        <div class="project-card">
-          <div class="project-icon">&#128188;</div>
-          <div class="project-content">
+          <div class="project-card">
             <div class="project-header">
-              <h3>CNEFP Professional Training System</h3>
-              <span class="project-org">CNEFP</span>
+              <div class="project-icon">
+                <i class="fa-solid fa-briefcase"></i>
+              </div>
+              <div class="project-meta">
+                <h3>CNEFP Professional Training System</h3>
+                <span class="project-org">CNEFP</span>
+              </div>
             </div>
             <p>Developed a system for controlling professional training courses, tracking trainees, and monitoring employability outcomes.</p>
             <div class="project-tags">
@@ -1204,15 +1680,17 @@
               <span class="tag">Employability</span>
             </div>
           </div>
-        </div>
 
-        <!-- AI & Machine Learning -->
-        <div class="project-card">
-          <div class="project-icon">&#128200;</div>
-          <div class="project-content">
+          <!-- AI & Machine Learning -->
+          <div class="project-card">
             <div class="project-header">
-              <h3>Tax Classification AI Tool</h3>
-              <span class="project-org">Becomex (Brazil)</span>
+              <div class="project-icon">
+                <i class="fa-solid fa-robot"></i>
+              </div>
+              <div class="project-meta">
+                <h3>Tax Classification AI Tool</h3>
+                <span class="project-org">Becomex (Brazil)</span>
+              </div>
             </div>
             <p>Led AI/ML pilot for automated tax classification using GCP and BigQuery, identifying over $1M in revenue optimization opportunities.</p>
             <div class="project-tags">
@@ -1221,15 +1699,17 @@
               <span class="tag">BigQuery</span>
             </div>
           </div>
-        </div>
 
-        <!-- SAP & Enterprise -->
-        <div class="project-card">
-          <div class="project-icon">&#9881;</div>
-          <div class="project-content">
+          <!-- SAP & Enterprise -->
+          <div class="project-card">
             <div class="project-header">
-              <h3>SAP ERP Implementations</h3>
-              <span class="project-org">Malwee, Votorantim, BRF</span>
+              <div class="project-icon">
+                <i class="fa-solid fa-cubes"></i>
+              </div>
+              <div class="project-meta">
+                <h3>SAP ERP Implementations</h3>
+                <span class="project-org">Malwee, Votorantim, BRF</span>
+              </div>
             </div>
             <p>Delivered SAP ABAP integrations across MM, PP, SD, AFS, WM, and PI modules for large-scale manufacturing and retail clients in Brazil.</p>
             <div class="project-tags">
@@ -1238,15 +1718,17 @@
               <span class="tag">Data Migration</span>
             </div>
           </div>
-        </div>
 
-        <!-- Infrastructure & IT -->
-        <div class="project-card">
-          <div class="project-icon">&#128187;</div>
-          <div class="project-content">
+          <!-- Infrastructure & IT -->
+          <div class="project-card">
             <div class="project-header">
-              <h3>Balkaun Uniku One-Stop Shop</h3>
-              <span class="project-org">Government of TL</span>
+              <div class="project-icon">
+                <i class="fa-solid fa-building-columns"></i>
+              </div>
+              <div class="project-meta">
+                <h3>Balkaun Uniku One-Stop Shop</h3>
+                <span class="project-org">Government of TL</span>
+              </div>
             </div>
             <p>Installed and configured full ICT infrastructure for national one-stop public service office, including networks, systems, and acceptance testing.</p>
             <div class="project-tags">
@@ -1255,14 +1737,16 @@
               <span class="tag">Public Services</span>
             </div>
           </div>
-        </div>
 
-        <div class="project-card">
-          <div class="project-icon">&#127987;</div>
-          <div class="project-content">
+          <div class="project-card">
             <div class="project-header">
-              <h3>EU Delegation IT Outsourcing</h3>
-              <span class="project-org">European Union</span>
+              <div class="project-icon">
+                <i class="fa-solid fa-flag"></i>
+              </div>
+              <div class="project-meta">
+                <h3>EU Delegation IT Outsourcing</h3>
+                <span class="project-org">European Union</span>
+              </div>
             </div>
             <p>Provided on-site IT operations and infrastructure support for the EU Delegation in Timor-Leste over a two-year engagement.</p>
             <div class="project-tags">
@@ -1271,15 +1755,17 @@
               <span class="tag">Infrastructure</span>
             </div>
           </div>
-        </div>
 
-        <!-- Other -->
-        <div class="project-card">
-          <div class="project-icon">&#127968;</div>
-          <div class="project-content">
+          <!-- Other -->
+          <div class="project-card">
             <div class="project-header">
-              <h3>Casa Vida Website & Platform</h3>
-              <span class="project-org">Casa Vida NGO</span>
+              <div class="project-icon">
+                <i class="fa-solid fa-heart"></i>
+              </div>
+              <div class="project-meta">
+                <h3>Casa Vida Website & Platform</h3>
+                <span class="project-org">Casa Vida NGO</span>
+              </div>
             </div>
             <p>Developed new website integrated with e-commerce and online donation platforms for fundraising. Volunteer ICT lead for organization protecting women and children.</p>
             <div class="project-tags">
@@ -1288,14 +1774,16 @@
               <span class="tag">Volunteer</span>
             </div>
           </div>
-        </div>
 
-        <div class="project-card">
-          <div class="project-icon">&#128279;</div>
-          <div class="project-content">
+          <div class="project-card">
             <div class="project-header">
-              <h3>Data Integration & Automation</h3>
-              <span class="project-org">Various</span>
+              <div class="project-icon">
+                <i class="fa-solid fa-plug"></i>
+              </div>
+              <div class="project-meta">
+                <h3>Data Integration & Automation</h3>
+                <span class="project-org">Various</span>
+              </div>
             </div>
             <p>Built KoboToolbox to Google Sheets pipelines and API-based data extractors from UNICEF Primero to PostgreSQL for analytics and reporting.</p>
             <div class="project-tags">
@@ -1308,229 +1796,294 @@
       </div>
     </section>
 
+    <hr class="section-divider">
+
     <!-- Experience -->
     <section class="section" id="experience">
-      <div class="section-header">
-        <span class="section-icon">&#128188;</span>
-        <h2 data-i18n="experience.title">Experience</h2>
-      </div>
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-header">
-            <div class="timeline-title">Digital Transformation Consultant <span class="timeline-company">@ UNDP</span></div>
-            <span class="timeline-date">Jan 2026 - Present</span>
+      <div class="container">
+        <div class="section-header">
+          <div class="section-icon">
+            <i class="fa-solid fa-briefcase"></i>
           </div>
-          <div class="timeline-location">Dili, Timor-Leste</div>
-          <ul class="timeline-desc">
-            <li data-i18n="exp.undp1">Led the National Digital Maturity Assessment for Dalan ba Digital programme</li>
-            <li data-i18n="exp.undp2">Designed custom Digital Maturity Assessment web platform using AI-assisted rapid prototyping</li>
-          </ul>
+          <h2 class="section-title" data-i18n="experience.title">Experience</h2>
         </div>
-
-        <div class="timeline-item">
-          <div class="timeline-header">
-            <div class="timeline-title">T4D Health Consultant <span class="timeline-company">@ UNICEF</span></div>
-            <span class="timeline-date">Mar 2025 - Present</span>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-header">
+              <div class="timeline-title">Digital Transformation Consultant <span class="timeline-company">@ UNDP</span></div>
+              <span class="timeline-date">Jan 2026 - Present</span>
+            </div>
+            <div class="timeline-location">
+              <i class="fa-solid fa-location-dot"></i>
+              Dili, Timor-Leste
+            </div>
+            <ul class="timeline-desc">
+              <li data-i18n="exp.undp1">Led the National Digital Maturity Assessment for Dalan ba Digital programme</li>
+              <li data-i18n="exp.undp2">Designed custom Digital Maturity Assessment web platform using AI-assisted rapid prototyping</li>
+            </ul>
           </div>
-          <div class="timeline-location">Dili, Timor-Leste</div>
-          <ul class="timeline-desc">
-            <li data-i18n="exp.unicef1">Delivered technical support for T4D and Digital Transformation initiatives</li>
-            <li data-i18n="exp.unicef2">Led policy formulation for health system strengthening</li>
-          </ul>
-        </div>
 
-        <div class="timeline-item">
-          <div class="timeline-header">
-            <div class="timeline-title">Data Analyst <span class="timeline-company">@ Catalpa International</span></div>
-            <span class="timeline-date">Apr 2023 - Present</span>
+          <div class="timeline-item">
+            <div class="timeline-header">
+              <div class="timeline-title">T4D Health Consultant <span class="timeline-company">@ UNICEF</span></div>
+              <span class="timeline-date">Mar 2025 - Present</span>
+            </div>
+            <div class="timeline-location">
+              <i class="fa-solid fa-location-dot"></i>
+              Dili, Timor-Leste
+            </div>
+            <ul class="timeline-desc">
+              <li data-i18n="exp.unicef1">Delivered technical support for T4D and Digital Transformation initiatives</li>
+              <li data-i18n="exp.unicef2">Led policy formulation for health system strengthening</li>
+            </ul>
           </div>
-          <div class="timeline-location">Dili, Timor-Leste</div>
-          <ul class="timeline-desc">
-            <li data-i18n="exp.catalpa1">Managed data for PNDS with 9,000+ projects totaling $100M+</li>
-            <li data-i18n="exp.catalpa2">Facilitated $8M+ in payments through Jerasaun Foun social protection</li>
-          </ul>
-        </div>
 
-        <div class="timeline-item">
-          <div class="timeline-header">
-            <div class="timeline-title">IT Advisor <span class="timeline-company">@ Court of Appeals</span></div>
-            <span class="timeline-date">Apr 2019 - Feb 2022</span>
+          <div class="timeline-item">
+            <div class="timeline-header">
+              <div class="timeline-title">Data Analyst <span class="timeline-company">@ Catalpa International</span></div>
+              <span class="timeline-date">Apr 2023 - Present</span>
+            </div>
+            <div class="timeline-location">
+              <i class="fa-solid fa-location-dot"></i>
+              Dili, Timor-Leste
+            </div>
+            <ul class="timeline-desc">
+              <li data-i18n="exp.catalpa1">Managed data for PNDS with 9,000+ projects totaling $100M+</li>
+              <li data-i18n="exp.catalpa2">Facilitated $8M+ in payments through Jerasaun Foun social protection</li>
+            </ul>
           </div>
-          <div class="timeline-location">Dili, Timor-Leste</div>
-          <ul class="timeline-desc">
-            <li data-i18n="exp.court1">Led IT team and digital transformation across 7 District Courts</li>
-            <li data-i18n="exp.court2">Increased system availability from 40% to 99%</li>
-          </ul>
-        </div>
 
-        <div class="timeline-item">
-          <div class="timeline-header">
-            <div class="timeline-title">IT Advisor <span class="timeline-company">@ Prosecutor's General Office (UNDP)</span></div>
-            <span class="timeline-date">Jul 2014 - Mar 2019</span>
+          <div class="timeline-item">
+            <div class="timeline-header">
+              <div class="timeline-title">IT Advisor <span class="timeline-company">@ Court of Appeals</span></div>
+              <span class="timeline-date">Apr 2019 - Feb 2022</span>
+            </div>
+            <div class="timeline-location">
+              <i class="fa-solid fa-location-dot"></i>
+              Dili, Timor-Leste
+            </div>
+            <ul class="timeline-desc">
+              <li data-i18n="exp.court1">Led IT team and digital transformation across 7 District Courts</li>
+              <li data-i18n="exp.court2">Increased system availability from 40% to 99%</li>
+            </ul>
           </div>
-          <div class="timeline-location">Dili, Timor-Leste</div>
-          <ul class="timeline-desc">
-            <li data-i18n="exp.pgr1">Deployed Case Management System (IIMS), HR systems, and LMS</li>
-            <li data-i18n="exp.pgr2">Created first ICT Training Center for justice sector with KOICA</li>
-          </ul>
-        </div>
 
-        <div class="timeline-item">
-          <div class="timeline-header">
-            <div class="timeline-title">SAP ABAP Consultant <span class="timeline-company">@ FH Consulting - NTT</span></div>
-            <span class="timeline-date">Jun 2013 - Jul 2014</span>
+          <div class="timeline-item">
+            <div class="timeline-header">
+              <div class="timeline-title">IT Advisor <span class="timeline-company">@ Prosecutor's General Office (UNDP)</span></div>
+              <span class="timeline-date">Jul 2014 - Mar 2019</span>
+            </div>
+            <div class="timeline-location">
+              <i class="fa-solid fa-location-dot"></i>
+              Dili, Timor-Leste
+            </div>
+            <ul class="timeline-desc">
+              <li data-i18n="exp.pgr1">Deployed Case Management System (IIMS), HR systems, and LMS</li>
+              <li data-i18n="exp.pgr2">Created first ICT Training Center for justice sector with KOICA</li>
+            </ul>
           </div>
-          <div class="timeline-location">Curitiba, Brazil</div>
-          <ul class="timeline-desc">
-            <li data-i18n="exp.sap1">SAP implementations for Malwee Group (Retail), Votorantim Cement, BRF Foods</li>
-            <li data-i18n="exp.sap2">ABAP development for MM, SD, AFS, WM, and PI modules</li>
-          </ul>
+
+          <div class="timeline-item">
+            <div class="timeline-header">
+              <div class="timeline-title">SAP ABAP Consultant <span class="timeline-company">@ FH Consulting - NTT</span></div>
+              <span class="timeline-date">Jun 2013 - Jul 2014</span>
+            </div>
+            <div class="timeline-location">
+              <i class="fa-solid fa-location-dot"></i>
+              Curitiba, Brazil
+            </div>
+            <ul class="timeline-desc">
+              <li data-i18n="exp.sap1">SAP implementations for Malwee Group (Retail), Votorantim Cement, BRF Foods</li>
+              <li data-i18n="exp.sap2">ABAP development for MM, SD, AFS, WM, and PI modules</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
+
+    <hr class="section-divider">
 
     <!-- Skills -->
     <section class="section" id="skills">
-      <div class="section-header">
-        <span class="section-icon">&#128295;</span>
-        <h2 data-i18n="skills.title">Skills</h2>
-      </div>
-      <div class="skills-grid">
-        <div class="skill-category">
-          <h3 data-i18n="skills.cloud">Cloud & DevOps</h3>
-          <div class="skill-list">
-            <span class="skill-item">AWS</span>
-            <span class="skill-item">GCP</span>
-            <span class="skill-item">Docker</span>
-            <span class="skill-item">Kubernetes</span>
-            <span class="skill-item">Terraform</span>
-            <span class="skill-item">CI/CD</span>
+      <div class="container">
+        <div class="section-header">
+          <div class="section-icon">
+            <i class="fa-solid fa-toolbox"></i>
           </div>
+          <h2 class="section-title" data-i18n="skills.title">Skills</h2>
         </div>
-        <div class="skill-category">
-          <h3 data-i18n="skills.data">Data & Analytics</h3>
-          <div class="skill-list">
-            <span class="skill-item">Python</span>
-            <span class="skill-item">SQL / PostgreSQL</span>
-            <span class="skill-item">Power BI</span>
-            <span class="skill-item">Metabase</span>
-            <span class="skill-item">Machine Learning</span>
-            <span class="skill-item">DHIS2</span>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h3>
+              <i class="fa-solid fa-cloud"></i>
+              <span data-i18n="skills.cloud">Cloud & DevOps</span>
+            </h3>
+            <div class="skill-list">
+              <span class="skill-item">AWS</span>
+              <span class="skill-item">GCP</span>
+              <span class="skill-item">Docker</span>
+              <span class="skill-item">Kubernetes</span>
+              <span class="skill-item">Terraform</span>
+              <span class="skill-item">CI/CD</span>
+            </div>
           </div>
-        </div>
-        <div class="skill-category">
-          <h3 data-i18n="skills.systems">Systems</h3>
-          <div class="skill-list">
-            <span class="skill-item">Linux / Windows</span>
-            <span class="skill-item">Networking</span>
-            <span class="skill-item">Cybersecurity</span>
-            <span class="skill-item">LDAP / AD</span>
-            <span class="skill-item">ERP / SAP</span>
-            <span class="skill-item">ITIL</span>
+          <div class="skill-category">
+            <h3>
+              <i class="fa-solid fa-database"></i>
+              <span data-i18n="skills.data">Data & Analytics</span>
+            </h3>
+            <div class="skill-list">
+              <span class="skill-item">Python</span>
+              <span class="skill-item">SQL / PostgreSQL</span>
+              <span class="skill-item">Power BI</span>
+              <span class="skill-item">Metabase</span>
+              <span class="skill-item">Machine Learning</span>
+              <span class="skill-item">DHIS2</span>
+            </div>
           </div>
-        </div>
-        <div class="skill-category">
-          <h3 data-i18n="skills.professional">Professional</h3>
-          <div class="skill-list">
-            <span class="skill-item">Project Management</span>
-            <span class="skill-item">Human-Centered Design</span>
-            <span class="skill-item">Capacity Building</span>
-            <span class="skill-item">MEL</span>
-            <span class="skill-item">GovStack</span>
-            <span class="skill-item">Stakeholder Mgmt</span>
+          <div class="skill-category">
+            <h3>
+              <i class="fa-solid fa-server"></i>
+              <span data-i18n="skills.systems">Systems</span>
+            </h3>
+            <div class="skill-list">
+              <span class="skill-item">Linux / Windows</span>
+              <span class="skill-item">Networking</span>
+              <span class="skill-item">Cybersecurity</span>
+              <span class="skill-item">LDAP / AD</span>
+              <span class="skill-item">ERP / SAP</span>
+              <span class="skill-item">ITIL</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h3>
+              <i class="fa-solid fa-handshake"></i>
+              <span data-i18n="skills.professional">Professional</span>
+            </h3>
+            <div class="skill-list">
+              <span class="skill-item">Project Management</span>
+              <span class="skill-item">Human-Centered Design</span>
+              <span class="skill-item">Capacity Building</span>
+              <span class="skill-item">MEL</span>
+              <span class="skill-item">GovStack</span>
+              <span class="skill-item">Stakeholder Mgmt</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
+
+    <hr class="section-divider">
 
     <!-- Values -->
     <section class="section" id="values">
-      <div class="section-header">
-        <span class="section-icon">&#10024;</span>
-        <h2 data-i18n="values.title">Values & Culture</h2>
-      </div>
-      <div class="values-grid">
-        <div class="value-card">
-          <div class="value-icon">&#128161;</div>
-          <h3 data-i18n="values.v1.title">Excellence & Innovation</h3>
-          <p data-i18n="values.v1.desc">Delivering WOW to every client through creative and agile solutions.</p>
+      <div class="container">
+        <div class="section-header">
+          <div class="section-icon">
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <h2 class="section-title" data-i18n="values.title">Values & Culture</h2>
         </div>
-        <div class="value-card">
-          <div class="value-icon">&#128101;</div>
-          <h3 data-i18n="values.v2.title">UBUNTU Philosophy</h3>
-          <p data-i18n="values.v2.desc">"I am because we are" - building sustainable society through respect and solidarity.</p>
-        </div>
-        <div class="value-card">
-          <div class="value-icon">&#9968;</div>
-          <h3 data-i18n="values.v3.title">Do More With Less</h3>
-          <p data-i18n="values.v3.desc">Transparency, proactivity, and efficiency in every engagement.</p>
+        <div class="values-grid">
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="fa-solid fa-lightbulb"></i>
+            </div>
+            <h3 data-i18n="values.v1.title">Excellence & Innovation</h3>
+            <p data-i18n="values.v1.desc">Delivering WOW to every client through creative and agile solutions.</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="fa-solid fa-people-group"></i>
+            </div>
+            <h3 data-i18n="values.v2.title">UBUNTU Philosophy</h3>
+            <p data-i18n="values.v2.desc">"I am because we are" - building sustainable society through respect and solidarity.</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="fa-solid fa-bolt"></i>
+            </div>
+            <h3 data-i18n="values.v3.title">Do More With Less</h3>
+            <p data-i18n="values.v3.desc">Transparency, proactivity, and efficiency in every engagement.</p>
+          </div>
         </div>
       </div>
     </section>
 
+    <hr class="section-divider">
+
     <!-- Contact -->
     <section class="section" id="contact">
-      <div class="section-header">
-        <span class="section-icon">&#128231;</span>
-        <h2 data-i18n="contact.title">Get in Touch</h2>
-      </div>
-      <div class="contact-grid">
-        <div class="contact-info">
-          <a href="mailto:paulo.s.amaral@outlook.com" class="contact-item">
-            <div class="contact-icon">&#9993;</div>
-            <div class="contact-text">
-              <span class="contact-label">Email</span>
-              paulo.s.amaral@outlook.com
-            </div>
-          </a>
-          <a href="tel:+67078461740" class="contact-item">
-            <div class="contact-icon">&#128222;</div>
-            <div class="contact-text">
-              <span class="contact-label" data-i18n="contact.phone">Phone</span>
-              +670 78461740
-            </div>
-          </a>
-          <a href="https://linkedin.com/in/paulosergioamaral" target="_blank" class="contact-item">
-            <div class="contact-icon">&#128279;</div>
-            <div class="contact-text">
-              <span class="contact-label">LinkedIn</span>
-              linkedin.com/in/paulosergioamaral
-            </div>
-          </a>
-          <a href="https://github.com/paulo-amaral" target="_blank" class="contact-item">
-            <div class="contact-icon">&#128187;</div>
-            <div class="contact-text">
-              <span class="contact-label">GitHub</span>
-              github.com/paulo-amaral
-            </div>
-          </a>
+      <div class="container">
+        <div class="section-header">
+          <div class="section-icon">
+            <i class="fa-solid fa-envelope"></i>
+          </div>
+          <h2 class="section-title" data-i18n="contact.title">Get in Touch</h2>
         </div>
-        <div class="contact-cta">
-          <h3 data-i18n="contact.cta.title">Let's Work Together</h3>
-          <p data-i18n="contact.cta.desc">I'm available for consulting engagements in digital transformation, data systems, and technology advisory.</p>
-          <a href="https://calendly.com/pauloamaral" target="_blank" class="btn btn-primary">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <rect x="3" y="4" width="18" height="18" rx="2"/>
-              <path d="M16 2v4M8 2v4M3 10h18"/>
-            </svg>
-            <span data-i18n="contact.cta.button">Book a Call</span>
-          </a>
-          <div class="social-links">
-            <a href="https://linkedin.com/in/paulosergioamaral" target="_blank" class="social-link" aria-label="LinkedIn">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        <div class="contact-grid">
+          <div class="contact-list">
+            <a href="mailto:paulo.s.amaral@outlook.com" class="contact-item">
+              <div class="contact-icon">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div class="contact-text">
+                <span class="contact-label">Email</span>
+                <span class="contact-value">paulo.s.amaral@outlook.com</span>
+              </div>
             </a>
-            <a href="https://github.com/paulo-amaral" target="_blank" class="social-link" aria-label="GitHub">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+            <a href="tel:+67078461740" class="contact-item">
+              <div class="contact-icon">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <div class="contact-text">
+                <span class="contact-label" data-i18n="contact.phone">Phone</span>
+                <span class="contact-value">+670 78461740</span>
+              </div>
             </a>
-            <a href="https://x.com/askamaral" target="_blank" class="social-link" aria-label="X/Twitter">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
+            <a href="https://linkedin.com/in/paulosergioamaral" target="_blank" rel="noopener noreferrer" class="contact-item">
+              <div class="contact-icon">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </div>
+              <div class="contact-text">
+                <span class="contact-label">LinkedIn</span>
+                <span class="contact-value">linkedin.com/in/paulosergioamaral</span>
+              </div>
             </a>
-            <a href="https://wa.me/67078461740" target="_blank" class="social-link" aria-label="WhatsApp">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            <a href="https://github.com/paulo-amaral" target="_blank" rel="noopener noreferrer" class="contact-item">
+              <div class="contact-icon">
+                <i class="fa-brands fa-github"></i>
+              </div>
+              <div class="contact-text">
+                <span class="contact-label">GitHub</span>
+                <span class="contact-value">github.com/paulo-amaral</span>
+              </div>
             </a>
-            <a href="https://www.instagram.com/paulo_s_amaral" target="_blank" class="social-link" aria-label="Instagram">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg>
+          </div>
+          <div class="contact-cta">
+            <h3 data-i18n="contact.cta.title">Let's Work Together</h3>
+            <p data-i18n="contact.cta.desc">I'm available for consulting engagements in digital transformation, data systems, and technology advisory.</p>
+            <a href="https://calendly.com/pauloamaral" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+              <i class="fa-regular fa-calendar"></i>
+              <span data-i18n="contact.cta.button">Book a Call</span>
             </a>
+            <div class="social-links">
+              <a href="https://linkedin.com/in/paulosergioamaral" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+              <a href="https://github.com/paulo-amaral" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+                <i class="fa-brands fa-github"></i>
+              </a>
+              <a href="https://x.com/askamaral" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="X/Twitter">
+                <i class="fa-brands fa-x-twitter"></i>
+              </a>
+              <a href="https://wa.me/67078461740" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="WhatsApp">
+                <i class="fa-brands fa-whatsapp"></i>
+              </a>
+              <a href="https://www.instagram.com/paulo_s_amaral" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -1539,10 +2092,15 @@
 
   <!-- Footer -->
   <footer class="footer">
-    <div class="page">
+    <div class="container">
       <p>&copy; 2025 Paulo Amaral. <span data-i18n="footer.rights">All rights reserved.</span></p>
     </div>
   </footer>
+
+  <!-- Scroll to top button -->
+  <button class="scroll-top" aria-label="Scroll to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
 
   <script>
     // Translations
@@ -1578,23 +2136,7 @@
         "services.s5.desc": "Cloud, DevOps, and enterprise infrastructure design and operations.",
         "services.s6.title": "Business Intelligence",
         "services.s6.desc": "Dashboards, analytics, and data-driven decision support systems.",
-        "projects.title": "Featured Projects",
-        "projects.p1.title": "National Election Systems (2022-2023)",
-        "projects.p1.desc": "Developed and deployed national election tabulation systems for Presidential and Parliamentary elections, supporting 650,000+ voters across 1,400 voting centers.",
-        "projects.p2.title": "Jerasaun Foun Social Protection",
-        "projects.p2.desc": "Led data analytics enabling $8M+ in payments to 40,000+ registrations, 50,000 children including 221 with disabilities, and 10,000+ pregnant women.",
-        "projects.p3.title": "DRBI Asset Declaration System",
-        "projects.p3.desc": "Built digital asset and interest declaration platform for anti-corruption bodies, serving 37,000+ public officials with secure data management.",
-        "projects.p4.title": "DHIS2 Health Analytics",
-        "projects.p4.desc": "Improved health data collection and validation with EPI dashboards for immunization monitoring, supporting national health information systems.",
-        "projects.p5.title": "BNCTL Iris Recognition Banking",
-        "projects.p5.desc": "Implemented biometric iris authentication to strengthen KYC, fraud prevention, and banking security for national financial institution.",
-        "projects.p6.title": "ROSA Sexual Harassment Chatbot",
-        "projects.p6.desc": "Developed secure digital reporting system for sexual harassment complaints in public sector, strengthening accountability and survivor-centered reporting.",
-        "projects.p7.title": "Tax Classification AI Tool",
-        "projects.p7.desc": "Led AI/ML pilot for automated tax classification using GCP and BigQuery, identifying over $1M in revenue optimization opportunities.",
-        "projects.p8.title": "PNDS Rural Development Platform",
-        "projects.p8.desc": "Managed legacy data migration for 9,000+ projects totaling $100M+ supporting rural development through digital project management.",
+        "projects.title": "Projects",
         "experience.title": "Experience",
         "exp.undp1": "Led the National Digital Maturity Assessment for Dalan ba Digital programme",
         "exp.undp2": "Designed custom Digital Maturity Assessment web platform using AI-assisted rapid prototyping",
@@ -1658,23 +2200,7 @@
         "services.s5.desc": "Design e operacoes de cloud, DevOps e infraestrutura empresarial.",
         "services.s6.title": "Business Intelligence",
         "services.s6.desc": "Dashboards, analytics e sistemas de apoio a decisao baseados em dados.",
-        "projects.title": "Projetos em Destaque",
-        "projects.p1.title": "Sistemas Eleitorais Nacionais (2022-2023)",
-        "projects.p1.desc": "Desenvolvi e implementei sistemas de apuracao eleitoral para eleicoes Presidenciais e Parlamentares, apoiando 650.000+ eleitores em 1.400 centros de votacao.",
-        "projects.p2.title": "Jerasaun Foun Protecao Social",
-        "projects.p2.desc": "Liderei analise de dados permitindo $8M+ em pagamentos para 40.000+ registros, 50.000 criancas incluindo 221 com deficiencias e 10.000+ gestantes.",
-        "projects.p3.title": "Sistema DRBI de Declaracao de Bens",
-        "projects.p3.desc": "Construi plataforma digital de declaracao de bens e interesses para orgaos anticorrupcao, servindo 37.000+ funcionarios publicos.",
-        "projects.p4.title": "Analytics de Saude DHIS2",
-        "projects.p4.desc": "Melhorei coleta e validacao de dados de saude com dashboards EPI para monitoramento de imunizacao.",
-        "projects.p5.title": "BNCTL Biometria de Iris",
-        "projects.p5.desc": "Implementei autenticacao biometrica por iris para fortalecer KYC, prevencao de fraudes e seguranca bancaria.",
-        "projects.p6.title": "Chatbot ROSA Assedio Sexual",
-        "projects.p6.desc": "Desenvolvi sistema digital seguro para denuncias de assedio sexual no setor publico.",
-        "projects.p7.title": "Ferramenta IA Classificacao Fiscal",
-        "projects.p7.desc": "Liderei piloto de IA/ML para classificacao fiscal automatizada usando GCP e BigQuery, identificando $1M+ em oportunidades.",
-        "projects.p8.title": "Plataforma PNDS Desenvolvimento Rural",
-        "projects.p8.desc": "Gerenciei migracao de dados para 9.000+ projetos totalizando $100M+ apoiando desenvolvimento rural.",
+        "projects.title": "Projetos",
         "experience.title": "Experiencia",
         "exp.undp1": "Liderei a Avaliacao Nacional de Maturidade Digital para o programa Dalan ba Digital",
         "exp.undp2": "Projetei plataforma web de Avaliacao de Maturidade Digital usando prototipagem rapida assistida por IA",
@@ -1733,24 +2259,104 @@
     }
 
     function toggleNav() {
-      document.getElementById('nav').classList.toggle('open');
+      const nav = document.getElementById('nav');
+      const toggle = document.querySelector('.mobile-nav-toggle');
+      if (!nav || !toggle) return;
+      const isOpen = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      toggle.innerHTML = isOpen ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
     }
 
     // Initialize
     document.addEventListener('DOMContentLoaded', () => {
       updatePage();
-    });
 
-    // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          document.getElementById('nav').classList.remove('open');
-        }
+      // Language switcher buttons
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const lang = btn.dataset.lang;
+          if (lang) {
+            changeLanguage(lang);
+          }
+        });
       });
+
+      // Mobile nav toggle
+      const navToggle = document.querySelector('.mobile-nav-toggle');
+      if (navToggle) {
+        navToggle.addEventListener('click', toggleNav);
+      }
+
+      // Smooth scroll with reduced motion support
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const href = this.getAttribute('href');
+          if (!href || href === '#') return;
+          const target = document.querySelector(href);
+          if (target) {
+            e.preventDefault();
+            const headerHeight = document.querySelector('.header').offsetHeight;
+            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+            window.scrollTo({
+              top: targetPosition,
+              behavior: prefersReducedMotion ? 'auto' : 'smooth'
+            });
+            const nav = document.getElementById('nav');
+            const toggle = document.querySelector('.mobile-nav-toggle');
+            if (nav && toggle) {
+              nav.classList.remove('open');
+              toggle.setAttribute('aria-expanded', 'false');
+              toggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+            }
+          }
+        });
+      });
+
+      // Scroll to top button
+      const scrollTopBtn = document.querySelector('.scroll-top');
+      if (scrollTopBtn) {
+        window.addEventListener('scroll', () => {
+          if (window.pageYOffset > 500) {
+            scrollTopBtn.classList.add('visible');
+          } else {
+            scrollTopBtn.classList.remove('visible');
+          }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+          window.scrollTo({
+            top: 0,
+            behavior: prefersReducedMotion ? 'auto' : 'smooth'
+          });
+        });
+      }
+
+      // Active nav link on scroll
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.nav-link');
+
+      function updateActiveNav() {
+        const scrollPos = window.pageYOffset + 100;
+
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.offsetHeight;
+          const sectionId = section.getAttribute('id');
+
+          if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+            navLinks.forEach(link => {
+              link.classList.remove('active');
+              if (link.getAttribute('href') === `#${sectionId}`) {
+                link.classList.add('active');
+              }
+            });
+          }
+        });
+      }
+
+      window.addEventListener('scroll', updateActiveNav);
+      updateActiveNav();
     });
   </script>
 </body>
