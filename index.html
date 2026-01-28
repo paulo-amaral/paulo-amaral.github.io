@@ -602,9 +602,52 @@
 
     .section-divider {
       width: 100%;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--border), transparent);
+      height: 80px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       margin: 0;
+      border: none;
+      background: transparent;
+    }
+
+    .section-divider::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(400px, 80%);
+      height: 1px;
+      background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(228, 176, 69, 0.1) 20%,
+        rgba(228, 176, 69, 0.3) 50%,
+        rgba(228, 176, 69, 0.1) 80%,
+        transparent 100%
+      );
+    }
+
+    .section-divider::after {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: var(--accent);
+      border-radius: 50%;
+      box-shadow: 0 0 20px rgba(228, 176, 69, 0.5),
+                  0 0 40px rgba(228, 176, 69, 0.2);
+      animation: dividerPulse 3s ease-in-out infinite;
+    }
+
+    @keyframes dividerPulse {
+      0%, 100% {
+        opacity: 0.6;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.2);
+      }
     }
 
     /* About Section */
@@ -1120,24 +1163,46 @@
       border: 1px solid rgba(228, 176, 69, 0.2);
       border-radius: var(--radius-xl);
       padding: 40px;
-      text-align: center;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      gap: 32px;
     }
 
-    .contact-cta h3 {
+    @media (min-width: 768px) {
+      .contact-cta {
+        flex-direction: row;
+        align-items: center;
+        gap: 48px;
+      }
+    }
+
+    .cta-content {
+      flex: 1;
+      text-align: center;
+    }
+
+    @media (min-width: 768px) {
+      .cta-content {
+        text-align: left;
+      }
+    }
+
+    .cta-content h3 {
       font-size: 24px;
       font-weight: 700;
       margin-bottom: 12px;
       color: var(--text-primary);
     }
 
-    .contact-cta p {
+    .cta-content p {
       font-size: 15px;
       color: var(--text-secondary);
       margin-bottom: 28px;
       line-height: 1.7;
+    }
+
+    .cta-content .btn {
+      display: inline-flex;
     }
 
     .social-links {
@@ -1145,6 +1210,12 @@
       gap: 12px;
       justify-content: center;
       margin-top: 24px;
+    }
+
+    @media (min-width: 768px) {
+      .social-links {
+        justify-content: flex-start;
+      }
     }
 
     .social-link {
@@ -1167,6 +1238,113 @@
       border-color: var(--accent);
       color: var(--accent);
       transform: translateY(-2px);
+    }
+
+    /* QR Code Section - Modern Design */
+    .qr-section {
+      display: flex;
+      justify-content: center;
+    }
+
+    .qr-card-modern {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 24px;
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      text-decoration: none;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow: hidden;
+    }
+
+    .qr-card-modern::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(37, 211, 102, 0.05) 0%, transparent 50%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .qr-card-modern:hover {
+      border-color: rgba(37, 211, 102, 0.4);
+      transform: translateY(-6px);
+      box-shadow: 0 20px 50px rgba(37, 211, 102, 0.15),
+                  0 0 0 1px rgba(37, 211, 102, 0.1);
+    }
+
+    .qr-card-modern:hover::before {
+      opacity: 1;
+    }
+
+    .qr-glow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 120px;
+      height: 120px;
+      background: radial-gradient(circle, rgba(37, 211, 102, 0.15) 0%, transparent 70%);
+      filter: blur(20px);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      pointer-events: none;
+    }
+
+    .qr-card-modern:hover .qr-glow {
+      opacity: 1;
+    }
+
+    .qr-card-modern .qr-image {
+      position: relative;
+      width: 130px;
+      height: 130px;
+      border-radius: var(--radius-md);
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 1;
+    }
+
+    .qr-card-modern:hover .qr-image {
+      transform: scale(1.08);
+    }
+
+    .qr-badge {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 16px;
+      padding: 8px 16px;
+      background: rgba(37, 211, 102, 0.1);
+      border-radius: var(--radius-pill);
+      font-size: 12px;
+      font-weight: 500;
+      color: #25D366;
+      z-index: 1;
+      transition: all 0.3s ease;
+    }
+
+    .qr-badge i {
+      font-size: 14px;
+    }
+
+    .qr-card-modern:hover .qr-badge {
+      background: rgba(37, 211, 102, 0.2);
+    }
+
+    @media (max-width: 768px) {
+      .qr-card-modern .qr-image {
+        width: 110px;
+        height: 110px;
+      }
+
+      .qr-badge {
+        font-size: 11px;
+        padding: 6px 12px;
+      }
     }
 
     /* Footer */
@@ -1942,6 +2120,21 @@
 
           <div class="timeline-item">
             <div class="timeline-header">
+              <div class="timeline-title">Digital Transformation Consultant <span class="timeline-company">@ UN Resident Coordinator's Office</span></div>
+              <span class="timeline-date">Aug 2025 - Present</span>
+            </div>
+            <div class="timeline-location">
+              <i class="fa-solid fa-location-dot"></i>
+              Dili, Timor-Leste
+            </div>
+            <ul class="timeline-desc">
+              <li data-i18n="exp.unrco1">Mapped institutional, policy, and financing frameworks for digitalization</li>
+              <li data-i18n="exp.unrco2">Supported production of One-UN Position Paper on Digital Transformation</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-header">
               <div class="timeline-title">Data Analyst <span class="timeline-company">@ Catalpa International</span></div>
               <span class="timeline-date">Apr 2023 - Present</span>
             </div>
@@ -2179,15 +2372,6 @@
                 <span class="contact-value">paulo.s.amaral@outlook.com</span>
               </div>
             </a>
-            <a href="tel:+67078461740" class="contact-item">
-              <div class="contact-icon">
-                <i class="fa-solid fa-phone"></i>
-              </div>
-              <div class="contact-text">
-                <span class="contact-label" data-i18n="contact.phone">Phone</span>
-                <span class="contact-value">+670 78461740</span>
-              </div>
-            </a>
             <a href="https://linkedin.com/in/paulosergioamaral" target="_blank" rel="noopener noreferrer" class="contact-item">
               <div class="contact-icon">
                 <i class="fa-brands fa-linkedin-in"></i>
@@ -2208,30 +2392,42 @@
             </a>
           </div>
           <div class="contact-cta">
-            <h3 data-i18n="contact.cta.title">Let's Work Together</h3>
-            <p data-i18n="contact.cta.desc">I'm available for consulting engagements in digital transformation, data systems, and technology advisory.</p>
-            <a href="https://calendly.com/matenek/15min" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-              <i class="fa-regular fa-calendar"></i>
-              <span data-i18n="contact.cta.button">Book a Call</span>
-            </a>
-            <div class="social-links">
-              <a href="https://linkedin.com/in/paulosergioamaral" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
-                <i class="fa-brands fa-linkedin-in"></i>
+            <div class="cta-content">
+              <h3 data-i18n="contact.cta.title">Let's Work Together</h3>
+              <p data-i18n="contact.cta.desc">I'm available for consulting engagements in digital transformation, data systems, and technology advisory.</p>
+              <a href="https://calendly.com/matenek/15min" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                <i class="fa-regular fa-calendar"></i>
+                <span data-i18n="contact.cta.button">Book a Call</span>
               </a>
-              <a href="https://github.com/paulo-amaral" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
-                <i class="fa-brands fa-github"></i>
-              </a>
-              <a href="https://x.com/askamaral" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="X/Twitter">
-                <i class="fa-brands fa-x-twitter"></i>
-              </a>
-              <a href="https://wa.me/67078461740" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="WhatsApp">
-                <i class="fa-brands fa-whatsapp"></i>
-              </a>
-              <a href="https://www.instagram.com/paulo_s_amaral" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
-                <i class="fa-brands fa-instagram"></i>
-              </a>
-              <a href="https://www.facebook.com/paulo.s.amaral" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook">
-                <i class="fa-brands fa-facebook-f"></i>
+              <div class="social-links">
+                <a href="https://linkedin.com/in/paulosergioamaral" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+                  <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/paulo-amaral" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="https://x.com/askamaral" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="X/Twitter">
+                  <i class="fa-brands fa-x-twitter"></i>
+                </a>
+                <a href="https://wa.me/67078461740" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="WhatsApp">
+                  <i class="fa-brands fa-whatsapp"></i>
+                </a>
+                <a href="https://www.instagram.com/paulo_s_amaral" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+                  <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://www.facebook.com/paulo.s.amaral" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook">
+                  <i class="fa-brands fa-facebook-f"></i>
+                </a>
+              </div>
+            </div>
+            <div class="qr-section">
+              <a href="https://wa.me/67078461740" target="_blank" rel="noopener noreferrer" class="qr-card-modern">
+                <div class="qr-glow"></div>
+                <img src="whatsapp-qr.png" alt="WhatsApp QR Code" class="qr-image">
+                <div class="qr-badge">
+                  <i class="fa-brands fa-whatsapp"></i>
+                  <span data-i18n="contact.qr.label">Scan to chat on WhatsApp</span>
+                </div>
               </a>
             </div>
           </div>
@@ -2293,6 +2489,8 @@
         "exp.undp2": "Designed custom Digital Maturity Assessment web platform using AI-assisted rapid prototyping",
         "exp.unicef1": "Delivered technical support for T4D and Digital Transformation initiatives",
         "exp.unicef2": "Led policy formulation for health system strengthening",
+        "exp.unrco1": "Mapped institutional, policy, and financing frameworks for digitalization",
+        "exp.unrco2": "Supported production of One-UN Position Paper on Digital Transformation",
         "exp.catalpa1": "Managed data for PNDS with 9,000+ projects totaling $100M+",
         "exp.catalpa2": "Facilitated $8M+ in payments through Jerasaun Foun social protection",
         "exp.eyetrust1": "Integrated iris recognition with Temenos T24 core banking (BNCTL)",
@@ -2320,10 +2518,10 @@
         "values.v3.title": "Do More With Less",
         "values.v3.desc": "Transparency, proactivity, and efficiency in every engagement.",
         "contact.title": "Get in Touch",
-        "contact.phone": "Phone",
         "contact.cta.title": "Let's Work Together",
         "contact.cta.desc": "I'm available for consulting engagements in digital transformation, data systems, and technology advisory.",
         "contact.cta.button": "Book a Call",
+        "contact.qr.label": "Scan to chat on WhatsApp",
         "footer.rights": "All rights reserved."
       },
       pt: {
@@ -2364,6 +2562,8 @@
         "exp.undp2": "Projetei plataforma web de Avaliacao de Maturidade Digital usando prototipagem rapida assistida por IA",
         "exp.unicef1": "Entreguei suporte tecnico para iniciativas T4D e Transformacao Digital",
         "exp.unicef2": "Liderei formulacao de politicas para fortalecimento de sistemas de saude",
+        "exp.unrco1": "Mapeei estruturas institucionais, politicas e de financiamento para digitalizacao",
+        "exp.unrco2": "Apoiei producao do Position Paper One-UN sobre Transformacao Digital",
         "exp.catalpa1": "Gerenciei dados do PNDS com 9.000+ projetos totalizando $100M+",
         "exp.catalpa2": "Facilitei $8M+ em pagamentos atraves da protecao social Jerasaun Foun",
         "exp.eyetrust1": "Integrei reconhecimento de iris com core banking Temenos T24 (BNCTL)",
@@ -2391,10 +2591,10 @@
         "values.v3.title": "Fazer Mais Com Menos",
         "values.v3.desc": "Transparencia, proatividade e eficiencia em cada engajamento.",
         "contact.title": "Entre em Contato",
-        "contact.phone": "Telefone",
         "contact.cta.title": "Vamos Trabalhar Juntos",
         "contact.cta.desc": "Estou disponivel para consultorias em transformacao digital, sistemas de dados e assessoria tecnologica.",
         "contact.cta.button": "Agendar Reuniao",
+        "contact.qr.label": "Escaneie para conversar no WhatsApp",
         "footer.rights": "Todos os direitos reservados."
       }
     };
