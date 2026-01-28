@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Paulo Amaral | Digital Transformation Consultant</title>
-  <meta name="description" content="Senior ICT and Digital Transformation Consultant with 20+ years of experience delivering national-scale digital systems.">
+  <meta name="description" content="Tech-for-good meets get-it-done. Digital Transformation Consultant with 20+ years building national-scale systems. Hands-on, learn-by-doing approach.">
   <meta name="author" content="Paulo Amaral">
   <meta name="theme-color" content="#040714">
   <link rel="canonical" href="https://paulo-amaral.github.io/">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Paulo Amaral | Digital Transformation Consultant">
-  <meta property="og:description" content="Using technology to make a difference. 20+ years transforming public sector and international development.">
+  <meta property="og:description" content="Tech-for-good meets get-it-done. 20+ years building digital systems that matter. Hands-on, learn-by-doing approach.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://paulo-amaral.github.io/">
   <meta property="og:image" content="https://paulo-amaral.github.io/Paulo_mew.png">
@@ -20,7 +20,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Paulo Amaral | Digital Transformation Consultant">
-  <meta name="twitter:description" content="Senior ICT and Digital Transformation Consultant using technology to make a difference in public sector and international development.">
+  <meta name="twitter:description" content="Tech-for-good meets get-it-done. Digital Transformation Consultant with hands-on, learn-by-doing approach to building systems that matter.">
   <meta name="twitter:image" content="https://paulo-amaral.github.io/Paulo_mew.png">
 
   <!-- Fonts -->
@@ -384,6 +384,77 @@
       flex-wrap: wrap;
     }
 
+    .hero-social {
+      margin-top: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .hero-social-label {
+      font-size: 13px;
+      color: var(--text-muted);
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    .hero-social-links {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .hero-social-link {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 16px;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-social-link::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--accent) 0%, #d99932 100%);
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+
+    .hero-social-link i {
+      position: relative;
+      z-index: 1;
+      transition: transform 0.25s ease, color 0.25s ease;
+    }
+
+    .hero-social-link:hover {
+      border-color: var(--accent);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(228, 176, 69, 0.2);
+    }
+
+    .hero-social-link:hover::before {
+      opacity: 1;
+    }
+
+    .hero-social-link:hover i {
+      color: var(--bg-primary);
+      transform: scale(1.1);
+    }
+
+    .hero-social-link:active {
+      transform: translateY(-1px);
+    }
+
     .hero-avatar-wrapper {
       position: relative;
     }
@@ -429,6 +500,14 @@
       }
 
       .hero-actions {
+        justify-content: center;
+      }
+
+      .hero-social {
+        align-items: center;
+      }
+
+      .hero-social-links {
         justify-content: center;
       }
     }
@@ -1207,9 +1286,9 @@
               <span data-i18n="hero.available">Available for consulting</span>
             </div>
             <h1>Hi, I'm <span>Paulo Amaral</span></h1>
-            <p class="hero-subtitle" data-i18n="hero.tagline">Senior ICT and Digital Transformation Consultant using technology to make a difference in international development and public sector.</p>
+            <p class="hero-subtitle" data-i18n="hero.tagline">Tech-for-good meets get-it-done. Hands-on consultant with a learn-by-doing approach to building systems that matter.</p>
             <div class="hero-actions">
-              <a href="https://calendly.com/pauloamaral" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+              <a href="https://calendly.com/matenek/15min" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
                 <i class="fa-regular fa-calendar"></i>
                 <span data-i18n="hero.book">Book a Call</span>
               </a>
@@ -1217,6 +1296,29 @@
                 <i class="fa-solid fa-folder-open"></i>
                 <span data-i18n="hero.viewwork">View My Work</span>
               </a>
+            </div>
+            <div class="hero-social">
+              <span class="hero-social-label" data-i18n="hero.connect">Connect with me</span>
+              <div class="hero-social-links">
+                <a href="https://linkedin.com/in/paulosergioamaral" target="_blank" rel="noopener noreferrer" class="hero-social-link" aria-label="LinkedIn">
+                  <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/paulo-amaral" target="_blank" rel="noopener noreferrer" class="hero-social-link" aria-label="GitHub">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="https://x.com/askamaral" target="_blank" rel="noopener noreferrer" class="hero-social-link" aria-label="X/Twitter">
+                  <i class="fa-brands fa-x-twitter"></i>
+                </a>
+                <a href="https://wa.me/67078461740" target="_blank" rel="noopener noreferrer" class="hero-social-link" aria-label="WhatsApp">
+                  <i class="fa-brands fa-whatsapp"></i>
+                </a>
+                <a href="https://www.instagram.com/paulo_s_amaral" target="_blank" rel="noopener noreferrer" class="hero-social-link" aria-label="Instagram">
+                  <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://www.facebook.com/paulo.s.amaral" target="_blank" rel="noopener noreferrer" class="hero-social-link" aria-label="Facebook">
+                  <i class="fa-brands fa-facebook-f"></i>
+                </a>
+              </div>
             </div>
           </div>
           <div class="hero-avatar-wrapper">
@@ -1247,11 +1349,11 @@
               <div class="stat-label" data-i18n="about.stat1">Years of Experience</div>
             </div>
             <div class="stat-card">
-              <div class="stat-number">50+</div>
+              <div class="stat-number">20+</div>
               <div class="stat-label" data-i18n="about.stat2">Projects Delivered</div>
             </div>
             <div class="stat-card">
-              <div class="stat-number">10+</div>
+              <div class="stat-number">3</div>
               <div class="stat-label" data-i18n="about.stat3">Countries Impacted</div>
             </div>
             <div class="stat-card">
@@ -1855,6 +1957,21 @@
 
           <div class="timeline-item">
             <div class="timeline-header">
+              <div class="timeline-title">Head of Technology <span class="timeline-company">@ EYETRUST LDA</span></div>
+              <span class="timeline-date">Jan 2020 - Apr 2024</span>
+            </div>
+            <div class="timeline-location">
+              <i class="fa-solid fa-location-dot"></i>
+              Dili, Timor-Leste
+            </div>
+            <ul class="timeline-desc">
+              <li data-i18n="exp.eyetrust1">Integrated iris recognition with Temenos T24 core banking (BNCTL)</li>
+              <li data-i18n="exp.eyetrust2">Coordinated international teams across India, England, and Timor-Leste</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-header">
               <div class="timeline-title">IT Advisor <span class="timeline-company">@ Court of Appeals</span></div>
               <span class="timeline-date">Apr 2019 - Feb 2022</span>
             </div>
@@ -1865,6 +1982,21 @@
             <ul class="timeline-desc">
               <li data-i18n="exp.court1">Led IT team and digital transformation across 7 District Courts</li>
               <li data-i18n="exp.court2">Increased system availability from 40% to 99%</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-header">
+              <div class="timeline-title">Head of Technology <span class="timeline-company">@ Otimizai LDA</span></div>
+              <span class="timeline-date">Jul 2015 - Dec 2023</span>
+            </div>
+            <div class="timeline-location">
+              <i class="fa-solid fa-location-dot"></i>
+              Dili, Timor-Leste
+            </div>
+            <ul class="timeline-desc">
+              <li data-i18n="exp.otimizai1">Delivered digital solutions for UN Women, World Vision, MOEYS, EU, and Police</li>
+              <li data-i18n="exp.otimizai2">Led AI/ML tax classification pilot identifying $1M+ optimization (Brazil)</li>
             </ul>
           </div>
 
@@ -1895,6 +2027,21 @@
             <ul class="timeline-desc">
               <li data-i18n="exp.sap1">SAP implementations for Malwee Group (Retail), Votorantim Cement, BRF Foods</li>
               <li data-i18n="exp.sap2">ABAP development for MM, SD, AFS, WM, and PI modules</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-header">
+              <div class="timeline-title">System Development Analyst <span class="timeline-company">@ CKBV Florestal</span></div>
+              <span class="timeline-date">Nov 2002 - Dec 2011</span>
+            </div>
+            <div class="timeline-location">
+              <i class="fa-solid fa-location-dot"></i>
+              Curitiba, Brazil
+            </div>
+            <ul class="timeline-desc">
+              <li data-i18n="exp.ckbv1">Managed ERP Datasul/TOTVS, HCM, and CRM systems across multiple branches</li>
+              <li data-i18n="exp.ckbv2">Reduced costs by 30% through open-source adoption and virtualization</li>
             </ul>
           </div>
         </div>
@@ -2063,7 +2210,7 @@
           <div class="contact-cta">
             <h3 data-i18n="contact.cta.title">Let's Work Together</h3>
             <p data-i18n="contact.cta.desc">I'm available for consulting engagements in digital transformation, data systems, and technology advisory.</p>
-            <a href="https://calendly.com/pauloamaral" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            <a href="https://calendly.com/matenek/15min" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
               <i class="fa-regular fa-calendar"></i>
               <span data-i18n="contact.cta.button">Book a Call</span>
             </a>
@@ -2082,6 +2229,9 @@
               </a>
               <a href="https://www.instagram.com/paulo_s_amaral" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
                 <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a href="https://www.facebook.com/paulo.s.amaral" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook">
+                <i class="fa-brands fa-facebook-f"></i>
               </a>
             </div>
           </div>
@@ -2113,9 +2263,10 @@
         "nav.contact": "Contact",
         "hero.available": "Available for consulting",
         "hero.greeting": "Hi, I'm Paulo Amaral",
-        "hero.tagline": "Senior ICT and Digital Transformation Consultant using technology to make a difference in international development and public sector.",
+        "hero.tagline": "Tech-for-good meets get-it-done. Hands-on consultant with a learn-by-doing approach to building systems that matter.",
         "hero.book": "Book a Call",
         "hero.viewwork": "View My Work",
+        "hero.connect": "Connect with me",
         "about.title": "About Me",
         "about.p1": "I'm a consultant passionate about transforming businesses and organizations through technology. With extensive engagement with UN agencies, governments, and donors, I specialize in digital governance, health, justice, civil registration, and social protection systems.",
         "about.p2": "I believe in building products and solutions that make a difference from the very first delivery. My approach follows the UBUNTU philosophy - believing in a sustainable society built on respect and solidarity.",
@@ -2144,12 +2295,18 @@
         "exp.unicef2": "Led policy formulation for health system strengthening",
         "exp.catalpa1": "Managed data for PNDS with 9,000+ projects totaling $100M+",
         "exp.catalpa2": "Facilitated $8M+ in payments through Jerasaun Foun social protection",
+        "exp.eyetrust1": "Integrated iris recognition with Temenos T24 core banking (BNCTL)",
+        "exp.eyetrust2": "Coordinated international teams across India, England, and Timor-Leste",
         "exp.court1": "Led IT team and digital transformation across 7 District Courts",
         "exp.court2": "Increased system availability from 40% to 99%",
+        "exp.otimizai1": "Delivered digital solutions for UN Women, World Vision, MOEYS, EU, and Police",
+        "exp.otimizai2": "Led AI/ML tax classification pilot identifying $1M+ optimization (Brazil)",
         "exp.pgr1": "Deployed Case Management System (IIMS), HR systems, and LMS",
         "exp.pgr2": "Created first ICT Training Center for justice sector with KOICA",
         "exp.sap1": "SAP implementations for Malwee Group (Retail), Votorantim Cement, BRF Foods",
         "exp.sap2": "ABAP development for MM, SD, AFS, WM, and PI modules",
+        "exp.ckbv1": "Managed ERP Datasul/TOTVS, HCM, and CRM systems across multiple branches",
+        "exp.ckbv2": "Reduced costs by 30% through open-source adoption and virtualization",
         "skills.title": "Skills",
         "skills.cloud": "Cloud & DevOps",
         "skills.data": "Data & Analytics",
@@ -2177,9 +2334,10 @@
         "nav.contact": "Contato",
         "hero.available": "Disponivel para consultoria",
         "hero.greeting": "Ola, sou Paulo Amaral",
-        "hero.tagline": "Consultor Senior em TIC e Transformacao Digital usando tecnologia para fazer a diferenca no desenvolvimento internacional e setor publico.",
+        "hero.tagline": "Tecnologia para o bem com resultados concretos. Consultor hands-on com abordagem aprenda-fazendo para construir sistemas que importam.",
         "hero.book": "Agendar Reuniao",
         "hero.viewwork": "Ver Meu Trabalho",
+        "hero.connect": "Conecte-se comigo",
         "about.title": "Sobre Mim",
         "about.p1": "Sou um consultor apaixonado por transformar empresas e organizacoes atraves da tecnologia. Com amplo envolvimento com agencias da ONU, governos e doadores, especializo-me em governanca digital, saude, justica, registro civil e sistemas de protecao social.",
         "about.p2": "Acredito em construir produtos e solucoes que fazem a diferenca desde a primeira entrega. Minha abordagem segue a filosofia UBUNTU - acreditando em uma sociedade sustentavel construida sobre respeito e solidariedade.",
@@ -2208,12 +2366,18 @@
         "exp.unicef2": "Liderei formulacao de politicas para fortalecimento de sistemas de saude",
         "exp.catalpa1": "Gerenciei dados do PNDS com 9.000+ projetos totalizando $100M+",
         "exp.catalpa2": "Facilitei $8M+ em pagamentos atraves da protecao social Jerasaun Foun",
+        "exp.eyetrust1": "Integrei reconhecimento de iris com core banking Temenos T24 (BNCTL)",
+        "exp.eyetrust2": "Coordenei equipes internacionais na India, Inglaterra e Timor-Leste",
         "exp.court1": "Liderei equipe de TI e transformacao digital em 7 Tribunais Distritais",
         "exp.court2": "Aumentei disponibilidade do sistema de 40% para 99%",
+        "exp.otimizai1": "Entreguei solucoes digitais para ONU Mulheres, World Vision, MOEYS, UE e Policia",
+        "exp.otimizai2": "Liderei piloto de IA/ML para classificacao fiscal identificando $1M+ em otimizacao (Brasil)",
         "exp.pgr1": "Implantei Sistema de Gestao de Casos (IIMS), sistemas de RH e LMS",
         "exp.pgr2": "Criei primeiro Centro de Treinamento TIC para setor de justica com KOICA",
         "exp.sap1": "Implementacoes SAP para Grupo Malwee (Varejo), Votorantim Cimentos, BRF Foods",
         "exp.sap2": "Desenvolvimento ABAP para modulos MM, SD, AFS, WM e PI",
+        "exp.ckbv1": "Gerenciei sistemas ERP Datasul/TOTVS, HCM e CRM em multiplas filiais",
+        "exp.ckbv2": "Reduzi custos em 30% atraves de adocao de open-source e virtualizacao",
         "skills.title": "Habilidades",
         "skills.cloud": "Cloud e DevOps",
         "skills.data": "Dados e Analytics",
