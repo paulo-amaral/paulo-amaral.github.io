@@ -796,32 +796,229 @@
       background: var(--accent-soft);
     }
 
-    .projects-grid {
+    /* Portfolio Section - Premium Bento Grid */
+    .portfolio-intro {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 48px;
+    }
+
+    .portfolio-intro p {
+      color: var(--text-secondary);
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    .portfolio-stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+
+    @media (min-width: 768px) {
+      .portfolio-stats {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+      }
+    }
+
+    .portfolio-stat {
+      background: linear-gradient(145deg, rgba(228, 176, 69, 0.08) 0%, rgba(228, 176, 69, 0.02) 100%);
+      border: 1px solid rgba(228, 176, 69, 0.15);
+      border-radius: var(--radius-lg);
+      padding: 24px 20px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .portfolio-stat:hover {
+      transform: translateY(-4px);
+      border-color: rgba(228, 176, 69, 0.3);
+      box-shadow: 0 12px 40px rgba(228, 176, 69, 0.1);
+    }
+
+    .portfolio-stat-value {
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .portfolio-stat-label {
+      font-size: 13px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* Category Filter Tabs */
+    .portfolio-filters {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 40px;
+    }
+
+    .filter-btn {
+      padding: 10px 20px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-pill);
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      font-family: inherit;
+    }
+
+    .filter-btn:hover {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(255, 255, 255, 0.15);
+      color: var(--text-primary);
+    }
+
+    .filter-btn.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: var(--bg-primary);
+    }
+
+    .filter-btn i {
+      margin-right: 6px;
+      font-size: 12px;
+    }
+
+    /* Bento Grid Layout */
+    .projects-bento {
       display: grid;
       grid-template-columns: 1fr;
       gap: 20px;
     }
 
     @media (min-width: 768px) {
-      .projects-grid {
+      .projects-bento {
         grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
       }
     }
 
+    @media (min-width: 1024px) {
+      .projects-bento {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    /* Project Card - Base Styles */
     .project-card {
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.005) 100%);
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
       border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 24px;
-      transition: all 0.3s ease;
+      border-radius: var(--radius-xl);
+      padding: 28px;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       display: flex;
       flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent) 0%, transparent 100%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
     }
 
     .project-card:hover {
-      border-color: var(--border-hover);
-      transform: translateY(-4px);
-      box-shadow: var(--card-shadow);
+      border-color: rgba(228, 176, 69, 0.3);
+      transform: translateY(-8px);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4),
+                  0 0 0 1px rgba(228, 176, 69, 0.1);
+    }
+
+    .project-card:hover::before {
+      opacity: 1;
+    }
+
+    /* Featured Card - Spans full width with horizontal layout */
+    .project-card.featured {
+      grid-column: span 1;
+      background: linear-gradient(145deg, rgba(228, 176, 69, 0.06) 0%, rgba(228, 176, 69, 0.01) 100%);
+      border-color: rgba(228, 176, 69, 0.2);
+    }
+
+    @media (min-width: 768px) {
+      .project-card.featured {
+        grid-column: span 2;
+        padding: 40px;
+      }
+
+      .project-card.featured .featured-content {
+        display: flex;
+        gap: 40px;
+        align-items: flex-start;
+      }
+
+      .project-card.featured .featured-main {
+        flex: 1;
+        min-width: 0;
+      }
+
+      .project-card.featured .featured-sidebar {
+        flex-shrink: 0;
+        width: 200px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .project-card.featured {
+        grid-column: span 3;
+        padding: 48px;
+      }
+
+      .project-card.featured .featured-content {
+        gap: 56px;
+      }
+
+      .project-card.featured .featured-sidebar {
+        width: 240px;
+      }
+    }
+
+    .project-card.featured::before {
+      opacity: 1;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent) 0%, rgba(228, 176, 69, 0.3) 100%);
+    }
+
+    .featured-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      background: var(--accent);
+      color: var(--bg-primary);
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-radius: var(--radius-sm);
+      margin-bottom: 20px;
+      width: fit-content;
+    }
+
+    .featured-badge i {
+      font-size: 10px;
     }
 
     .project-header {
@@ -832,17 +1029,30 @@
     }
 
     .project-icon {
-      width: 48px;
-      height: 48px;
-      background: var(--bg-primary);
-      border: 1px solid var(--border);
+      width: 52px;
+      height: 52px;
+      background: linear-gradient(135deg, rgba(228, 176, 69, 0.15) 0%, rgba(228, 176, 69, 0.05) 100%);
+      border: 1px solid rgba(228, 176, 69, 0.2);
       border-radius: var(--radius-md);
       display: flex;
       align-items: center;
       justify-content: center;
       color: var(--accent);
-      font-size: 20px;
+      font-size: 22px;
       flex-shrink: 0;
+      transition: all 0.3s ease;
+    }
+
+    .project-card.featured .project-icon {
+      width: 64px;
+      height: 64px;
+      font-size: 28px;
+      border-radius: var(--radius-lg);
+    }
+
+    .project-card:hover .project-icon {
+      transform: scale(1.1) rotate(-5deg);
+      box-shadow: 0 8px 25px rgba(228, 176, 69, 0.25);
     }
 
     .project-meta {
@@ -851,39 +1061,208 @@
     }
 
     .project-meta h3 {
-      font-size: 15px;
-      font-weight: 600;
-      margin-bottom: 4px;
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 6px;
       color: var(--text-primary);
+      line-height: 1.3;
+    }
+
+    .project-card.featured .project-meta h3 {
+      font-size: 22px;
+      margin-bottom: 8px;
     }
 
     .project-org {
-      font-size: 12px;
+      font-size: 13px;
       color: var(--accent);
-      font-weight: 500;
+      font-weight: 600;
+    }
+
+    .project-card.featured .project-org {
+      font-size: 14px;
     }
 
     .project-card p {
       font-size: 14px;
       color: var(--text-secondary);
-      line-height: 1.6;
-      margin-bottom: 16px;
+      line-height: 1.7;
+      margin-bottom: 20px;
       flex: 1;
+    }
+
+    .project-card.featured p {
+      font-size: 15px;
+      line-height: 1.8;
+      margin-bottom: 24px;
+    }
+
+    /* Impact Metrics */
+    .project-impact {
+      display: flex;
+      gap: 24px;
+      padding: 16px 0;
+      margin-bottom: 16px;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .project-card.featured .project-impact {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      padding: 0;
+      margin: 0;
+      border: none;
+      background: rgba(255, 255, 255, 0.02);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+
+    .project-card.featured .impact-item {
+      padding: 20px 16px;
+      border-right: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(228, 176, 69, 0.03) 0%, transparent 100%);
+    }
+
+    .project-card.featured .impact-item:last-child {
+      border-right: none;
+    }
+
+    /* Sidebar impact layout for desktop */
+    @media (min-width: 768px) {
+      .featured-sidebar .project-impact {
+        grid-template-columns: 1fr;
+        border-radius: var(--radius-lg);
+      }
+
+      .featured-sidebar .impact-item {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+        padding: 16px 20px;
+      }
+
+      .featured-sidebar .impact-item:last-child {
+        border-bottom: none;
+      }
+    }
+
+    .impact-item {
+      text-align: center;
+    }
+
+    .impact-value {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .impact-label {
+      font-size: 11px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
 
     .project-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 6px;
+      gap: 8px;
+      margin-top: auto;
     }
 
     .tag {
       font-size: 11px;
-      font-weight: 500;
-      padding: 4px 10px;
+      font-weight: 600;
+      padding: 6px 12px;
       background: rgba(255, 255, 255, 0.04);
       color: var(--text-muted);
       border-radius: var(--radius-sm);
+      border: 1px solid transparent;
+      transition: all 0.2s ease;
+    }
+
+    .tag:hover {
+      background: rgba(228, 176, 69, 0.1);
+      border-color: rgba(228, 176, 69, 0.2);
+      color: var(--accent);
+    }
+
+    /* Category-specific tag colors */
+    .tag.tag-governance { background: rgba(99, 102, 241, 0.1); color: #818cf8; }
+    .tag.tag-health { background: rgba(16, 185, 129, 0.1); color: #34d399; }
+    .tag.tag-social { background: rgba(236, 72, 153, 0.1); color: #f472b6; }
+    .tag.tag-ai { background: rgba(139, 92, 246, 0.1); color: #a78bfa; }
+    .tag.tag-fintech { background: rgba(245, 158, 11, 0.1); color: #fbbf24; }
+
+    /* Show More Button */
+    .projects-show-more {
+      display: flex;
+      justify-content: center;
+      margin-top: 40px;
+    }
+
+    .btn-show-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 32px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-primary);
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-pill);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: inherit;
+    }
+
+    .btn-show-more:hover {
+      background: rgba(228, 176, 69, 0.1);
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .btn-show-more i {
+      transition: transform 0.3s ease;
+    }
+
+    .btn-show-more:hover i {
+      transform: translateY(3px);
+    }
+
+    .btn-show-more.expanded i {
+      transform: rotate(180deg);
+    }
+
+    /* Hidden projects animation */
+    .project-card.hidden-project {
+      display: none;
+    }
+
+    .projects-bento.show-all .project-card.hidden-project {
+      display: flex;
+      animation: fadeInUp 0.5s ease forwards;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Filter animation */
+    .project-card.filter-hidden {
+      display: none;
     }
 
     /* Experience Section */
@@ -1359,6 +1738,46 @@
       color: var(--text-muted);
     }
 
+    .footer-tagline {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      margin-top: 12px;
+      font-size: 13px;
+    }
+
+    .footer-icon {
+      font-size: 14px;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .footer-icon.heart {
+      color: #e74c3c;
+      animation: heartbeat 1.5s ease-in-out infinite;
+    }
+
+    .footer-icon.coffee {
+      color: #c9a66b;
+    }
+
+    .footer-tagline:hover .footer-icon.heart {
+      transform: scale(1.2);
+    }
+
+    .footer-tagline:hover .footer-icon.coffee {
+      transform: rotate(-10deg) scale(1.1);
+      color: var(--accent);
+    }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      14% { transform: scale(1.15); }
+      28% { transform: scale(1); }
+      42% { transform: scale(1.15); }
+      56% { transform: scale(1); }
+    }
+
     /* Scroll to top */
     .scroll-top {
       position: fixed;
@@ -1612,64 +2031,147 @@
           </div>
           <h2 class="section-title" data-i18n="projects.title">Projects</h2>
         </div>
-        <div class="projects-grid">
-          <!-- Elections & Governance -->
-          <div class="project-card">
-            <div class="project-header">
-              <div class="project-icon">
-                <i class="fa-solid fa-check-to-slot"></i>
-              </div>
-              <div class="project-meta">
-                <h3>National Election Systems (2022-2023)</h3>
-                <span class="project-org">CNE / UNDP</span>
-              </div>
+
+        <!-- Portfolio Introduction -->
+        <div class="portfolio-intro">
+          <p data-i18n="projects.intro">A curated selection of impactful projects across digital governance, social protection, health systems, and enterprise technology spanning 20+ years of hands-on delivery.</p>
+        </div>
+
+        <!-- Portfolio Stats -->
+        <div class="portfolio-stats">
+          <div class="portfolio-stat">
+            <div class="portfolio-stat-value">$100M+</div>
+            <div class="portfolio-stat-label" data-i18n="projects.stat1">Systems Managed</div>
+          </div>
+          <div class="portfolio-stat">
+            <div class="portfolio-stat-value">650K+</div>
+            <div class="portfolio-stat-label" data-i18n="projects.stat2">Users Served</div>
+          </div>
+          <div class="portfolio-stat">
+            <div class="portfolio-stat-value">37K+</div>
+            <div class="portfolio-stat-label" data-i18n="projects.stat3">Officials on Platform</div>
+          </div>
+          <div class="portfolio-stat">
+            <div class="portfolio-stat-value">99%</div>
+            <div class="portfolio-stat-label" data-i18n="projects.stat4">System Uptime</div>
+          </div>
+        </div>
+
+        <!-- Category Filters -->
+        <div class="portfolio-filters">
+          <button class="filter-btn active" data-filter="all">
+            <i class="fa-solid fa-border-all"></i>
+            <span data-i18n="projects.filter.all">All Projects</span>
+          </button>
+          <button class="filter-btn" data-filter="governance">
+            <i class="fa-solid fa-landmark"></i>
+            <span data-i18n="projects.filter.governance">Governance</span>
+          </button>
+          <button class="filter-btn" data-filter="health">
+            <i class="fa-solid fa-heart-pulse"></i>
+            <span data-i18n="projects.filter.health">Health</span>
+          </button>
+          <button class="filter-btn" data-filter="social">
+            <i class="fa-solid fa-hand-holding-heart"></i>
+            <span data-i18n="projects.filter.social">Social</span>
+          </button>
+          <button class="filter-btn" data-filter="enterprise">
+            <i class="fa-solid fa-building"></i>
+            <span data-i18n="projects.filter.enterprise">Enterprise</span>
+          </button>
+        </div>
+
+        <!-- Bento Grid Projects -->
+        <div class="projects-bento" id="projectsGrid">
+
+          <!-- FEATURED: National Election Systems -->
+          <div class="project-card featured" data-category="governance">
+            <div class="featured-badge">
+              <i class="fa-solid fa-star"></i>
+              Featured Project
             </div>
-            <p>Developed and deployed national election tabulation systems for Presidential and Parliamentary elections, supporting 650,000+ voters across 1,400 voting centers.</p>
-            <div class="project-tags">
-              <span class="tag">Digital Governance</span>
-              <span class="tag">Dashboards</span>
-              <span class="tag">Real-time Analytics</span>
+            <div class="featured-content">
+              <div class="featured-main">
+                <div class="project-header">
+                  <div class="project-icon">
+                    <i class="fa-solid fa-check-to-slot"></i>
+                  </div>
+                  <div class="project-meta">
+                    <h3>National Election Tabulation System</h3>
+                    <span class="project-org">CNE / UNDP Timor-Leste</span>
+                  </div>
+                </div>
+                <p>Led the development and deployment of the National Tabulation Center platform for Presidential and Parliamentary elections (2022-2023). Zero system failures during critical election periods.</p>
+                <div class="project-tags">
+                  <span class="tag tag-governance">Digital Governance</span>
+                  <span class="tag">Real-time Analytics</span>
+                  <span class="tag">Mission Critical</span>
+                </div>
+              </div>
+              <div class="featured-sidebar">
+                <div class="project-impact">
+                  <div class="impact-item">
+                    <div class="impact-value">650K+</div>
+                    <div class="impact-label">Voters</div>
+                  </div>
+                  <div class="impact-item">
+                    <div class="impact-value">1,400</div>
+                    <div class="impact-label">Voting Centers</div>
+                  </div>
+                  <div class="impact-item">
+                    <div class="impact-value">0</div>
+                    <div class="impact-label">System Failures</div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div class="project-card">
-            <div class="project-header">
-              <div class="project-icon">
-                <i class="fa-solid fa-landmark"></i>
-              </div>
-              <div class="project-meta">
-                <h3>DRBI Asset Declaration System</h3>
-                <span class="project-org">Court of Appeals</span>
-              </div>
+          <!-- FEATURED: Digital Maturity Assessment -->
+          <div class="project-card featured" data-category="governance">
+            <div class="featured-badge">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+              AI-Powered
             </div>
-            <p>Built digital asset and interest declaration platform for anti-corruption bodies, serving 37,000+ public officials with secure data management.</p>
-            <div class="project-tags">
-              <span class="tag">Justice Sector</span>
-              <span class="tag">Anti-Corruption</span>
-              <span class="tag">Database Design</span>
+            <div class="featured-content">
+              <div class="featured-main">
+                <div class="project-header">
+                  <div class="project-icon">
+                    <i class="fa-solid fa-clipboard-check"></i>
+                  </div>
+                  <div class="project-meta">
+                    <h3>Digital Maturity Assessment Platform</h3>
+                    <span class="project-org">UNDP / Timor Digital 2032</span>
+                  </div>
+                </div>
+                <p>Designed and delivered custom Digital Maturity Assessment web platform using AI-assisted rapid prototyping. Automated scoring across 15+ government institutions for Timor-Leste's digital transformation roadmap.</p>
+                <div class="project-tags">
+                  <span class="tag tag-ai">AI-Assisted</span>
+                  <span class="tag">Deloitte Framework</span>
+                  <span class="tag">National Strategy</span>
+                </div>
+              </div>
+              <div class="featured-sidebar">
+                <div class="project-impact">
+                  <div class="impact-item">
+                    <div class="impact-value">15+</div>
+                    <div class="impact-label">Institutions</div>
+                  </div>
+                  <div class="impact-item">
+                    <div class="impact-value">AI</div>
+                    <div class="impact-label">Automated</div>
+                  </div>
+                  <div class="impact-item">
+                    <div class="impact-value">2032</div>
+                    <div class="impact-label">Strategy</div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div class="project-card">
-            <div class="project-header">
-              <div class="project-icon">
-                <i class="fa-solid fa-clipboard-check"></i>
-              </div>
-              <div class="project-meta">
-                <h3>Digital Maturity Assessment Platform</h3>
-                <span class="project-org">UNDP / EU</span>
-              </div>
-            </div>
-            <p>Designed custom Digital Maturity Assessment web platform based on Deloitte framework, using AI-assisted rapid prototyping to automate scoring and analysis.</p>
-            <div class="project-tags">
-              <span class="tag">Digital Transformation</span>
-              <span class="tag">AI-Assisted</span>
-              <span class="tag">Assessment Tools</span>
-            </div>
-          </div>
-
-          <!-- Social Protection & Development -->
-          <div class="project-card">
+          <!-- Social Protection -->
+          <div class="project-card" data-category="social">
             <div class="project-header">
               <div class="project-icon">
                 <i class="fa-solid fa-children"></i>
@@ -1679,52 +2181,61 @@
                 <span class="project-org">MSSI / Catalpa</span>
               </div>
             </div>
-            <p>Led data analytics enabling $8M+ in payments to 40,000+ registrations, 50,000 children including 221 with disabilities, and 10,000+ pregnant women.</p>
+            <p>Led data analytics enabling $8M+ in payments to vulnerable families, including 50,000 children and 10,000+ pregnant women.</p>
+            <div class="project-impact">
+              <div class="impact-item">
+                <div class="impact-value">$8M+</div>
+                <div class="impact-label">Payments</div>
+              </div>
+              <div class="impact-item">
+                <div class="impact-value">50K</div>
+                <div class="impact-label">Children</div>
+              </div>
+            </div>
             <div class="project-tags">
-              <span class="tag">Social Protection</span>
-              <span class="tag">Data Analysis</span>
-              <span class="tag">Payment Systems</span>
+              <span class="tag tag-social">Social Protection</span>
+              <span class="tag">Data Analytics</span>
             </div>
           </div>
 
-          <div class="project-card">
+          <!-- DRBI Platform -->
+          <div class="project-card" data-category="governance">
+            <div class="project-header">
+              <div class="project-icon">
+                <i class="fa-solid fa-scale-balanced"></i>
+              </div>
+              <div class="project-meta">
+                <h3>DRBI Asset Declaration Platform</h3>
+                <span class="project-org">Court of Appeals</span>
+              </div>
+            </div>
+            <p>Built digital asset and interest declaration platform for courts and anti-corruption bodies, serving 37,000+ public officials.</p>
+            <div class="project-tags">
+              <span class="tag tag-governance">Anti-Corruption</span>
+              <span class="tag">Justice Sector</span>
+            </div>
+          </div>
+
+          <!-- PNDS -->
+          <div class="project-card" data-category="social">
             <div class="project-header">
               <div class="project-icon">
                 <i class="fa-solid fa-seedling"></i>
               </div>
               <div class="project-meta">
-                <h3>PNDS Rural Development Platform</h3>
-                <span class="project-org">Catalpa / Govt of TL</span>
+                <h3>PNDS Rural Development</h3>
+                <span class="project-org">Government of Timor-Leste</span>
               </div>
             </div>
-            <p>Managed legacy data migration for 9,000+ projects totaling $100M+ supporting rural development through digital project management.</p>
+            <p>Managed data migration for 9,000+ development projects totaling $100M+ in rural community investments.</p>
             <div class="project-tags">
-              <span class="tag">Data Migration</span>
-              <span class="tag">Project Management</span>
-              <span class="tag">Rural Development</span>
+              <span class="tag tag-social">Rural Development</span>
+              <span class="tag">$100M+ Data</span>
             </div>
           </div>
 
-          <div class="project-card">
-            <div class="project-header">
-              <div class="project-icon">
-                <i class="fa-solid fa-money-bill-transfer"></i>
-              </div>
-              <div class="project-meta">
-                <h3>Kartaun Bele Digital Cash Transfer</h3>
-                <span class="project-org">World Vision</span>
-              </div>
-            </div>
-            <p>Designed and delivered a digital cash transfer platform for low-income households, supporting social protection for 3,000+ beneficiaries in Ermera District.</p>
-            <div class="project-tags">
-              <span class="tag">Digital Payments</span>
-              <span class="tag">Financial Inclusion</span>
-              <span class="tag">Mobile App</span>
-            </div>
-          </div>
-
-          <!-- Health & Child Protection -->
-          <div class="project-card">
+          <!-- DHIS2 Health -->
+          <div class="project-card" data-category="health">
             <div class="project-header">
               <div class="project-icon">
                 <i class="fa-solid fa-syringe"></i>
@@ -1734,15 +2245,15 @@
                 <span class="project-org">UNICEF / MOH</span>
               </div>
             </div>
-            <p>Improved health data collection and validation with EPI dashboards for immunization monitoring, supporting national health information systems.</p>
+            <p>Strengthened national health information systems with improved data collection, validation, and EPI dashboards for immunization monitoring.</p>
             <div class="project-tags">
-              <span class="tag">Health Systems</span>
-              <span class="tag">DHIS2</span>
+              <span class="tag tag-health">DHIS2</span>
               <span class="tag">Immunization</span>
             </div>
           </div>
 
-          <div class="project-card">
+          <!-- CPIMS -->
+          <div class="project-card" data-category="health">
             <div class="project-header">
               <div class="project-icon">
                 <i class="fa-solid fa-hand-holding-heart"></i>
@@ -1752,143 +2263,15 @@
                 <span class="project-org">UNICEF / MSSI</span>
               </div>
             </div>
-            <p>Developed dashboards and analytics for child protection case management to support policy and operational decisions.</p>
+            <p>Developed Power BI dashboards and analytics for child protection case management supporting policy and operational decisions.</p>
             <div class="project-tags">
-              <span class="tag">Child Protection</span>
-              <span class="tag">Case Management</span>
+              <span class="tag tag-health">Child Protection</span>
               <span class="tag">Power BI</span>
             </div>
           </div>
 
-          <div class="project-card">
-            <div class="project-header">
-              <div class="project-icon">
-                <i class="fa-solid fa-id-card"></i>
-              </div>
-              <div class="project-meta">
-                <h3>CRVS Civil Registration Dashboard</h3>
-                <span class="project-org">UNICEF / MOJ</span>
-              </div>
-            </div>
-            <p>Delivered technical improvements and dashboards to strengthen birth registration systems and civil registration data quality.</p>
-            <div class="project-tags">
-              <span class="tag">Civil Registration</span>
-              <span class="tag">Birth Registration</span>
-              <span class="tag">Data Quality</span>
-            </div>
-          </div>
-
-          <!-- Justice Sector -->
-          <div class="project-card">
-            <div class="project-header">
-              <div class="project-icon">
-                <i class="fa-solid fa-comment-dots"></i>
-              </div>
-              <div class="project-meta">
-                <h3>ROSA Sexual Harassment Chatbot</h3>
-                <span class="project-org">UN Women</span>
-              </div>
-            </div>
-            <p>Developed secure digital reporting system for sexual harassment complaints in public sector via Facebook Messenger, strengthening accountability.</p>
-            <div class="project-tags">
-              <span class="tag">Chatbot</span>
-              <span class="tag">Facebook Messenger</span>
-              <span class="tag">Accountability</span>
-            </div>
-          </div>
-
-          <div class="project-card">
-            <div class="project-header">
-              <div class="project-icon">
-                <i class="fa-solid fa-scale-balanced"></i>
-              </div>
-              <div class="project-meta">
-                <h3>IIMS Case Management System</h3>
-                <span class="project-org">Prosecutor's General</span>
-              </div>
-            </div>
-            <p>Deployed and maintained Case Management System with dashboards using Metabase, supporting case tracking across prosecution offices.</p>
-            <div class="project-tags">
-              <span class="tag">Case Management</span>
-              <span class="tag">Metabase</span>
-              <span class="tag">Justice Sector</span>
-            </div>
-          </div>
-
-          <div class="project-card">
-            <div class="project-header">
-              <div class="project-icon">
-                <i class="fa-solid fa-chalkboard-user"></i>
-              </div>
-              <div class="project-meta">
-                <h3>ICT Training Center</h3>
-                <span class="project-org">PGR / KOICA</span>
-              </div>
-            </div>
-            <p>Spearheaded the creation of the first ICT Training Center for the justice sector in collaboration with KOICA, bolstering organizational capacity.</p>
-            <div class="project-tags">
-              <span class="tag">Capacity Building</span>
-              <span class="tag">Training Center</span>
-              <span class="tag">KOICA</span>
-            </div>
-          </div>
-
-          <div class="project-card">
-            <div class="project-header">
-              <div class="project-icon">
-                <i class="fa-solid fa-users-gear"></i>
-              </div>
-              <div class="project-meta">
-                <h3>HR Management System</h3>
-                <span class="project-org">Prosecutor's General</span>
-              </div>
-            </div>
-            <p>Developed HCM Human resources manager for the HR department, supporting workforce management and institutional governance.</p>
-            <div class="project-tags">
-              <span class="tag">HCM</span>
-              <span class="tag">HR Systems</span>
-              <span class="tag">Personnel Management</span>
-            </div>
-          </div>
-
-          <div class="project-card">
-            <div class="project-header">
-              <div class="project-icon">
-                <i class="fa-solid fa-globe"></i>
-              </div>
-              <div class="project-meta">
-                <h3>Courts Portal & Internal Systems</h3>
-                <span class="project-org">Court of Appeals</span>
-              </div>
-            </div>
-            <p>Developed new portal, internal systems, knowledgebase, SOP documentation, and GitLab repository for code management across 7 district courts.</p>
-            <div class="project-tags">
-              <span class="tag">Web Portal</span>
-              <span class="tag">GitLab</span>
-              <span class="tag">Knowledge Management</span>
-            </div>
-          </div>
-
-          <!-- Police & Security -->
-          <div class="project-card">
-            <div class="project-header">
-              <div class="project-icon">
-                <i class="fa-solid fa-shield-halved"></i>
-              </div>
-              <div class="project-meta">
-                <h3>National Police Systems (PNTL)</h3>
-                <span class="project-org">PNTL / AFP</span>
-              </div>
-            </div>
-            <p>Scaled and operated 40+ servers and 20+ databases for police intelligence and case management systems, including infrastructure diagnosis and remodeling.</p>
-            <div class="project-tags">
-              <span class="tag">Police Systems</span>
-              <span class="tag">Infrastructure</span>
-              <span class="tag">Database</span>
-            </div>
-          </div>
-
-          <div class="project-card">
+          <!-- Iris Recognition -->
+          <div class="project-card" data-category="enterprise">
             <div class="project-header">
               <div class="project-icon">
                 <i class="fa-solid fa-eye"></i>
@@ -1898,71 +2281,15 @@
                 <span class="project-org">EYETRUST / BNCTL</span>
               </div>
             </div>
-            <p>Implemented biometric iris authentication to strengthen KYC, fraud prevention, and banking security for national financial institution.</p>
+            <p>Integrated iris biometric authentication with Temenos T24 core banking, strengthening KYC compliance and fraud prevention.</p>
             <div class="project-tags">
-              <span class="tag">Biometrics</span>
+              <span class="tag tag-fintech">Biometrics</span>
               <span class="tag">Banking</span>
-              <span class="tag">KYC</span>
             </div>
           </div>
 
-          <!-- Education -->
-          <div class="project-card">
-            <div class="project-header">
-              <div class="project-icon">
-                <i class="fa-solid fa-user-graduate"></i>
-              </div>
-              <div class="project-meta">
-                <h3>Teacher Recruitment System</h3>
-                <span class="project-org">MOEYS</span>
-              </div>
-            </div>
-            <p>Built the first digital recruitment platform for the Ministry of Education, improving transparency, workforce planning, and process efficiency.</p>
-            <div class="project-tags">
-              <span class="tag">Education</span>
-              <span class="tag">Recruitment</span>
-              <span class="tag">HR Platform</span>
-            </div>
-          </div>
-
-          <div class="project-card">
-            <div class="project-header">
-              <div class="project-icon">
-                <i class="fa-solid fa-school"></i>
-              </div>
-              <div class="project-meta">
-                <h3>School Census System</h3>
-                <span class="project-org">MOEYS / World Bank</span>
-              </div>
-            </div>
-            <p>Designed and implemented nationwide school census using CSPro, trained 70+ enumerators, and deployed cloud infrastructure for data collection.</p>
-            <div class="project-tags">
-              <span class="tag">Census</span>
-              <span class="tag">CSPro</span>
-              <span class="tag">Data Collection</span>
-            </div>
-          </div>
-
-          <div class="project-card">
-            <div class="project-header">
-              <div class="project-icon">
-                <i class="fa-solid fa-briefcase"></i>
-              </div>
-              <div class="project-meta">
-                <h3>CNEFP Professional Training System</h3>
-                <span class="project-org">CNEFP</span>
-              </div>
-            </div>
-            <p>Developed a system for controlling professional training courses, tracking trainees, and monitoring employability outcomes.</p>
-            <div class="project-tags">
-              <span class="tag">Training Management</span>
-              <span class="tag">Dashboard</span>
-              <span class="tag">Employability</span>
-            </div>
-          </div>
-
-          <!-- AI & Machine Learning -->
-          <div class="project-card">
+          <!-- Tax AI -->
+          <div class="project-card" data-category="enterprise">
             <div class="project-header">
               <div class="project-icon">
                 <i class="fa-solid fa-robot"></i>
@@ -1972,16 +2299,83 @@
                 <span class="project-org">Becomex (Brazil)</span>
               </div>
             </div>
-            <p>Led AI/ML pilot for automated tax classification using GCP and BigQuery, identifying over $1M in revenue optimization opportunities.</p>
+            <p>Led AI/ML pilot for automated tax classification using GCP and BigQuery, identifying $1M+ in revenue optimization opportunities.</p>
             <div class="project-tags">
-              <span class="tag">Machine Learning</span>
+              <span class="tag tag-ai">Machine Learning</span>
               <span class="tag">GCP</span>
-              <span class="tag">BigQuery</span>
             </div>
           </div>
 
-          <!-- SAP & Enterprise -->
-          <div class="project-card">
+          <!-- Hidden Projects (Show More) -->
+          <div class="project-card hidden-project" data-category="governance">
+            <div class="project-header">
+              <div class="project-icon">
+                <i class="fa-solid fa-comment-dots"></i>
+              </div>
+              <div class="project-meta">
+                <h3>ROSA Sexual Harassment Chatbot</h3>
+                <span class="project-org">UN Women</span>
+              </div>
+            </div>
+            <p>Developed secure digital reporting system for sexual harassment complaints in public sector via Facebook Messenger.</p>
+            <div class="project-tags">
+              <span class="tag">Chatbot</span>
+              <span class="tag">Accountability</span>
+            </div>
+          </div>
+
+          <div class="project-card hidden-project" data-category="governance">
+            <div class="project-header">
+              <div class="project-icon">
+                <i class="fa-solid fa-gavel"></i>
+              </div>
+              <div class="project-meta">
+                <h3>IIMS Case Management System</h3>
+                <span class="project-org">Prosecutor's General</span>
+              </div>
+            </div>
+            <p>Deployed and maintained Case Management System with Metabase dashboards for case tracking across prosecution offices.</p>
+            <div class="project-tags">
+              <span class="tag">Metabase</span>
+              <span class="tag">Justice</span>
+            </div>
+          </div>
+
+          <div class="project-card hidden-project" data-category="social">
+            <div class="project-header">
+              <div class="project-icon">
+                <i class="fa-solid fa-money-bill-transfer"></i>
+              </div>
+              <div class="project-meta">
+                <h3>Kartaun Bele Cash Transfer</h3>
+                <span class="project-org">World Vision</span>
+              </div>
+            </div>
+            <p>Digital cash transfer platform for 3,000+ low-income beneficiaries supporting social protection in Ermera District.</p>
+            <div class="project-tags">
+              <span class="tag tag-social">Digital Payments</span>
+              <span class="tag">Financial Inclusion</span>
+            </div>
+          </div>
+
+          <div class="project-card hidden-project" data-category="governance">
+            <div class="project-header">
+              <div class="project-icon">
+                <i class="fa-solid fa-shield-halved"></i>
+              </div>
+              <div class="project-meta">
+                <h3>National Police Systems (PNTL)</h3>
+                <span class="project-org">PNTL / AFP</span>
+              </div>
+            </div>
+            <p>Scaled and operated 40+ servers and 20+ databases for police intelligence and case management systems.</p>
+            <div class="project-tags">
+              <span class="tag">Infrastructure</span>
+              <span class="tag">Security</span>
+            </div>
+          </div>
+
+          <div class="project-card hidden-project" data-category="enterprise">
             <div class="project-header">
               <div class="project-icon">
                 <i class="fa-solid fa-cubes"></i>
@@ -1991,87 +2385,38 @@
                 <span class="project-org">Malwee, Votorantim, BRF</span>
               </div>
             </div>
-            <p>Delivered SAP ABAP integrations across MM, PP, SD, AFS, WM, and PI modules for large-scale manufacturing and retail clients in Brazil.</p>
+            <p>SAP ABAP integrations across MM, PP, SD, AFS, WM, PI modules for large-scale manufacturing and retail in Brazil.</p>
             <div class="project-tags">
               <span class="tag">SAP ABAP</span>
-              <span class="tag">ERP</span>
-              <span class="tag">Data Migration</span>
+              <span class="tag">Enterprise</span>
             </div>
           </div>
 
-          <!-- Infrastructure & IT -->
-          <div class="project-card">
+          <div class="project-card hidden-project" data-category="social">
             <div class="project-header">
               <div class="project-icon">
-                <i class="fa-solid fa-building-columns"></i>
+                <i class="fa-solid fa-school"></i>
               </div>
               <div class="project-meta">
-                <h3>Balkaun Uniku One-Stop Shop</h3>
-                <span class="project-org">Government of TL</span>
+                <h3>School Census System</h3>
+                <span class="project-org">MOEYS / World Bank</span>
               </div>
             </div>
-            <p>Installed and configured full ICT infrastructure for national one-stop public service office, including networks, systems, and acceptance testing.</p>
+            <p>Designed and implemented nationwide school census, trained 70+ enumerators, collecting data from 1,500+ schools.</p>
             <div class="project-tags">
-              <span class="tag">Infrastructure</span>
-              <span class="tag">Network</span>
-              <span class="tag">Public Services</span>
+              <span class="tag">Census</span>
+              <span class="tag">World Bank</span>
             </div>
           </div>
 
-          <div class="project-card">
-            <div class="project-header">
-              <div class="project-icon">
-                <i class="fa-solid fa-flag"></i>
-              </div>
-              <div class="project-meta">
-                <h3>EU Delegation IT Outsourcing</h3>
-                <span class="project-org">European Union</span>
-              </div>
-            </div>
-            <p>Provided on-site IT operations and infrastructure support for the EU Delegation in Timor-Leste over a two-year engagement.</p>
-            <div class="project-tags">
-              <span class="tag">IT Support</span>
-              <span class="tag">Outsourcing</span>
-              <span class="tag">Infrastructure</span>
-            </div>
-          </div>
+        </div>
 
-          <!-- Other -->
-          <div class="project-card">
-            <div class="project-header">
-              <div class="project-icon">
-                <i class="fa-solid fa-heart"></i>
-              </div>
-              <div class="project-meta">
-                <h3>Casa Vida Website & Platform</h3>
-                <span class="project-org">Casa Vida NGO</span>
-              </div>
-            </div>
-            <p>Developed new website integrated with e-commerce and online donation platforms for fundraising. Volunteer ICT lead for organization protecting women and children.</p>
-            <div class="project-tags">
-              <span class="tag">NGO</span>
-              <span class="tag">E-commerce</span>
-              <span class="tag">Volunteer</span>
-            </div>
-          </div>
-
-          <div class="project-card">
-            <div class="project-header">
-              <div class="project-icon">
-                <i class="fa-solid fa-plug"></i>
-              </div>
-              <div class="project-meta">
-                <h3>Data Integration & Automation</h3>
-                <span class="project-org">Various</span>
-              </div>
-            </div>
-            <p>Built KoboToolbox to Google Sheets pipelines and API-based data extractors from UNICEF Primero to PostgreSQL for analytics and reporting.</p>
-            <div class="project-tags">
-              <span class="tag">API Integration</span>
-              <span class="tag">ETL</span>
-              <span class="tag">Automation</span>
-            </div>
-          </div>
+        <!-- Show More Button -->
+        <div class="projects-show-more">
+          <button class="btn-show-more" id="showMoreBtn">
+            <span data-i18n="projects.showMore">Show More Projects</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
         </div>
       </div>
     </section>
@@ -2439,7 +2784,13 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <p>&copy; 2025 Paulo Amaral. <span data-i18n="footer.rights">All rights reserved.</span></p>
+      <p>&copy; 2026 Paulo Amaral. <span data-i18n="footer.rights">All rights reserved.</span></p>
+      <p class="footer-tagline">
+        <span data-i18n="footer.made">Made with</span>
+        <i class="fa-solid fa-heart footer-icon heart"></i>
+        <span data-i18n="footer.and">and</span>
+        <i class="fa-solid fa-mug-hot footer-icon coffee"></i>
+      </p>
     </div>
   </footer>
 
@@ -2484,6 +2835,18 @@
         "services.s6.title": "Business Intelligence",
         "services.s6.desc": "Dashboards, analytics, and data-driven decision support systems.",
         "projects.title": "Projects",
+        "projects.intro": "A curated selection of impactful projects across digital governance, social protection, health systems, and enterprise technology spanning 20+ years of hands-on delivery.",
+        "projects.stat1": "Systems Managed",
+        "projects.stat2": "Users Served",
+        "projects.stat3": "Officials on Platform",
+        "projects.stat4": "System Uptime",
+        "projects.filter.all": "All Projects",
+        "projects.filter.governance": "Governance",
+        "projects.filter.health": "Health",
+        "projects.filter.social": "Social",
+        "projects.filter.enterprise": "Enterprise",
+        "projects.showMore": "Show More Projects",
+        "projects.showLess": "Show Less",
         "experience.title": "Experience",
         "exp.undp1": "Led the National Digital Maturity Assessment for Dalan ba Digital programme",
         "exp.undp2": "Designed custom Digital Maturity Assessment web platform using AI-assisted rapid prototyping",
@@ -2522,7 +2885,9 @@
         "contact.cta.desc": "I'm available for consulting engagements in digital transformation, data systems, and technology advisory.",
         "contact.cta.button": "Book a Call",
         "contact.qr.label": "Scan to chat on WhatsApp",
-        "footer.rights": "All rights reserved."
+        "footer.rights": "All rights reserved.",
+        "footer.made": "Made with",
+        "footer.and": "and"
       },
       pt: {
         "nav.about": "Sobre",
@@ -2557,6 +2922,18 @@
         "services.s6.title": "Business Intelligence",
         "services.s6.desc": "Dashboards, analytics e sistemas de apoio a decisao baseados em dados.",
         "projects.title": "Projetos",
+        "projects.intro": "Uma selecao curada de projetos impactantes em governanca digital, protecao social, sistemas de saude e tecnologia empresarial ao longo de 20+ anos de entrega hands-on.",
+        "projects.stat1": "Sistemas Gerenciados",
+        "projects.stat2": "Usuarios Atendidos",
+        "projects.stat3": "Funcionarios na Plataforma",
+        "projects.stat4": "Disponibilidade",
+        "projects.filter.all": "Todos os Projetos",
+        "projects.filter.governance": "Governanca",
+        "projects.filter.health": "Saude",
+        "projects.filter.social": "Social",
+        "projects.filter.enterprise": "Empresarial",
+        "projects.showMore": "Ver Mais Projetos",
+        "projects.showLess": "Mostrar Menos",
         "experience.title": "Experiencia",
         "exp.undp1": "Liderei a Avaliacao Nacional de Maturidade Digital para o programa Dalan ba Digital",
         "exp.undp2": "Projetei plataforma web de Avaliacao de Maturidade Digital usando prototipagem rapida assistida por IA",
@@ -2595,7 +2972,9 @@
         "contact.cta.desc": "Estou disponivel para consultorias em transformacao digital, sistemas de dados e assessoria tecnologica.",
         "contact.cta.button": "Agendar Reuniao",
         "contact.qr.label": "Escaneie para conversar no WhatsApp",
-        "footer.rights": "Todos os direitos reservados."
+        "footer.rights": "Todos os direitos reservados.",
+        "footer.made": "Feito com",
+        "footer.and": "e"
       }
     };
 
@@ -2721,6 +3100,49 @@
 
       window.addEventListener('scroll', updateActiveNav);
       updateActiveNav();
+
+      // Portfolio Filter Functionality
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const projectCards = document.querySelectorAll('.project-card');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          // Update active button
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          const filter = btn.dataset.filter;
+
+          projectCards.forEach(card => {
+            if (filter === 'all' || card.dataset.category === filter) {
+              card.classList.remove('filter-hidden');
+            } else {
+              card.classList.add('filter-hidden');
+            }
+          });
+        });
+      });
+
+      // Show More Projects Functionality
+      const showMoreBtn = document.getElementById('showMoreBtn');
+      const projectsGrid = document.getElementById('projectsGrid');
+
+      if (showMoreBtn && projectsGrid) {
+        showMoreBtn.addEventListener('click', () => {
+          projectsGrid.classList.toggle('show-all');
+          showMoreBtn.classList.toggle('expanded');
+
+          const isExpanded = projectsGrid.classList.contains('show-all');
+          const btnText = showMoreBtn.querySelector('span');
+          const currentLang = localStorage.getItem('language') || 'en';
+
+          if (isExpanded) {
+            btnText.textContent = currentLang === 'pt' ? 'Mostrar Menos' : 'Show Less';
+          } else {
+            btnText.textContent = currentLang === 'pt' ? 'Ver Mais Projetos' : 'Show More Projects';
+          }
+        });
+      }
     });
   </script>
 </body>
