@@ -1469,72 +1469,13 @@
 
     /* Contact Section */
     .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 32px;
-    }
-
-    @media (min-width: 768px) {
-      .contact-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 48px;
-      }
-    }
-
-    .contact-list {
       display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .contact-item {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      padding: 16px 20px;
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.005) 100%);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      text-decoration: none;
-      color: var(--text-primary);
-      transition: all 0.3s ease;
-    }
-
-    .contact-item:hover {
-      border-color: var(--border-hover);
-      transform: translateX(4px);
-      box-shadow: var(--card-shadow);
-    }
-
-    .contact-icon {
-      width: 44px;
-      height: 44px;
-      background: var(--accent-soft);
-      border-radius: var(--radius-md);
-      display: flex;
-      align-items: center;
       justify-content: center;
-      color: var(--accent);
-      font-size: 18px;
-      flex-shrink: 0;
     }
 
-    .contact-text {
-      flex: 1;
-      min-width: 0;
-    }
-
-    .contact-label {
-      display: block;
-      font-size: 12px;
-      color: var(--text-muted);
-      margin-bottom: 2px;
-      font-weight: 500;
-    }
-
-    .contact-value {
-      font-size: 14px;
-      font-weight: 500;
+    .contact-grid-centered {
+      max-width: 900px;
+      margin: 0 auto;
     }
 
     .contact-cta {
@@ -1545,6 +1486,11 @@
       display: flex;
       flex-direction: column;
       gap: 32px;
+      width: 100%;
+    }
+
+    .contact-cta-full {
+      flex: 1;
     }
 
     @media (min-width: 768px) {
@@ -1552,6 +1498,7 @@
         flex-direction: row;
         align-items: center;
         gap: 48px;
+        padding: 48px 56px;
       }
     }
 
@@ -1564,6 +1511,42 @@
       .cta-content {
         text-align: left;
       }
+    }
+
+    /* Obfuscated email - anti-spam best practice */
+    .cta-email {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 24px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 14px;
+      font-family: 'JetBrains Mono', 'Fira Code', monospace;
+      letter-spacing: 0.5px;
+      margin-bottom: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .cta-email:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: rgba(228, 176, 69, 0.05);
+      transform: translateY(-2px);
+    }
+
+    .cta-email i {
+      color: var(--accent);
+      font-size: 16px;
+    }
+
+    .cta-email .email-at,
+    .cta-email .email-dot {
+      color: var(--text-muted);
+      font-weight: 400;
     }
 
     .cta-content h3 {
@@ -2713,7 +2696,7 @@
               <p data-i18n="contact.cta.desc">I'm available for consulting engagements in digital transformation, data systems, and technology advisory.</p>
               <a href="mailto:paulo.s.amaral@outlook.com" class="cta-email">
                 <i class="fa-solid fa-envelope"></i>
-                <span>paulo.s.amaral@outlook.com</span>
+                <span>paulo.s.amaral <span class="email-at">[at]</span> outlook <span class="email-dot">[dot]</span> com</span>
               </a>
               <a href="https://calendly.com/matenek/15min" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
                 <i class="fa-regular fa-calendar"></i>
