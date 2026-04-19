@@ -1,3256 +1,1618 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Paulo Amaral | Digital Transformation Consultant</title>
-  <meta name="description"
-    content="Tech-for-good meets get-it-done. Digital Transformation Consultant with 20+ years building national-scale systems. Hands-on, learn-by-doing approach.">
+
+  <!-- ── Primary SEO ─────────────────────────────────────────── -->
+  <title>Paulo Amaral — Digital Transformation Consultant | UN, World Bank, UNICEF</title>
+  <meta name="description" content="Paulo Amaral is a Digital Transformation Consultant with 20+ years designing national-scale digital public infrastructure, e-government platforms and digital readiness assessments for UN agencies, the World Bank, UNICEF, UNDP, UN Women and governments.">
+  <meta name="keywords" content="Paulo Amaral, Digital Transformation Consultant, Digital Public Infrastructure, e-Government, UN Technology Bank, UNICEF, UNDP, World Bank, Digital Readiness Assessment, ITU Digital Transformation Wheel, Timor-Leste, International Development Consultant">
   <meta name="author" content="Paulo Amaral">
-  <meta name="theme-color" content="#040714">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow">
+  <meta name="theme-color" content="#FF6B7A">
+  <meta name="color-scheme" content="light">
+
+  <!-- ── Canonical & language alternates ─────────────────────── -->
   <link rel="canonical" href="https://paulo-amaral.github.io/">
+  <link rel="alternate" hreflang="en" href="https://paulo-amaral.github.io/?lang=en">
+  <link rel="alternate" hreflang="pt" href="https://paulo-amaral.github.io/?lang=pt">
+  <link rel="alternate" hreflang="x-default" href="https://paulo-amaral.github.io/">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Paulo Amaral | Digital Transformation Consultant">
-  <meta property="og:description"
-    content="Tech-for-good meets get-it-done. 20+ years building digital systems that matter. Hands-on, learn-by-doing approach.">
-  <meta property="og:type" content="website">
+  <!-- ── Favicon & app icons ─────────────────────────────────── -->
+  <link rel="icon" type="image/png" href="paulo-logo.png">
+  <link rel="apple-touch-icon" href="paulo-logo.png">
+
+  <!-- ── Open Graph ──────────────────────────────────────────── -->
+  <meta property="og:site_name" content="Paulo Amaral">
+  <meta property="og:title" content="Paulo Amaral — Digital Transformation Consultant">
+  <meta property="og:description" content="20+ years building national-scale digital systems with UN agencies, the World Bank, UNICEF, UNDP and governments. Currently consulting on Timor-Leste's digital transformation with UN Technology Bank, UNDP and the UN Resident Coordinator's Office.">
+  <meta property="og:type" content="profile">
+  <meta property="profile:first_name" content="Paulo">
+  <meta property="profile:last_name" content="Amaral">
   <meta property="og:url" content="https://paulo-amaral.github.io/">
-  <meta property="og:image" content="https://paulo-amaral.github.io/Paulo_mew.png">
-  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://paulo-amaral.github.io/paulo-logo.png">
+  <meta property="og:image:alt" content="Paulo Amaral — Digital Transformation Consultant">
+  <meta property="og:image:width" content="912">
+  <meta property="og:image:height" content="1164">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:locale:alternate" content="en_US">
 
-  <!-- Twitter Card -->
+  <!-- ── Twitter / X card ────────────────────────────────────── -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Paulo Amaral | Digital Transformation Consultant">
-  <meta name="twitter:description"
-    content="Tech-for-good meets get-it-done. Digital Transformation Consultant with hands-on, learn-by-doing approach to building systems that matter.">
-  <meta name="twitter:image" content="https://paulo-amaral.github.io/Paulo_mew.png">
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
-    rel="stylesheet">
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-  <link rel="icon" type="image/png" href="/favicon.png">
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-
-  <style>
-    :root {
-      /* Riyadh-style dark theme */
-      --bg-primary: #040714;
-      --bg-secondary: #0b1020;
-      --bg-tertiary: #151b2f;
-      --bg-card: #0a0f1e;
-      --overlay: rgba(9, 13, 30, 0.85);
-
-      --text-primary: #f5f7ff;
-      --text-secondary: #c0c4d7;
-      --text-muted: #8d93aa;
-
-      --accent: #e4b045;
-      --accent-soft: rgba(228, 176, 69, 0.12);
-      --accent-hover: #f0c35b;
-      --accent-glow: rgba(228, 176, 69, 0.25);
-
-      --border: rgba(255, 255, 255, 0.06);
-      --border-hover: rgba(228, 176, 69, 0.4);
-      --card-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
-      --card-shadow-hover: 0 25px 60px rgba(0, 0, 0, 0.7);
-
-      --tag-bg: rgba(255, 255, 255, 0.04);
-      --tag-text: #e2e6ff;
-      --radius-sm: 8px;
-      --radius-md: 12px;
-      --radius-lg: 16px;
-      --radius-xl: 20px;
-      --radius-pill: 999px;
-
-      --hero-gradient: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(228, 176, 69, 0.08) 0%, transparent 50%),
-        radial-gradient(circle at top left, #1b2344 0%, #040714 55%, #02030a 100%);
-      --section-gradient: linear-gradient(180deg, #060918 0%, #0a0f1e 100%);
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: var(--bg-primary);
-      color: var(--text-primary);
-      line-height: 1.6;
-      font-size: 16px;
-      -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
-    }
-
-    /* Skip link for keyboard users */
-    .skip-link {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      top: -60px;
-      padding: 12px 24px;
-      background: var(--accent);
-      color: var(--bg-primary);
-      border-radius: var(--radius-sm);
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 600;
-      z-index: 110;
-      transition: top 0.2s ease;
-    }
-
-    .skip-link:focus-visible {
-      top: 16px;
-    }
-
-    /* Container */
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    @media (min-width: 768px) {
-      .container {
-        padding: 0 48px;
-      }
-    }
-
-    @media (min-width: 1024px) {
-      .container {
-        padding: 0 64px;
-      }
-    }
-
-    /* Header */
-    .header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      background: rgba(4, 7, 20, 0.8);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--border);
-      z-index: 100;
-    }
-
-    .header-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 24px;
-      height: 64px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    @media (min-width: 768px) {
-      .header-inner {
-        padding: 0 48px;
-      }
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-    }
-
-    .logo-img {
-      height: 28px;
-      width: auto;
-    }
-
-    @media (max-width: 480px) {
-      .logo-img {
-        height: 24px;
-      }
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-    }
-
-    .nav-link {
-      padding: 8px 14px;
-      color: var(--text-secondary);
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 500;
-      border-radius: var(--radius-sm);
-      transition: all 0.2s ease;
-    }
-
-    .nav-link:hover {
-      color: var(--text-primary);
-      background: rgba(255, 255, 255, 0.04);
-    }
-
-    .nav-link.active {
-      color: var(--accent);
-    }
-
-    .lang-selector {
-      display: flex;
-      align-items: center;
-      margin-left: 8px;
-      padding-left: 12px;
-      border-left: 1px solid var(--border);
-    }
-
-    .lang-btn {
-      padding: 6px 10px;
-      font-size: 12px;
-      font-weight: 500;
-      color: var(--text-muted);
-      background: transparent;
-      border: none;
-      border-radius: var(--radius-sm);
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-
-    .lang-btn:hover {
-      color: var(--text-primary);
-      background: rgba(255, 255, 255, 0.04);
-    }
-
-    .lang-btn.active {
-      background: var(--accent);
-      color: var(--bg-primary);
-    }
-
-    .mobile-nav-toggle {
-      display: none;
-      width: 40px;
-      height: 40px;
-      padding: 0;
-      background: transparent;
-      border: none;
-      border-radius: var(--radius-sm);
-      color: var(--text-secondary);
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-
-    .mobile-nav-toggle:hover {
-      background: rgba(255, 255, 255, 0.04);
-      color: var(--text-primary);
-    }
-
-    @media (max-width: 768px) {
-      .nav {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        flex-direction: column;
-        padding: 16px 24px 24px;
-        background: rgba(4, 7, 20, 0.98);
-        backdrop-filter: blur(20px);
-        border-bottom: 1px solid var(--border);
-      }
-
-      .nav.open {
-        display: flex;
-      }
-
-      .nav-link {
-        width: 100%;
-        padding: 12px 16px;
-      }
-
-      .lang-selector {
-        margin: 16px 0 0;
-        padding: 16px 0 0;
-        border-left: none;
-        border-top: 1px solid var(--border);
-        width: 100%;
-        justify-content: center;
-      }
-
-      .mobile-nav-toggle {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-    }
-
-    /* Hero Section */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding: 120px 0 80px;
-      background: var(--hero-gradient);
-      position: relative;
-    }
-
-    .hero::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 200px;
-      background: linear-gradient(to bottom, transparent, var(--bg-primary));
-      pointer-events: none;
-    }
-
-    .hero-content {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 48px;
-      align-items: center;
-      position: relative;
-      z-index: 1;
-    }
-
-    @media (min-width: 768px) {
-      .hero-content {
-        grid-template-columns: 1fr auto;
-        gap: 64px;
-      }
-    }
-
-    .hero-text {
-      max-width: 600px;
-    }
-
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 6px 14px 6px 10px;
-      background: rgba(54, 226, 159, 0.1);
-      border: 1px solid rgba(54, 226, 159, 0.2);
-      border-radius: var(--radius-pill);
-      font-size: 13px;
-      font-weight: 500;
-      color: #36e29f;
-      margin-bottom: 24px;
-    }
-
-    .hero-badge-dot {
-      width: 8px;
-      height: 8px;
-      background: #36e29f;
-      border-radius: 50%;
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-
-      0%,
-      100% {
-        opacity: 1;
-        box-shadow: 0 0 0 0 rgba(54, 226, 159, 0.4);
-      }
-
-      50% {
-        opacity: 0.8;
-        box-shadow: 0 0 0 6px rgba(54, 226, 159, 0);
-      }
-    }
-
-    .hero h1 {
-      font-size: clamp(36px, 6vw, 56px);
-      font-weight: 700;
-      line-height: 1.1;
-      margin-bottom: 20px;
-      letter-spacing: -0.03em;
-    }
-
-    .hero h1 span {
-      background: linear-gradient(135deg, var(--accent) 0%, #f0c35b 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .hero-subtitle {
-      font-size: clamp(16px, 2.5vw, 20px);
-      color: var(--text-secondary);
-      margin-bottom: 32px;
-      line-height: 1.7;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .hero-social {
-      margin-top: 32px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .hero-social-label {
-      font-size: 13px;
-      color: var(--text-muted);
-      font-weight: 500;
-      letter-spacing: 0.02em;
-    }
-
-    .hero-social-links {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .hero-social-link {
-      width: 40px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      color: var(--text-secondary);
-      text-decoration: none;
-      font-size: 16px;
-      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-social-link::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, var(--accent) 0%, #d99932 100%);
-      opacity: 0;
-      transition: opacity 0.25s ease;
-    }
-
-    .hero-social-link i {
-      position: relative;
-      z-index: 1;
-      transition: transform 0.25s ease, color 0.25s ease;
-    }
-
-    .hero-social-link:hover {
-      border-color: var(--accent);
-      transform: translateY(-3px);
-      box-shadow: 0 8px 25px rgba(228, 176, 69, 0.2);
-    }
-
-    .hero-social-link:hover::before {
-      opacity: 1;
-    }
-
-    .hero-social-link:hover i {
-      color: var(--bg-primary);
-      transform: scale(1.1);
-    }
-
-    .hero-social-link:active {
-      transform: translateY(-1px);
-    }
-
-    .hero-avatar-wrapper {
-      position: relative;
-    }
-
-    .hero-avatar {
-      width: 220px;
-      height: 220px;
-      border-radius: 50%;
-      object-fit: cover;
-      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
-      border: 3px solid rgba(255, 255, 255, 0.1);
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-avatar-glow {
-      position: absolute;
-      inset: -20px;
-      background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
-      border-radius: 50%;
-      z-index: 0;
-      animation: glow 4s ease-in-out infinite;
-    }
-
-    @keyframes glow {
-
-      0%,
-      100% {
-        opacity: 0.5;
-        transform: scale(1);
-      }
-
-      50% {
-        opacity: 0.8;
-        transform: scale(1.05);
-      }
-    }
-
-    @media (max-width: 768px) {
-      .hero-content {
-        text-align: center;
-      }
-
-      .hero-avatar-wrapper {
-        order: -1;
-        margin: 0 auto;
-      }
-
-      .hero-avatar {
-        width: 180px;
-        height: 180px;
-      }
-
-      .hero-actions {
-        justify-content: center;
-      }
-
-      .hero-social {
-        align-items: center;
-      }
-
-      .hero-social-links {
-        justify-content: center;
-      }
-    }
-
-    /* Buttons */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 14px 24px;
-      border-radius: var(--radius-md);
-      font-size: 15px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.2s ease;
-      cursor: pointer;
-      border: none;
-    }
-
-    .btn i {
-      font-size: 14px;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, var(--accent) 0%, #d99932 100%);
-      color: var(--bg-primary);
-      box-shadow: 0 8px 30px rgba(228, 176, 69, 0.3);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 40px rgba(228, 176, 69, 0.4);
-    }
-
-    .btn-secondary {
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      color: var(--text-primary);
-    }
-
-    .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.08);
-      border-color: rgba(255, 255, 255, 0.2);
-      transform: translateY(-2px);
-    }
-
-    /* Accessible focus styles */
-    a:focus-visible,
-    button:focus-visible,
-    .btn:focus-visible {
-      outline: 2px solid var(--accent);
-      outline-offset: 3px;
-    }
-
-    /* Sections */
-    .section {
-      padding: 80px 0;
-      position: relative;
-    }
-
-    @media (min-width: 768px) {
-      .section {
-        padding: 100px 0;
-      }
-    }
-
-    .section-header {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 48px;
-    }
-
-    .section-icon {
-      width: 48px;
-      height: 48px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--accent-soft);
-      border-radius: var(--radius-md);
-      color: var(--accent);
-      font-size: 20px;
-    }
-
-    .section-title {
-      font-size: clamp(24px, 4vw, 32px);
-      font-weight: 700;
-      letter-spacing: -0.02em;
-    }
-
-    .section-divider {
-      width: 100%;
-      height: 80px;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0;
-      border: none;
-      background: transparent;
-    }
-
-    .section-divider::before {
-      content: '';
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      width: min(400px, 80%);
-      height: 1px;
-      background: linear-gradient(90deg,
-          transparent 0%,
-          rgba(228, 176, 69, 0.1) 20%,
-          rgba(228, 176, 69, 0.3) 50%,
-          rgba(228, 176, 69, 0.1) 80%,
-          transparent 100%);
-    }
-
-    .section-divider::after {
-      content: '';
-      width: 8px;
-      height: 8px;
-      background: var(--accent);
-      border-radius: 50%;
-      box-shadow: 0 0 20px rgba(228, 176, 69, 0.5),
-        0 0 40px rgba(228, 176, 69, 0.2);
-      animation: dividerPulse 3s ease-in-out infinite;
-    }
-
-    @keyframes dividerPulse {
-
-      0%,
-      100% {
-        opacity: 0.6;
-        transform: scale(1);
-      }
-
-      50% {
-        opacity: 1;
-        transform: scale(1.2);
-      }
-    }
-
-    /* About Section */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 48px;
-    }
-
-    @media (min-width: 768px) {
-      .about-grid {
-        grid-template-columns: 1.2fr 1fr;
-        gap: 64px;
-      }
-    }
-
-    .about-text p {
-      color: var(--text-secondary);
-      margin-bottom: 20px;
-      font-size: 16px;
-      line-height: 1.8;
-    }
-
-    .about-text p:last-child {
-      margin-bottom: 0;
-    }
-
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-    }
-
-    .stat-card {
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 24px;
-      text-align: center;
-      transition: all 0.3s ease;
-    }
-
-    .stat-card:hover {
-      border-color: var(--border-hover);
-      transform: translateY(-4px);
-      box-shadow: var(--card-shadow);
-    }
-
-    .stat-number {
-      font-size: 36px;
-      font-weight: 700;
-      color: var(--accent);
-      line-height: 1;
-      margin-bottom: 8px;
-    }
-
-    .stat-label {
-      font-size: 13px;
-      color: var(--text-muted);
-      font-weight: 500;
-    }
-
-    /* Services Section */
-    .services-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 16px;
-    }
-
-    @media (min-width: 640px) {
-      .services-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (min-width: 1024px) {
-      .services-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    .service-card {
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.005) 100%);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 28px;
-      transition: all 0.3s ease;
-    }
-
-    .service-card:hover {
-      border-color: var(--border-hover);
-      transform: translateY(-4px);
-      box-shadow: var(--card-shadow);
-    }
-
-    .service-icon {
-      width: 48px;
-      height: 48px;
-      background: var(--accent-soft);
-      border-radius: var(--radius-md);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--accent);
-      font-size: 20px;
-      margin-bottom: 20px;
-    }
-
-    .service-card h3 {
-      font-size: 16px;
-      font-weight: 600;
-      margin-bottom: 8px;
-      color: var(--text-primary);
-    }
-
-    .service-card p {
-      font-size: 14px;
-      color: var(--text-secondary);
-      line-height: 1.6;
-    }
-
-    /* Projects Section */
-    .projects-filter {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-bottom: 32px;
-    }
-
-    .filter-btn {
-      padding: 8px 16px;
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--text-secondary);
-      background: transparent;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-pill);
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-
-    .filter-btn:hover,
-    .filter-btn.active {
-      color: var(--accent);
-      border-color: var(--accent);
-      background: var(--accent-soft);
-    }
-
-    /* Portfolio Section - Premium Bento Grid */
-    .portfolio-intro {
-      text-align: center;
-      max-width: 700px;
-      margin: 0 auto 48px;
-    }
-
-    .portfolio-intro p {
-      color: var(--text-secondary);
-      font-size: 17px;
-      line-height: 1.7;
-    }
-
-    .portfolio-stats {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-      margin-bottom: 48px;
-    }
-
-    @media (min-width: 768px) {
-      .portfolio-stats {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 24px;
-      }
-    }
-
-    .portfolio-stat {
-      background: linear-gradient(145deg, rgba(228, 176, 69, 0.08) 0%, rgba(228, 176, 69, 0.02) 100%);
-      border: 1px solid rgba(228, 176, 69, 0.15);
-      border-radius: var(--radius-lg);
-      padding: 24px 20px;
-      text-align: center;
-      transition: all 0.3s ease;
-    }
-
-    .portfolio-stat:hover {
-      transform: translateY(-4px);
-      border-color: rgba(228, 176, 69, 0.3);
-      box-shadow: 0 12px 40px rgba(228, 176, 69, 0.1);
-    }
-
-    .portfolio-stat-value {
-      font-size: 32px;
-      font-weight: 700;
-      color: var(--accent);
-      line-height: 1;
-      margin-bottom: 8px;
-    }
-
-    .portfolio-stat-label {
-      font-size: 13px;
-      color: var(--text-muted);
-      font-weight: 500;
-    }
-
-    /* Category Filter Tabs */
-    .portfolio-filters {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      margin-bottom: 40px;
-    }
-
-    .filter-btn {
-      padding: 10px 20px;
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--text-secondary);
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-pill);
-      cursor: pointer;
-      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-      font-family: inherit;
-    }
-
-    .filter-btn:hover {
-      background: rgba(255, 255, 255, 0.06);
-      border-color: rgba(255, 255, 255, 0.15);
-      color: var(--text-primary);
-    }
-
-    .filter-btn.active {
-      background: var(--accent);
-      border-color: var(--accent);
-      color: var(--bg-primary);
-    }
-
-    .filter-btn i {
-      margin-right: 6px;
-      font-size: 12px;
-    }
-
-    /* Bento Grid Layout */
-    .projects-bento {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 20px;
-    }
-
-    @media (min-width: 768px) {
-      .projects-bento {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 24px;
-      }
-    }
-
-    @media (min-width: 1024px) {
-      .projects-bento {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    /* Project Card - Base Styles */
-    .project-card {
-      background: linear-gradient(145deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-xl);
-      padding: 28px;
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      display: flex;
-      flex-direction: column;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .project-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--accent) 0%, transparent 100%);
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    .project-card:hover {
-      border-color: rgba(228, 176, 69, 0.3);
-      transform: translateY(-8px);
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4),
-        0 0 0 1px rgba(228, 176, 69, 0.1);
-    }
-
-    .project-card:hover::before {
-      opacity: 1;
-    }
-
-    /* Featured Card - Spans full width with horizontal layout */
-    .project-card.featured {
-      grid-column: span 1;
-      background: linear-gradient(145deg, rgba(228, 176, 69, 0.06) 0%, rgba(228, 176, 69, 0.01) 100%);
-      border-color: rgba(228, 176, 69, 0.2);
-    }
-
-    @media (min-width: 768px) {
-      .project-card.featured {
-        grid-column: span 2;
-        padding: 40px;
-      }
-
-      .project-card.featured .featured-content {
-        display: flex;
-        gap: 40px;
-        align-items: flex-start;
-      }
-
-      .project-card.featured .featured-main {
-        flex: 1;
-        min-width: 0;
-      }
-
-      .project-card.featured .featured-sidebar {
-        flex-shrink: 0;
-        width: 200px;
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-      }
-    }
-
-    @media (min-width: 1024px) {
-      .project-card.featured {
-        grid-column: span 3;
-        padding: 48px;
-      }
-
-      .project-card.featured .featured-content {
-        gap: 56px;
-      }
-
-      .project-card.featured .featured-sidebar {
-        width: 240px;
-      }
-    }
-
-    .project-card.featured::before {
-      opacity: 1;
-      height: 4px;
-      background: linear-gradient(90deg, var(--accent) 0%, rgba(228, 176, 69, 0.3) 100%);
-    }
-
-    .featured-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 6px 14px;
-      background: var(--accent);
-      color: var(--bg-primary);
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      border-radius: var(--radius-sm);
-      margin-bottom: 20px;
-      width: fit-content;
-    }
-
-    .featured-badge i {
-      font-size: 10px;
-    }
-
-    .project-header {
-      display: flex;
-      align-items: flex-start;
-      gap: 16px;
-      margin-bottom: 16px;
-    }
-
-    .project-icon {
-      width: 52px;
-      height: 52px;
-      background: linear-gradient(135deg, rgba(228, 176, 69, 0.15) 0%, rgba(228, 176, 69, 0.05) 100%);
-      border: 1px solid rgba(228, 176, 69, 0.2);
-      border-radius: var(--radius-md);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--accent);
-      font-size: 22px;
-      flex-shrink: 0;
-      transition: all 0.3s ease;
-    }
-
-    .project-card.featured .project-icon {
-      width: 64px;
-      height: 64px;
-      font-size: 28px;
-      border-radius: var(--radius-lg);
-    }
-
-    .project-card:hover .project-icon {
-      transform: scale(1.1) rotate(-5deg);
-      box-shadow: 0 8px 25px rgba(228, 176, 69, 0.25);
-    }
-
-    .project-meta {
-      flex: 1;
-      min-width: 0;
-    }
-
-    .project-meta h3 {
-      font-size: 17px;
-      font-weight: 700;
-      margin-bottom: 6px;
-      color: var(--text-primary);
-      line-height: 1.3;
-    }
-
-    .project-card.featured .project-meta h3 {
-      font-size: 22px;
-      margin-bottom: 8px;
-    }
-
-    .project-org {
-      font-size: 13px;
-      color: var(--accent);
-      font-weight: 600;
-    }
-
-    .project-card.featured .project-org {
-      font-size: 14px;
-    }
-
-    .project-card p {
-      font-size: 14px;
-      color: var(--text-secondary);
-      line-height: 1.7;
-      margin-bottom: 20px;
-      flex: 1;
-    }
-
-    .project-card.featured p {
-      font-size: 15px;
-      line-height: 1.8;
-      margin-bottom: 24px;
-    }
-
-    /* Impact Metrics */
-    .project-impact {
-      display: flex;
-      gap: 24px;
-      padding: 16px 0;
-      margin-bottom: 16px;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .project-card.featured .project-impact {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0;
-      padding: 0;
-      margin: 0;
-      border: none;
-      background: rgba(255, 255, 255, 0.02);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-    }
-
-    .project-card.featured .impact-item {
-      padding: 20px 16px;
-      border-right: 1px solid var(--border);
-      background: linear-gradient(180deg, rgba(228, 176, 69, 0.03) 0%, transparent 100%);
-    }
-
-    .project-card.featured .impact-item:last-child {
-      border-right: none;
-    }
-
-    /* Sidebar impact layout for desktop */
-    @media (min-width: 768px) {
-      .featured-sidebar .project-impact {
-        grid-template-columns: 1fr;
-        border-radius: var(--radius-lg);
-      }
-
-      .featured-sidebar .impact-item {
-        border-right: none;
-        border-bottom: 1px solid var(--border);
-        padding: 16px 20px;
-      }
-
-      .featured-sidebar .impact-item:last-child {
-        border-bottom: none;
-      }
-    }
-
-    .impact-item {
-      text-align: center;
-    }
-
-    .impact-value {
-      font-size: 20px;
-      font-weight: 700;
-      color: var(--accent);
-      line-height: 1;
-      margin-bottom: 4px;
-    }
-
-    .impact-label {
-      font-size: 11px;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .project-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: auto;
-    }
-
-    .tag {
-      font-size: 11px;
-      font-weight: 600;
-      padding: 6px 12px;
-      background: rgba(255, 255, 255, 0.04);
-      color: var(--text-muted);
-      border-radius: var(--radius-sm);
-      border: 1px solid transparent;
-      transition: all 0.2s ease;
-    }
-
-    .tag:hover {
-      background: rgba(228, 176, 69, 0.1);
-      border-color: rgba(228, 176, 69, 0.2);
-      color: var(--accent);
-    }
-
-    /* Category-specific tag colors */
-    .tag.tag-governance {
-      background: rgba(99, 102, 241, 0.1);
-      color: #818cf8;
-    }
-
-    .tag.tag-health {
-      background: rgba(16, 185, 129, 0.1);
-      color: #34d399;
-    }
-
-    .tag.tag-social {
-      background: rgba(236, 72, 153, 0.1);
-      color: #f472b6;
-    }
-
-    .tag.tag-ai {
-      background: rgba(139, 92, 246, 0.1);
-      color: #a78bfa;
-    }
-
-    .tag.tag-fintech {
-      background: rgba(245, 158, 11, 0.1);
-      color: #fbbf24;
-    }
-
-    /* Show More Button */
-    .projects-show-more {
-      display: flex;
-      justify-content: center;
-      margin-top: 40px;
-    }
-
-    .btn-show-more {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 14px 32px;
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--text-primary);
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-pill);
-      cursor: pointer;
-      transition: all 0.3s ease;
-      font-family: inherit;
-    }
-
-    .btn-show-more:hover {
-      background: rgba(228, 176, 69, 0.1);
-      border-color: var(--accent);
-      color: var(--accent);
-      transform: translateY(-2px);
-    }
-
-    .btn-show-more i {
-      transition: transform 0.3s ease;
-    }
-
-    .btn-show-more:hover i {
-      transform: translateY(3px);
-    }
-
-    .btn-show-more.expanded i {
-      transform: rotate(180deg);
-    }
-
-    /* Hidden projects animation */
-    .project-card.hidden-project {
-      display: none;
-    }
-
-    .projects-bento.show-all .project-card.hidden-project {
-      display: flex;
-      animation: fadeInUp 0.5s ease forwards;
-    }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Filter animation */
-    .project-card.filter-hidden {
-      display: none;
-    }
-
-    /* Experience Section */
-    .timeline {
-      position: relative;
-      padding-left: 32px;
-    }
-
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 6px;
-      top: 8px;
-      bottom: 8px;
-      width: 2px;
-      background: linear-gradient(to bottom, var(--accent), var(--border));
-      border-radius: 1px;
-    }
-
-    .timeline-item {
-      position: relative;
-      padding-bottom: 40px;
-    }
-
-    .timeline-item:last-child {
-      padding-bottom: 0;
-    }
-
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: -32px;
-      top: 6px;
-      width: 14px;
-      height: 14px;
-      background: var(--bg-primary);
-      border: 3px solid var(--accent);
-      border-radius: 50%;
-      z-index: 1;
-    }
-
-    .timeline-header {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: baseline;
-      gap: 12px;
-      margin-bottom: 8px;
-    }
-
-    .timeline-title {
-      font-size: 16px;
-      font-weight: 600;
-      color: var(--text-primary);
-    }
-
-    .timeline-company {
-      color: var(--accent);
-    }
-
-    .timeline-date {
-      font-size: 13px;
-      color: var(--text-muted);
-      font-weight: 500;
-      margin-left: auto;
-    }
-
-    .timeline-location {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 13px;
-      color: var(--text-secondary);
-      margin-bottom: 12px;
-    }
-
-    .timeline-location i {
-      color: var(--text-muted);
-      font-size: 12px;
-    }
-
-    .timeline-desc {
-      list-style: none;
-      padding: 0;
-    }
-
-    .timeline-desc li {
-      position: relative;
-      padding-left: 20px;
-      font-size: 14px;
-      color: var(--text-secondary);
-      margin-bottom: 8px;
-      line-height: 1.6;
-    }
-
-    .timeline-desc li::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 10px;
-      width: 6px;
-      height: 1px;
-      background: var(--text-muted);
-    }
-
-    /* Skills Section */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 32px;
-    }
-
-    @media (min-width: 768px) {
-      .skills-grid {
-        grid-template-columns: repeat(4, 1fr);
-      }
-    }
-
-    .skill-category h3 {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 13px;
-      font-weight: 600;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 16px;
-      letter-spacing: 0.05em;
-    }
-
-    .skill-category h3 i {
-      font-size: 14px;
-    }
-
-    .skill-list {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .skill-item {
-      font-size: 14px;
-      color: var(--text-secondary);
-      padding: 8px 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .skill-item:last-child {
-      border-bottom: none;
-    }
-
-    /* Values Section */
-    .values-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 20px;
-    }
-
-    @media (min-width: 768px) {
-      .values-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    .value-card {
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.005) 100%);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 32px;
-      text-align: center;
-      transition: all 0.3s ease;
-    }
-
-    .value-card:hover {
-      border-color: var(--border-hover);
-      transform: translateY(-4px);
-      box-shadow: var(--card-shadow);
-    }
-
-    .value-icon {
-      width: 64px;
-      height: 64px;
-      margin: 0 auto 20px;
-      background: var(--accent-soft);
-      border-radius: var(--radius-lg);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--accent);
-      font-size: 28px;
-    }
-
-    .value-card h3 {
-      font-size: 16px;
-      font-weight: 600;
-      margin-bottom: 8px;
-      color: var(--text-primary);
-    }
-
-    .value-card p {
-      font-size: 14px;
-      color: var(--text-secondary);
-      line-height: 1.6;
-    }
-
-    /* Contact Section */
-    .contact-grid {
-      display: flex;
-      justify-content: center;
-    }
-
-    .contact-grid-centered {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .contact-cta {
-      background: linear-gradient(135deg, rgba(228, 176, 69, 0.08) 0%, rgba(228, 176, 69, 0.02) 100%);
-      border: 1px solid rgba(228, 176, 69, 0.2);
-      border-radius: var(--radius-xl);
-      padding: 40px;
-      display: flex;
-      flex-direction: column;
-      gap: 32px;
-      width: 100%;
-    }
-
-    .contact-cta-full {
-      flex: 1;
-    }
-
-    @media (min-width: 768px) {
-      .contact-cta {
-        flex-direction: row;
-        align-items: center;
-        gap: 48px;
-        padding: 48px 56px;
-      }
-    }
-
-    .cta-content {
-      flex: 1;
-      text-align: center;
-    }
-
-    @media (min-width: 768px) {
-      .cta-content {
-        text-align: left;
-      }
-    }
-
-    /* Obfuscated email - anti-spam best practice */
-    .cta-email {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      padding: 14px 24px;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      color: var(--text-secondary);
-      text-decoration: none;
-      font-size: 14px;
-      font-family: 'JetBrains Mono', 'Fira Code', monospace;
-      letter-spacing: 0.5px;
-      margin-bottom: 20px;
-      transition: all 0.3s ease;
-    }
-
-    .cta-email:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-      background: rgba(228, 176, 69, 0.05);
-      transform: translateY(-2px);
-    }
-
-    .cta-email i {
-      color: var(--accent);
-      font-size: 16px;
-    }
-
-    .cta-email .email-at,
-    .cta-email .email-dot {
-      color: var(--text-muted);
-      font-weight: 400;
-    }
-
-    .cta-content h3 {
-      font-size: 24px;
-      font-weight: 700;
-      margin-bottom: 12px;
-      color: var(--text-primary);
-    }
-
-    .cta-content p {
-      font-size: 15px;
-      color: var(--text-secondary);
-      margin-bottom: 28px;
-      line-height: 1.7;
-    }
-
-    .cta-content .btn {
-      display: inline-flex;
-    }
-
-    .social-links {
-      display: flex;
-      gap: 12px;
-      justify-content: center;
-      margin-top: 24px;
-    }
-
-    @media (min-width: 768px) {
-      .social-links {
-        justify-content: flex-start;
-      }
-    }
-
-    .social-link {
-      width: 44px;
-      height: 44px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      color: var(--text-secondary);
-      text-decoration: none;
-      font-size: 18px;
-      transition: all 0.2s ease;
-    }
-
-    .social-link:hover {
-      background: var(--accent-soft);
-      border-color: var(--accent);
-      color: var(--accent);
-      transform: translateY(-2px);
-    }
-
-    /* QR Code Section - Modern Design */
-    .qr-section {
-      display: flex;
-      justify-content: center;
-    }
-
-    .qr-card-modern {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 24px;
-      background: linear-gradient(145deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-xl);
-      text-decoration: none;
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      overflow: hidden;
-    }
-
-    .qr-card-modern::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(37, 211, 102, 0.05) 0%, transparent 50%);
-      opacity: 0;
-      transition: opacity 0.4s ease;
-    }
-
-    .qr-card-modern:hover {
-      border-color: rgba(37, 211, 102, 0.4);
-      transform: translateY(-6px);
-      box-shadow: 0 20px 50px rgba(37, 211, 102, 0.15),
-        0 0 0 1px rgba(37, 211, 102, 0.1);
-    }
-
-    .qr-card-modern:hover::before {
-      opacity: 1;
-    }
-
-    .qr-glow {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 120px;
-      height: 120px;
-      background: radial-gradient(circle, rgba(37, 211, 102, 0.15) 0%, transparent 70%);
-      filter: blur(20px);
-      opacity: 0;
-      transition: opacity 0.4s ease;
-      pointer-events: none;
-    }
-
-    .qr-card-modern:hover .qr-glow {
-      opacity: 1;
-    }
-
-    .qr-card-modern .qr-image {
-      position: relative;
-      width: 130px;
-      height: 130px;
-      border-radius: var(--radius-md);
-      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      z-index: 1;
-    }
-
-    .qr-card-modern:hover .qr-image {
-      transform: scale(1.08);
-    }
-
-    .qr-badge {
-      position: relative;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-top: 16px;
-      padding: 8px 16px;
-      background: rgba(37, 211, 102, 0.1);
-      border-radius: var(--radius-pill);
-      font-size: 12px;
-      font-weight: 500;
-      color: #25D366;
-      z-index: 1;
-      transition: all 0.3s ease;
-    }
-
-    .qr-badge i {
-      font-size: 14px;
-    }
-
-    .qr-card-modern:hover .qr-badge {
-      background: rgba(37, 211, 102, 0.2);
-    }
-
-    @media (max-width: 768px) {
-      .qr-card-modern .qr-image {
-        width: 110px;
-        height: 110px;
-      }
-
-      .qr-badge {
-        font-size: 11px;
-        padding: 6px 12px;
-      }
-    }
-
-    /* Footer */
-    .footer {
-      padding: 40px 0;
-      border-top: 1px solid var(--border);
-      text-align: center;
-    }
-
-    .footer p {
-      font-size: 14px;
-      color: var(--text-muted);
-    }
-
-    .footer-tagline {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      margin-top: 12px;
-      font-size: 13px;
-    }
-
-    .footer-icon {
-      font-size: 14px;
-      transition: transform 0.3s ease, color 0.3s ease;
-    }
-
-    .footer-icon.heart {
-      color: #e74c3c;
-      animation: heartbeat 1.5s ease-in-out infinite;
-    }
-
-    .footer-icon.coffee {
-      color: #c9a66b;
-    }
-
-    .footer-tagline:hover .footer-icon.heart {
-      transform: scale(1.2);
-    }
-
-    .footer-tagline:hover .footer-icon.coffee {
-      transform: rotate(-10deg) scale(1.1);
-      color: var(--accent);
-    }
-
-    .footer-icon.crocodile {
-      font-style: normal;
-      font-size: 16px;
-      cursor: help;
-      transition: transform 0.3s ease;
-    }
-
-    .footer-tagline:hover .footer-icon.crocodile {
-      transform: scale(1.2) rotate(5deg);
-      animation: swim 0.6s ease-in-out;
-    }
-
-    @keyframes swim {
-
-      0%,
-      100% {
-        transform: scale(1.2) rotate(5deg) translateX(0);
-      }
-
-      25% {
-        transform: scale(1.2) rotate(8deg) translateX(3px);
-      }
-
-      75% {
-        transform: scale(1.2) rotate(2deg) translateX(-3px);
-      }
-    }
-
-    @keyframes heartbeat {
-
-      0%,
-      100% {
-        transform: scale(1);
-      }
-
-      14% {
-        transform: scale(1.15);
-      }
-
-      28% {
-        transform: scale(1);
-      }
-
-      42% {
-        transform: scale(1.15);
-      }
-
-      56% {
-        transform: scale(1);
-      }
-    }
-
-    /* Scroll to top */
-    .scroll-top {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      width: 48px;
-      height: 48px;
-      background: var(--accent);
-      color: var(--bg-primary);
-      border: none;
-      border-radius: var(--radius-md);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 18px;
-      cursor: pointer;
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.3s ease;
-      z-index: 50;
-      box-shadow: 0 8px 30px rgba(228, 176, 69, 0.3);
-    }
-
-    .scroll-top.visible {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .scroll-top:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(228, 176, 69, 0.4);
-    }
-
-    /* Respect reduced motion preferences */
-    @media (prefers-reduced-motion: reduce) {
-
-      *,
-      *::before,
-      *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-      }
-    }
-  </style>
-
-  <!-- Structured data -->
+  <meta name="twitter:title" content="Paulo Amaral — Digital Transformation Consultant">
+  <meta name="twitter:description" content="20+ years building national-scale digital systems for UN agencies, World Bank and governments.">
+  <meta name="twitter:image" content="https://paulo-amaral.github.io/paulo-logo.png">
+  <meta name="twitter:image:alt" content="Paulo Amaral — Digital Transformation Consultant">
+
+  <!-- ── Structured data (Schema.org) ────────────────────────── -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Paulo Amaral",
-    "url": "https://paulo-amaral.github.io/",
-    "image": "https://paulo-amaral.github.io/Paulo_mew.png",
-    "jobTitle": "Digital Transformation Consultant",
-    "description": "Senior ICT and Digital Transformation Consultant with 20+ years of experience delivering national-scale digital systems.",
-    "sameAs": [
-      "https://linkedin.com/in/paulosergioamaral",
-      "https://github.com/paulo-amaral",
-      "https://x.com/askamaral",
-      "https://www.instagram.com/paulo_s_amaral"
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://paulo-amaral.github.io/#paulo",
+        "name": "Paulo Amaral",
+        "givenName": "Paulo",
+        "familyName": "Amaral",
+        "jobTitle": "Digital Transformation Consultant",
+        "description": "Digital Transformation Consultant with 20+ years of experience designing national-scale digital public infrastructure and e-government platforms for UN agencies, the World Bank and governments.",
+        "url": "https://paulo-amaral.github.io/",
+        "image": "https://paulo-amaral.github.io/paulo-logo.png",
+        "email": "mailto:paulo.s.amaral@outlook.com",
+        "sameAs": [
+          "https://www.linkedin.com/in/paulo-amaral",
+          "https://github.com/paulo-amaral"
+        ],
+        "knowsAbout": [
+          "Digital Transformation",
+          "Digital Public Infrastructure",
+          "e-Government",
+          "Digital Readiness Assessment",
+          "ITU Digital Transformation Wheel",
+          "International Development",
+          "Public Sector Innovation"
+        ],
+        "worksFor": {
+          "@type": "Organization",
+          "name": "UN Technology Bank for the Least Developed Countries"
+        },
+        "alumniOf": [
+          { "@type": "Organization", "name": "UNICEF" },
+          { "@type": "Organization", "name": "UNDP" },
+          { "@type": "Organization", "name": "World Bank" },
+          { "@type": "Organization", "name": "European Commission" }
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://paulo-amaral.github.io/#website",
+        "url": "https://paulo-amaral.github.io/",
+        "name": "Paulo Amaral — Digital Transformation Consultant",
+        "description": "Portfolio of Paulo Amaral, Digital Transformation Consultant.",
+        "inLanguage": ["pt-BR", "en-US"],
+        "author": { "@id": "https://paulo-amaral.github.io/#paulo" },
+        "publisher": { "@id": "https://paulo-amaral.github.io/#paulo" }
+      },
+      {
+        "@type": "ProfessionalService",
+        "name": "Paulo Amaral — Digital Transformation Advisory",
+        "url": "https://paulo-amaral.github.io/",
+        "image": "https://paulo-amaral.github.io/paulo-logo.png",
+        "founder": { "@id": "https://paulo-amaral.github.io/#paulo" },
+        "areaServed": "Worldwide",
+        "serviceType": [
+          "Digital Transformation Strategy",
+          "Digital Readiness Assessment",
+          "e-Government Platform Design",
+          "Digital Public Infrastructure"
+        ]
+      }
     ]
   }
   </script>
+
+  <!-- ── Performance hints ───────────────────────────────────── -->
+  <link rel="preload" as="image" href="paulo-logo.png" fetchpriority="high">
+  <link rel="preload" as="font" href="fonts/Sora/Sora-VariableFont_wght.ttf" type="font/ttf" crossorigin>
+
+  <style>
+    /* ── Sora Variable Font (self-hosted) ── */
+    @font-face {
+      font-family: 'Sora';
+      src: url('fonts/Sora/Sora-VariableFont_wght.ttf') format('truetype');
+      font-weight: 100 800;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    /* ── Language switching ── */
+    html[lang="pt"] .en { display: none !important; }
+    html[lang="en"] .pt { display: none !important; }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Sora', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #fff;
+      color: #0b0b0b;
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Typographic nuances: Headings vs Body ── */
+    /* Titles: tight tracking, heavy weight — Sora shines at display sizes */
+    h1, h2, h3, h4, h5, h6,
+    .hero-h1,
+    .section-title,
+    .service-card-body h3,
+    .service-card-contact h3,
+    .about-content h2,
+    .experience-left h2,
+    .exp-card-body h3,
+    .contact-left h2,
+    .footer-brand-name,
+    .footer-col h3,
+    .newsletter-title {
+      font-family: 'Sora', sans-serif;
+      letter-spacing: -0.025em;
+      font-weight: 800;
+      line-height: 1.15;
+    }
+
+    /* Body / descriptive text: relaxed spacing for readability */
+    p, .hero-desc, .section-desc, .about-content > p,
+    .experience-left > p, .service-card-body p,
+    .service-card-contact p, .exp-card-body p,
+    .contact-left > p, .footer-brand-desc,
+    .about-point p, .footer-col ul li {
+      font-family: 'Sora', sans-serif;
+      letter-spacing: 0.01em;
+      line-height: 1.7;
+    }
+
+    /* Nav / labels: medium weight, clean spacing */
+    .nav-links a, .lang-btn, .mobile-menu a,
+    .contact-btn, .hero-cta, .experience-left a,
+    .contact-book-btn, .qr-whatsapp-btn,
+    .logos-heading .eyebrow, .exp-card-date {
+      font-family: 'Sora', sans-serif;
+      letter-spacing: 0.01em;
+    }
+
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 16px; }
+
+    /* ── NAV ── */
+    .nav-wrap { padding: 32px 16px 16px; }
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #fff;
+      border: 4px solid #000;
+      border-radius: 16px;
+      padding: 10px 16px;
+      max-width: 700px;
+      margin: 0 auto;
+      box-shadow: 6px 6px 0px 0px rgba(0,0,0,1);
+      gap: 12px;
+    }
+    .nav-logo {
+      width: 40px; height: 40px;
+      background: #000; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .nav-logo-inner { width: 24px; height: 24px; background: #fff; border-radius: 50%; }
+    .nav-links { display: flex; align-items: center; gap: 20px; flex: 1; justify-content: center; }
+    .nav-links a {
+      font-size: 16px; font-weight: 700; color: #0b0b0b;
+      text-decoration: none; transition: opacity 0.2s; white-space: nowrap;
+    }
+    .nav-links a:hover { opacity: 0.6; }
+    .nav-actions { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+
+
+    /* ── Language toggle (neo-brutalist pill) ── */
+    .lang-toggle {
+      position: relative;
+      display: inline-flex; align-items: center;
+      background: #fff;
+      border: 3px solid #000;
+      border-radius: 999px;
+      padding: 3px;
+      box-shadow: 3px 3px 0 #000;
+      flex-shrink: 0;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .lang-toggle:hover {
+      transform: translate(-1px, -1px);
+      box-shadow: 4px 4px 0 #000;
+    }
+    .lang-toggle:active {
+      transform: translate(1px, 1px);
+      box-shadow: 1px 1px 0 #000;
+    }
+    .lang-btn {
+      position: relative;
+      display: inline-flex; align-items: center; justify-content: center;
+      min-width: 40px; min-height: 28px;
+      padding: 4px 12px;
+      font-family: inherit;
+      font-size: 12px; font-weight: 800;
+      letter-spacing: 1px;
+      color: #0b0b0b;
+      background: transparent;
+      border: none;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: color 0.2s ease, background 0.2s ease, transform 0.1s ease;
+    }
+    .lang-btn:not(.active):hover { color: #FF6B7A; }
+    .lang-btn.active {
+      background: #FDB927;
+      color: #0b0b0b;
+      box-shadow: inset 0 0 0 2px #000;
+    }
+    .lang-btn:focus-visible {
+      outline: 3px solid #2F81F7;
+      outline-offset: 3px;
+    }
+
+    /* ── HERO ── */
+    #home { padding: 64px 16px 96px; }
+    .hero-inner {
+      max-width: 1280px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;
+    }
+    .hero-h1 { font-size: 62px; font-weight: 800; line-height: 1.15; margin-bottom: 24px; }
+    .highlight-pink { background: #FF6B7A; color: #fff; padding: 2px 12px; display: inline-block; }
+    .highlight-blue { background: #2F81F7; color: #fff; padding: 2px 12px; display: inline-block; }
+    .highlight-red  { background: #FF4A60; color: #fff; padding: 2px 12px; display: inline-block; }
+    .highlight-purple { background: #6366F1; color: #fff; padding: 2px 12px; display: inline-block; }
+    .hero-desc {
+      color: #393939; font-size: 18px; font-weight: 500; line-height: 1.7;
+      max-width: 540px; margin-bottom: 40px;
+    }
+    .hero-cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #0b0b0b; color: #fff; font-size: 18px; font-weight: 600;
+      padding: 20px 48px; border-radius: 12px; text-decoration: none; transition: opacity 0.2s;
+    }
+    .hero-cta:hover { opacity: 0.85; }
+    .hero-cta svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .hero-avatar-wrap { display: flex; justify-content: flex-end; }
+    .hero-avatar {
+      width: 100%; max-width: 400px; aspect-ratio: 3/4;
+      background: transparent; border: 4px solid #000; border-radius: 24px;
+      overflow: hidden; box-shadow: 8px 8px 0px 0px rgba(0,0,0,1);
+    }
+    .hero-avatar img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: top center;
+    }
+
+    /* ── LOGOS CAROUSEL (neo-brutalist) ── */
+    .logos-section {
+      background: #fff;
+      padding: 80px 0 64px;
+      overflow: hidden;
+    }
+    .logos-heading {
+      text-align: center;
+      margin-bottom: 40px;
+      padding: 0 16px;
+    }
+    .logos-heading .eyebrow {
+      display: inline-block;
+      background: #0b0b0b; color: #fff;
+      font-size: 12px; font-weight: 800;
+      letter-spacing: 2px;
+      padding: 6px 16px;
+      border-radius: 999px;
+      border: 3px solid #000;
+      box-shadow: 3px 3px 0 #000;
+      margin-bottom: 18px;
+      transform: rotate(-2deg);
+    }
+    .logos-heading h3 {
+      font-size: 36px;
+      font-weight: 800;
+      color: #0b0b0b;
+      line-height: 1.2;
+    }
+    .logos-heading h3 .accent {
+      background: #FDB927;
+      padding: 2px 12px;
+      display: inline-block;
+      border: 3px solid #000;
+      border-radius: 10px;
+      box-shadow: 4px 4px 0 #000;
+      transform: rotate(-1.5deg);
+      margin: 0 4px;
+    }
+    .logos-carousel-wrap {
+      position: relative;
+      border-top: 4px solid #000;
+      border-bottom: 4px solid #000;
+      background: #FFFBEA;
+      padding: 28px 0;
+      overflow: hidden;
+    }
+    .logos-carousel-wrap::before,
+    .logos-carousel-wrap::after {
+      content: "";
+      position: absolute; top: 0; bottom: 0;
+      width: 80px; z-index: 2; pointer-events: none;
+    }
+    .logos-carousel-wrap::before {
+      left: 0;
+      background: linear-gradient(90deg, #FFFBEA, transparent);
+    }
+    .logos-carousel-wrap::after {
+      right: 0;
+      background: linear-gradient(-90deg, #FFFBEA, transparent);
+    }
+    .logos-track {
+      display: flex;
+      align-items: center;
+      gap: 64px;
+      width: max-content;
+      animation: logos-scroll 30s linear infinite;
+    }
+    .logos-track:hover { animation-play-state: paused; }
+    .logo-card {
+      flex-shrink: 0;
+      background: #fff;
+      border: 3px solid #000;
+      border-radius: 16px;
+      box-shadow: 5px 5px 0 #000;
+      padding: 20px 28px;
+      height: 110px;
+      min-width: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .logo-card:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: 8px 8px 0 #000;
+    }
+    .logo-card img {
+      max-height: 60px;
+      max-width: 160px;
+      width: auto; height: auto;
+      object-fit: contain;
+      display: block;
+    }
+    .logo-card.tall img { max-height: 72px; }
+    .logo-card .logo-text {
+      font-family: 'Sora', sans-serif;
+      font-weight: 800;
+      font-size: 20px;
+      letter-spacing: -0.02em;
+      color: #0b0b0b;
+      text-align: center;
+      line-height: 1.1;
+      white-space: nowrap;
+    }
+    @keyframes logos-scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(calc(-50% - 32px)); }
+    }
+
+    /* ── SERVICES ── */
+    #services { background: #fff; padding: 64px 16px 96px; }
+    .section-header { text-align: center; margin-bottom: 64px; }
+    .section-title { font-size: 52px; font-weight: 800; line-height: 1.15; margin-bottom: 16px; }
+    .section-desc { color: #393939; font-size: 18px; font-weight: 500; line-height: 1.7; max-width: 640px; margin: 0 auto; }
+    .services-grid { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .service-card {
+      background: #fff; border: 3px solid #000; border-radius: 32px; overflow: hidden;
+      display: flex; flex-direction: column; min-height: 460px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .service-card:hover { transform: translateY(-4px); box-shadow: 8px 8px 0px 0px rgba(0,0,0,1); }
+    .service-card-img {
+      flex-shrink: 0; height: 220px; overflow: hidden;
+      margin: -3px -3px 0;
+      border-radius: 29px 29px 0 0;
+      display: flex; align-items: center; justify-content: center;
+      position: relative;
+    }
+    .service-card-img svg.icon {
+      width: 96px; height: 96px;
+      transition: transform 0.5s ease-out;
+    }
+    .service-card:hover .service-card-img svg.icon { transform: scale(1.12) rotate(-4deg); }
+    .service-card-body { padding: 28px 32px 32px; flex: 1; display: flex; flex-direction: column; }
+    .service-card-body h3 { font-size: 24px; font-weight: 800; color: #0b0b0b; margin-bottom: 12px; line-height: 1.3; }
+    .service-card-body p { font-size: 16px; font-weight: 500; color: #393939; line-height: 1.7; }
+    .service-card-contact {
+      background: #FFC224; border: 3px solid #000; border-radius: 32px;
+      padding: 40px 32px; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; text-align: center;
+      min-height: 460px; box-shadow: 8px 8px 0px 0px rgba(0,0,0,1); transition: transform 0.3s;
+    }
+    .service-card-contact:hover { transform: translateY(-4px); }
+    .contact-icon {
+      width: 80px; height: 80px; background: #000; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center; margin-bottom: 28px;
+    }
+    .contact-icon svg { width: 36px; height: 36px; stroke: #fff; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .service-card-contact h3 { font-size: 24px; font-weight: 800; color: #0b0b0b; margin-bottom: 16px; }
+    .service-card-contact p { font-size: 16px; font-weight: 500; color: #393939; line-height: 1.7; margin-bottom: 32px; }
+    .contact-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #000; color: #fff; font-size: 17px; font-weight: 600;
+      padding: 16px 36px; border-radius: 16px; text-decoration: none;
+      width: 100%; max-width: 300px; justify-content: center; transition: opacity 0.2s;
+    }
+    .contact-btn:hover { opacity: 0.85; }
+    .contact-btn svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+    /* ── ABOUT ── */
+    #about { padding: 64px 16px 96px; }
+    .about-inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .about-img-wrap { display: flex; justify-content: center; }
+    .about-img {
+      width: 100%; max-width: 480px; aspect-ratio: 1;
+      border: 4px solid #000; border-radius: 50%; overflow: hidden;
+      background: transparent; box-shadow: -8px 8px 0px 0px rgba(0,0,0,1);
+    }
+    .about-img img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: top center;
+    }
+    .about-content h2 { font-size: 46px; font-weight: 800; line-height: 1.2; margin-bottom: 16px; }
+    .about-content > p { color: #6b7280; font-size: 18px; line-height: 1.7; margin-bottom: 40px; }
+    .about-points { display: flex; flex-direction: column; gap: 28px; }
+    .about-point { display: flex; gap: 16px; align-items: flex-start; }
+    .about-point-dot {
+      width: 20px; height: 20px; border: 2px solid #000;
+      border-radius: 5px; flex-shrink: 0; margin-top: 4px;
+    }
+    .about-point-dot.purple { background: #6366F1; }
+    .about-point-dot.pink   { background: #FF6B7A; }
+    .about-point-dot.blue   { background: #2F81F7; }
+    .about-point h3 { font-size: 20px; font-weight: 700; margin-bottom: 6px; }
+    .about-point p  { color: #6b7280; font-size: 15px; line-height: 1.6; }
+
+    /* ── EXPERIENCE ── */
+    #experience { background: #000; padding: 64px 16px 96px; }
+    .experience-inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+    .experience-left { color: #fff; padding-top: 48px; position: sticky; top: 48px; }
+    .experience-left h2 { font-size: 50px; font-weight: 800; line-height: 1.25; margin-bottom: 24px; }
+    .experience-left > p { color: #9ca3af; font-size: 18px; line-height: 1.7; margin-bottom: 40px; }
+    .experience-left a {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #fff; color: #000; font-size: 18px; font-weight: 600;
+      padding: 20px 48px; border-radius: 12px; text-decoration: none; transition: opacity 0.2s;
+    }
+    .experience-left a:hover { opacity: 0.85; }
+    .experience-left a svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .experience-cards { display: flex; flex-direction: column; gap: 24px; }
+    .exp-card { background: #fff; border: 4px solid #000; border-radius: 24px; }
+    .exp-card-header { display: flex; align-items: center; justify-content: space-between; padding: 28px 32px 20px; }
+    .exp-card-date { font-size: 17px; font-weight: 700; color: #0b0b0b; line-height: 1.4; }
+    .exp-card-logo {
+      width: 48px; height: 48px; border: 2px solid #000; border-radius: 50%;
+      box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px; font-weight: 800; color: #fff; flex-shrink: 0;
+    }
+    .exp-card-divider { border-top: 3px solid #000; }
+    .exp-card-body { padding: 20px 32px 32px; }
+    .exp-card-body h3 { font-size: 22px; font-weight: 800; color: #0b0b0b; margin-bottom: 12px; line-height: 1.3; }
+    .exp-card-body p  { font-size: 16px; font-weight: 500; color: #393939; line-height: 1.7; }
+
+    /* ── FOOTER ── */
+    footer { background: #fff; padding: 64px 16px; }
+    .footer-inner { max-width: 1280px; margin: 0 auto; }
+    .footer-newsletter { display: flex; align-items: center; gap: 24px; margin-bottom: 64px; }
+    .newsletter-icon {
+      width: 96px; height: 96px; background: #FFC224; border: 3px solid #000;
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; overflow: hidden;
+    }
+    .newsletter-icon img {
+      width: 68px; height: 68px;
+      object-fit: contain;
+      display: block;
+    }
+    .newsletter-form-wrap {
+      flex: 1; background: #fff; border: 4px solid #000; border-radius: 24px;
+      padding: 20px 32px; display: flex; align-items: center; gap: 24px;
+    }
+    .newsletter-title { font-size: 20px; font-weight: 800; color: #000; white-space: nowrap; }
+    .newsletter-input-wrap { flex: 1; position: relative; min-width: 0; }
+    .newsletter-input {
+      width: 100%; height: 60px; border: 4px solid #000; border-radius: 12px;
+      padding: 0 155px 0 20px; font-size: 16px; font-family: inherit; outline: none; color: #000; background: #fff;
+    }
+    .newsletter-input::placeholder { color: #9ca3af; }
+    .newsletter-submit {
+      position: absolute; right: 8px; top: 8px; bottom: 8px;
+      background: #000; color: #fff; border: none; border-radius: 8px;
+      padding: 0 24px; font-size: 14px; font-weight: 700; font-family: inherit;
+      cursor: pointer; white-space: nowrap; transition: opacity 0.2s;
+    }
+    .newsletter-submit:hover { opacity: 0.85; }
+    .footer-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+    .footer-brand-name { font-size: 20px; font-weight: 800; color: #000; margin-bottom: 12px; }
+    .footer-brand-desc { color: #6b7280; font-size: 14px; line-height: 1.6; margin-bottom: 24px; }
+    .footer-socials { display: flex; gap: 12px; }
+    .footer-social {
+      width: 40px; height: 40px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      text-decoration: none; transition: opacity 0.2s;
+    }
+    .footer-social:hover { opacity: 0.8; }
+    .footer-social.github  { background: #000; }
+    .footer-social.linkedin { background: #0A66C2; }
+    .footer-social svg { width: 18px; height: 18px; stroke: #fff; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .footer-col h3 { font-size: 16px; font-weight: 800; color: #000; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .footer-col ul li { display: flex; align-items: center; gap: 8px; color: #6b7280; font-size: 14px; }
+    .footer-col ul li svg { width: 16px; height: 16px; stroke: #6b7280; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+    .footer-col ul li a { color: #6b7280; text-decoration: none; transition: color 0.2s; }
+    .footer-col ul li a:hover { color: #000; }
+    .footer-divider { border-top: 1px solid #e5e7eb; padding-top: 32px; text-align: center; color: #6b7280; font-size: 14px; }
+
+    /* ── CONTACT SECTION ── */
+    #contact { background: #fff; padding: 80px 16px 96px; }
+    .contact-inner {
+      max-width: 1280px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
+    }
+    .contact-left h2 { font-size: 52px; font-weight: 800; line-height: 1.2; margin-bottom: 20px; }
+    .contact-left > p { color: #6b7280; font-size: 18px; line-height: 1.7; margin-bottom: 36px; }
+    .contact-email-box {
+      display: flex; align-items: center; gap: 14px;
+      background: #0b0b0b; border: 3px solid #000; border-radius: 14px;
+      padding: 18px 24px; margin-bottom: 28px;
+      box-shadow: 5px 5px 0 #000;
+      font-family: 'Courier New', monospace;
+    }
+    .contact-email-box svg { width: 22px; height: 22px; stroke: #FFC224; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+    .contact-email-box a {
+      color: #f5f5f5; font-size: 17px; font-weight: 500; text-decoration: none;
+      letter-spacing: 0.3px; transition: color 0.2s;
+    }
+    .contact-email-box a:hover { color: #FFC224; }
+    .contact-email-box .at { color: #9ca3af; margin: 0 2px; }
+    .contact-book-btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: #FFC224; color: #0b0b0b; font-size: 18px; font-weight: 700;
+      padding: 18px 40px; border-radius: 14px; text-decoration: none;
+      border: 3px solid #000; box-shadow: 5px 5px 0 #000;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .contact-book-btn:hover { transform: translate(-2px,-2px); box-shadow: 7px 7px 0 #000; }
+    .contact-book-btn svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .contact-right { display: flex; justify-content: flex-end; align-items: center; width: 100%; }
+    .qr-card {
+      position: relative;
+      background: #FDB927;
+      border: 4px solid #000;
+      border-radius: 24px;
+      padding: 28px 24px 24px;
+      display: flex; flex-direction: column; align-items: center;
+      gap: 18px;
+      box-shadow: 8px 8px 0 #000;
+      max-width: 300px; width: 100%;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .qr-card:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: 11px 11px 0 #000;
+    }
+    .qr-card::before {
+      content: "SCAN ME";
+      position: absolute;
+      top: -14px; left: 50%;
+      transform: translateX(-50%) rotate(-3deg);
+      background: #FF4A60;
+      color: #fff;
+      font-size: 11px; font-weight: 800;
+      letter-spacing: 2px;
+      padding: 6px 14px;
+      border: 3px solid #000;
+      border-radius: 999px;
+      box-shadow: 3px 3px 0 #000;
+      white-space: nowrap;
+    }
+    .qr-card-frame {
+      background: #fff;
+      padding: 12px;
+      border: 3px solid #000;
+      border-radius: 12px;
+      box-shadow: 5px 5px 0 #000;
+      display: flex;
+    }
+    .qr-card-frame img {
+      width: 190px; height: 190px; display: block;
+    }
+    .qr-card-caption {
+      font-size: 13px; font-weight: 700;
+      color: #0b0b0b;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      line-height: 1.3;
+    }
+    .qr-whatsapp-btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: #25D366; color: #0b0b0b;
+      font-size: 15px; font-weight: 800;
+      padding: 13px 20px;
+      border-radius: 12px; text-decoration: none;
+      width: 100%; justify-content: center;
+      border: 3px solid #000;
+      box-shadow: 4px 4px 0 #000;
+      transition: transform 0.15s, box-shadow 0.15s;
+      letter-spacing: 0.2px;
+    }
+    .qr-whatsapp-btn:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0 #000;
+    }
+    .qr-whatsapp-btn:active {
+      transform: translate(2px, 2px);
+      box-shadow: 1px 1px 0 #000;
+    }
+    .qr-whatsapp-btn svg { width: 20px; height: 20px; fill: #0b0b0b; }
+
+    /* ── HAMBURGER (mobile nav) ── */
+    .nav-hamburger {
+      display: none; flex-direction: column; justify-content: center;
+      gap: 5px; width: 40px; height: 40px; background: none;
+      border: 2px solid #000; border-radius: 8px; cursor: pointer; padding: 6px;
+    }
+    .nav-hamburger span { display: block; height: 2px; background: #000; border-radius: 2px; transition: all 0.3s; }
+    .mobile-menu {
+      display: none; position: fixed; inset: 0; background: #fff; z-index: 200;
+      flex-direction: column; align-items: center; justify-content: center; gap: 32px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-size: 28px; font-weight: 800; color: #0b0b0b;
+      text-decoration: none; transition: opacity 0.2s;
+    }
+    .mobile-menu a:hover { opacity: 0.6; }
+    .mobile-menu-close {
+      position: absolute; top: 24px; right: 24px;
+      width: 44px; height: 44px; background: #000; color: #fff;
+      border: none; border-radius: 8px; font-size: 24px;
+      cursor: pointer; display: flex; align-items: center; justify-content: center;
+    }
+    .mobile-lang-toggle {
+      display: inline-flex; align-items: center;
+      background: #fff;
+      border: 4px solid #000;
+      border-radius: 999px;
+      padding: 5px;
+      box-shadow: 6px 6px 0 #000;
+      margin-top: 8px;
+    }
+    .mobile-lang-toggle:active {
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0 #000;
+    }
+    .mobile-lang-toggle .lang-btn {
+      min-width: 80px; min-height: 52px;
+      padding: 12px 28px;
+      font-size: 18px;
+      letter-spacing: 2px;
+    }
+    .mobile-lang-toggle .lang-btn.active {
+      background: #FDB927;
+      box-shadow: inset 0 0 0 3px #000;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 960px) {
+      .hero-inner, .about-inner, .experience-inner, .contact-inner { grid-template-columns: 1fr; }
+      .hero-h1 { font-size: 44px; }
+      #home { padding: 40px 16px 64px; }
+      .hero-avatar-wrap { justify-content: center; }
+      .hero-avatar { max-width: 280px; }
+      .hero-text { order: 1; }
+      .hero-avatar-wrap { order: 2; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .about-inner { direction: ltr; }
+      .about-img-wrap { justify-content: center; }
+      .about-img { max-width: 300px; }
+      .experience-left { position: static; padding-top: 0; }
+      .footer-newsletter { flex-direction: column; align-items: stretch; }
+      .newsletter-icon { align-self: center; }
+      .newsletter-form-wrap { flex-direction: column; align-items: stretch; gap: 16px; }
+      .newsletter-title { white-space: normal; }
+      .newsletter-input { padding-right: 130px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      nav { max-width: 100%; padding: 8px 12px; }
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      #home { padding: 24px 16px 48px; }
+      .hero-h1 { font-size: 32px; line-height: 1.2; }
+      .hero-desc { font-size: 16px; }
+      .hero-cta { padding: 16px 32px; font-size: 16px; width: 100%; justify-content: center; }
+      .hero-avatar { max-width: 240px; }
+      /* tighter nav lang pill on very small screens */
+      .lang-toggle { padding: 2px; box-shadow: 2px 2px 0 #000; }
+      .lang-toggle .lang-btn { min-width: 34px; min-height: 26px; padding: 3px 9px; font-size: 11px; letter-spacing: 0.8px; }
+      .logos-section { padding: 48px 0 40px; }
+      .logos-heading { margin-bottom: 28px; }
+      .logos-heading h3 { font-size: 24px; }
+      .logos-heading .eyebrow { font-size: 11px; }
+      .logos-carousel-wrap { padding: 20px 0; }
+      .logos-track { gap: 40px; }
+      .logo-card { height: 90px; min-width: 160px; padding: 14px 20px; border-radius: 14px; box-shadow: 4px 4px 0 #000; }
+      .logo-card img { max-height: 48px; max-width: 120px; }
+      .logo-card.tall img { max-height: 56px; }
+      .logo-card .logo-text { font-size: 16px; }
+      .logos-carousel-wrap::before, .logos-carousel-wrap::after { width: 40px; }
+      .section-title { font-size: 30px; }
+      .section-desc { font-size: 16px; }
+      #contact { padding: 48px 16px 64px; }
+      .contact-left h2 { font-size: 32px; }
+      .contact-right { justify-content: center; margin-top: 40px; }
+      #services { padding: 40px 16px 64px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .service-card-img { height: 180px; }
+      .service-card-body h3 { font-size: 20px; }
+      #about { padding: 40px 16px 64px; }
+      .about-content h2 { font-size: 28px; }
+      .about-content > p { font-size: 16px; }
+      #experience { padding: 40px 16px 64px; }
+      .experience-left h2 { font-size: 30px; }
+      .experience-left > p { font-size: 16px; }
+      .experience-left a { width: 100%; justify-content: center; }
+      .exp-card-body h3 { font-size: 18px; }
+      .exp-card-body p { font-size: 15px; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .newsletter-title { font-size: 17px; }
+      .newsletter-input { padding-right: 120px; font-size: 15px; }
+      .newsletter-submit { padding: 0 16px; font-size: 13px; }
+      .footer-newsletter { gap: 16px; }
+      .newsletter-form-wrap { padding: 16px; }
+    }
+  </style>
 </head>
-
 <body>
-  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- Header -->
-  <header class="header">
-    <div class="header-inner">
-      <a href="#main-content" class="logo">
-        <img src="logo.png" alt="Paulo Amaral" class="logo-img">
-      </a>
+<!-- ═══════════════════════════ NAV ═══════════════════════════ -->
+<div class="nav-wrap">
+  <nav>
+    <div class="nav-logo"><div class="nav-logo-inner"></div></div>
 
-      <button class="mobile-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav">
-        <i class="fa-solid fa-bars"></i>
-      </button>
-
-      <nav class="nav" id="nav">
-        <a href="#about" class="nav-link" data-i18n="nav.about">About</a>
-        <a href="#services" class="nav-link" data-i18n="nav.services">Services</a>
-        <a href="#projects" class="nav-link" data-i18n="nav.projects">Projects</a>
-        <a href="#experience" class="nav-link" data-i18n="nav.experience">Experience</a>
-        <a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
-
-        <div class="lang-selector">
-          <button class="lang-btn active" data-lang="en">EN</button>
-          <button class="lang-btn" data-lang="pt">PT</button>
-        </div>
-      </nav>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#services"><span class="pt">Serviços</span><span class="en">Services</span></a>
+      <a href="#about"><span class="pt">Sobre</span><span class="en">About</span></a>
+      <a href="#experience"><span class="pt">Experiência</span><span class="en">Experience</span></a>
+      <a href="#contact"><span class="pt">Contato</span><span class="en">Contact</span></a>
     </div>
-  </header>
 
-  <main id="main-content" role="main">
-    <!-- Hero -->
-    <section class="hero">
-      <div class="container">
-        <div class="hero-content">
-          <div class="hero-text">
-            <div class="hero-badge">
-              <span class="hero-badge-dot"></span>
-              <span data-i18n="hero.available">Available for consulting</span>
-            </div>
-            <h1>Hi, I'm <span>Paulo Amaral</span></h1>
-            <p class="hero-subtitle" data-i18n="hero.tagline">Tech-for-good meets get-it-done. Hands-on consultant with
-              a learn-by-doing approach to building systems that matter.</p>
-            <div class="hero-actions">
-              <a href="https://calendly.com/matenek/15min" target="_blank" rel="noopener noreferrer"
-                class="btn btn-primary">
-                <i class="fa-regular fa-calendar"></i>
-                <span data-i18n="hero.book">Book a Call</span>
-              </a>
-              <a href="#projects" class="btn btn-secondary">
-                <i class="fa-solid fa-folder-open"></i>
-                <span data-i18n="hero.viewwork">View My Work</span>
-              </a>
-            </div>
-            <div class="hero-social">
-              <span class="hero-social-label" data-i18n="hero.connect">Connect with me</span>
-              <div class="hero-social-links">
-                <a href="https://linkedin.com/in/paulosergioamaral" target="_blank" rel="noopener noreferrer"
-                  class="hero-social-link" aria-label="LinkedIn">
-                  <i class="fa-brands fa-linkedin-in"></i>
-                </a>
-                <a href="https://github.com/paulo-amaral" target="_blank" rel="noopener noreferrer"
-                  class="hero-social-link" aria-label="GitHub">
-                  <i class="fa-brands fa-github"></i>
-                </a>
-                <a href="https://x.com/askamaral" target="_blank" rel="noopener noreferrer" class="hero-social-link"
-                  aria-label="X/Twitter">
-                  <i class="fa-brands fa-x-twitter"></i>
-                </a>
-                <a href="https://wa.me/67078461740" target="_blank" rel="noopener noreferrer" class="hero-social-link"
-                  aria-label="WhatsApp">
-                  <i class="fa-brands fa-whatsapp"></i>
-                </a>
-                <a href="https://www.instagram.com/paulo_s_amaral" target="_blank" rel="noopener noreferrer"
-                  class="hero-social-link" aria-label="Instagram">
-                  <i class="fa-brands fa-instagram"></i>
-                </a>
-                <a href="https://www.facebook.com/paulo.s.amaral" target="_blank" rel="noopener noreferrer"
-                  class="hero-social-link" aria-label="Facebook">
-                  <i class="fa-brands fa-facebook-f"></i>
-                </a>
-              </div>
-            </div>
+    <div class="nav-actions">
+      <button class="nav-hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="lang-toggle" role="group" aria-label="Language / Idioma">
+        <button class="lang-btn active" data-lang="pt" onclick="setLang('pt')" aria-pressed="true"  aria-label="Português" type="button">PT</button>
+        <button class="lang-btn"        data-lang="en" onclick="setLang('en')" aria-pressed="false" aria-label="English"    type="button">EN</button>
+      </div>
+    </div>
+  </nav>
+</div>
+
+<!-- Mobile menu overlay -->
+<div id="mobileMenu" class="mobile-menu">
+  <button class="mobile-menu-close" onclick="document.getElementById('mobileMenu').classList.remove('open')">✕</button>
+  <a href="#home"       onclick="document.getElementById('mobileMenu').classList.remove('open')">Home</a>
+  <a href="#services"   onclick="document.getElementById('mobileMenu').classList.remove('open')"><span class="pt">Serviços</span><span class="en">Services</span></a>
+  <a href="#about"      onclick="document.getElementById('mobileMenu').classList.remove('open')"><span class="pt">Sobre</span><span class="en">About</span></a>
+  <a href="#experience" onclick="document.getElementById('mobileMenu').classList.remove('open')"><span class="pt">Experiência</span><span class="en">Experience</span></a>
+  <a href="#contact"    onclick="document.getElementById('mobileMenu').classList.remove('open')"><span class="pt">Contato</span><span class="en">Contact</span></a>
+  <div class="mobile-lang-toggle" role="group" aria-label="Language / Idioma">
+    <button class="lang-btn" data-lang="pt" onclick="setLang('pt')" aria-pressed="false" aria-label="Português" type="button">PT</button>
+    <button class="lang-btn" data-lang="en" onclick="setLang('en')" aria-pressed="false" aria-label="English"    type="button">EN</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════ HERO ══════════════════════════ -->
+<section id="home">
+  <div class="hero-inner container">
+    <div class="hero-text">
+
+      <!-- PT heading -->
+      <h1 class="hero-h1 pt">
+        Olá, meu nome é<br>
+        <span class="highlight-pink">Paulo Amaral</span>,<br>
+        <span style="white-space:nowrap">sou</span> <span class="highlight-blue">Analista Sênior</span><br>
+        <span style="white-space:nowrap">em Transformação Digital</span>
+      </h1>
+      <!-- EN heading -->
+      <h1 class="hero-h1 en">
+        Hi, my name is<br>
+        <span class="highlight-pink">Paulo Amaral</span>,<br>
+        I am a <span class="highlight-blue">Senior Analyst</span><br>
+        <span style="white-space:nowrap">in Digital Transformation</span>
+      </h1>
+
+      <p class="hero-desc pt">
+        Consultor com mais de 20 anos de experiência projetando e escalando sistemas digitais nacionais em parceria com PNUD, UNICEF, UN RCO e governos de mais de 5 países. Entregando impacto real — dos dados às decisões.
+      </p>
+      <p class="hero-desc en">
+        Consultant with 20+ years of experience designing and scaling national digital systems in partnership with UNDP, UNICEF, UN RCO and governments across 5+ countries. Delivering real impact — from data to decisions.
+      </p>
+
+      <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+        <a href="cv_2026_v4.pdf" download class="hero-cta">
+          <svg viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
+          Download CV
+        </a>
+        <a href="PERSONAL_PORTFOLIO_PRESENTATION (English version).pdf" target="_blank" rel="noopener noreferrer" class="hero-cta" style="background:#fff;color:#0b0b0b;border:3px solid #000;box-shadow:4px 4px 0 #000;padding:17px 45px;">
+          <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+          Portfolio
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-avatar-wrap">
+      <div class="hero-avatar">
+        <img src="paulo-logo.png" alt="Paulo Amaral — Digital Transformation Consultant" width="912" height="1164" loading="eager" decoding="async">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ LOGOS CAROUSEL ═════════════════════ -->
+<section class="logos-section">
+  <div class="logos-heading">
+    <span class="eyebrow">
+      <span class="pt">COLABORAÇÕES</span>
+      <span class="en">COLLABORATIONS</span>
+    </span>
+    <h3>
+      <span class="pt">Trabalhando em parceria com <span class="accent">instituições globais</span></span>
+      <span class="en">Working together with <span class="accent">global institutions</span></span>
+    </h3>
+  </div>
+
+  <div class="logos-carousel-wrap">
+    <div class="logos-track">
+      <!-- set 1 -->
+      <div class="logo-card"><img src="customers%20logos/UNICEF_Logo.png" alt="UNICEF" loading="lazy" decoding="async"></div>
+      <div class="logo-card tall"><img src="customers%20logos/Logo_of_the_United_Nations.svg" alt="United Nations" loading="lazy" decoding="async"></div>
+      <div class="logo-card"><img src="customers%20logos/undp-seeklogo.svg" alt="UNDP" loading="lazy" decoding="async"></div>
+      <div class="logo-card"><img src="customers%20logos/european%20comission%20logo.png" alt="European Commission" loading="lazy" decoding="async"></div>
+      <div class="logo-card tall"><img src="customers%20logos/un%20technology%20bank.png" alt="UN Technology Bank" loading="lazy" decoding="async"></div>
+      <div class="logo-card"><img src="customers%20logos/Catalpa-Logo-Blue.svg" alt="Catalpa International" loading="lazy" decoding="async"></div>
+      <div class="logo-card"><img src="customers%20logos/ginger%20sofreco.svg" alt="Ginger Sofreco" loading="lazy" decoding="async" style="transform: scale(1.25);"></div>
+      <div class="logo-card"><img src="customers%20logos/jus.jpg" alt="Ministério da Justiça" loading="lazy" decoding="async" style="transform: scale(1.4);"></div>
+
+      <!-- set 2 (duplicate for seamless loop) -->
+      <div class="logo-card"><img src="customers%20logos/UNICEF_Logo.png" alt="UNICEF" loading="lazy" decoding="async"></div>
+      <div class="logo-card tall"><img src="customers%20logos/Logo_of_the_United_Nations.svg" alt="United Nations" loading="lazy" decoding="async"></div>
+      <div class="logo-card"><img src="customers%20logos/undp-seeklogo.svg" alt="UNDP" loading="lazy" decoding="async"></div>
+      <div class="logo-card"><img src="customers%20logos/european%20comission%20logo.png" alt="European Commission" loading="lazy" decoding="async"></div>
+      <div class="logo-card tall"><img src="customers%20logos/un%20technology%20bank.png" alt="UN Technology Bank" loading="lazy" decoding="async"></div>
+      <div class="logo-card"><img src="customers%20logos/Catalpa-Logo-Blue.svg" alt="Catalpa International" loading="lazy" decoding="async"></div>
+      <div class="logo-card"><img src="customers%20logos/ginger%20sofreco.svg" alt="Ginger Sofreco" loading="lazy" decoding="async" style="transform: scale(1.25);"></div>
+      <div class="logo-card"><img src="customers%20logos/jus.jpg" alt="Ministério da Justiça" loading="lazy" decoding="async" style="transform: scale(1.4);"></div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════ SERVICES ═══════════════════════ -->
+<section id="services">
+  <div class="section-header container">
+    <h2 class="section-title">
+      <span class="pt">Conheça meus <span class="highlight-red">serviços</span></span>
+      <span class="en">Explore my <span class="highlight-red">services</span></span>
+    </h2>
+    <p class="section-desc pt">Soluções digitais completas — da estratégia à implementação — sempre com foco em impacto real e sistemas que funcionam.</p>
+    <p class="section-desc en">Complete digital solutions — from strategy to implementation — always focused on real impact and systems that work.</p>
+  </div>
+
+  <div class="services-grid container">
+
+    <!-- 1 · Digital Transformation -->
+    <div class="service-card">
+      <div class="service-card-img" style="background:linear-gradient(135deg,#6366F1,#8B5CF6);">
+        <svg class="icon" viewBox="0 0 80 80" fill="none" style="stroke:#fff;stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round;">
+          <circle cx="40" cy="40" r="26"/><circle cx="40" cy="40" r="11"/>
+          <path d="M40 14v6M40 60v6M14 40h6M60 40h6M21 21l4 4M55 55l4 4M59 21l-4 4M25 55l-4 4"/>
+        </svg>
+      </div>
+      <div class="service-card-body">
+        <h3><span class="pt">Transformação Digital</span><span class="en">Digital Transformation</span></h3>
+        <p class="pt">Estratégia e implementação de sistemas digitais nacionais, do diagnóstico de maturidade digital à execução técnica com governos e organizações internacionais.</p>
+        <p class="en">Strategy and implementation of national digital systems, from digital maturity diagnostics to full technical execution with governments and international organizations.</p>
+      </div>
+    </div>
+
+    <!-- 2 · Data Analytics -->
+    <div class="service-card">
+      <div class="service-card-img" style="background:linear-gradient(135deg,#2F81F7,#06B6D4);">
+        <svg class="icon" viewBox="0 0 80 80" fill="none" style="stroke:#fff;stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round;">
+          <rect x="12" y="44" width="12" height="22" rx="2"/>
+          <rect x="34" y="30" width="12" height="36" rx="2"/>
+          <rect x="56" y="18" width="12" height="48" rx="2"/>
+          <path d="M14 38l18-14 22 10 16-18"/>
+          <circle cx="14" cy="38" r="2.5" fill="#fff"/>
+          <circle cx="32" cy="24" r="2.5" fill="#fff"/>
+          <circle cx="54" cy="34" r="2.5" fill="#fff"/>
+          <circle cx="70" cy="16" r="2.5" fill="#fff"/>
+        </svg>
+      </div>
+      <div class="service-card-body">
+        <h3><span class="pt">Data Analytics & BI</span><span class="en">Data Analytics & BI</span></h3>
+        <p class="pt">Dashboards Power BI e Metabase, pipelines de dados e análise para apoio à tomada de decisão em proteção social, saúde e desenvolvimento internacional.</p>
+        <p class="en">Power BI and Metabase dashboards, data pipelines, and analytics to support decision-making in social protection, health, and international development.</p>
+      </div>
+    </div>
+
+    <!-- 3 · Health IS -->
+    <div class="service-card">
+      <div class="service-card-img" style="background:linear-gradient(135deg,#10B981,#059669);">
+        <svg class="icon" viewBox="0 0 80 80" fill="none" style="stroke:#fff;stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round;">
+          <rect x="14" y="14" width="52" height="52" rx="10"/>
+          <path d="M40 26v28M26 40h28"/>
+          <path d="M22 56l6-8 6 4 8-14 6 10 10-4" stroke-width="2.5" opacity="0.55"/>
+        </svg>
+      </div>
+      <div class="service-card-body">
+        <h3><span class="pt">Sistemas de Saúde (DHIS2)</span><span class="en">Health Information Systems</span></h3>
+        <p class="pt">Fortalecimento de sistemas DHIS2, coleta de dados EPI, dashboards de imunização e gestão de proteção à criança com PRIMERO e CRVS.</p>
+        <p class="en">Strengthening DHIS2 systems, EPI data collection, immunization dashboards, and child protection case management with PRIMERO and CRVS.</p>
+      </div>
+    </div>
+
+    <!-- 4 · Government Systems -->
+    <div class="service-card">
+      <div class="service-card-img" style="background:linear-gradient(135deg,#F59E0B,#EF4444);">
+        <svg class="icon" viewBox="0 0 80 80" fill="none" style="stroke:#fff;stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round;">
+          <path d="M10 68h60"/>
+          <path d="M14 68V38M66 68V38"/>
+          <rect x="22" y="42" width="10" height="24"/>
+          <rect x="35" y="42" width="10" height="24"/>
+          <rect x="48" y="42" width="10" height="24"/>
+          <path d="M10 38l30-22 30 22"/>
+          <path d="M36 18l4-4 4 4" opacity="0.6"/>
+        </svg>
+      </div>
+      <div class="service-card-body">
+        <h3><span class="pt">Sistemas de Governo & ONU</span><span class="en">Government & UN Systems</span></h3>
+        <p class="pt">Plataformas eleitorais, justiça digital, registo civil, proteção social e infraestrutura ICT para o setor público e agências da ONU.</p>
+        <p class="en">Election platforms, digital justice, civil registration, social protection, and ICT infrastructure for public sector institutions and UN agencies.</p>
+      </div>
+    </div>
+
+    <!-- 5 · Capacity Building -->
+    <div class="service-card">
+      <div class="service-card-img" style="background:linear-gradient(135deg,#FF6B7A,#C026D3);">
+        <svg class="icon" viewBox="0 0 80 80" fill="none" style="stroke:#fff;stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round;">
+          <circle cx="40" cy="26" r="11"/>
+          <path d="M22 64c0-10 8-18 18-18s18 8 18 18"/>
+          <circle cx="18" cy="32" r="7"/>
+          <circle cx="62" cy="32" r="7"/>
+          <path d="M8 58c0-7 5-12 10-12M72 58c0-7-5-12-10-12" opacity="0.75"/>
+        </svg>
+      </div>
+      <div class="service-card-body">
+        <h3><span class="pt">Capacitação & Treinamento</span><span class="en">Capacity Building & Training</span></h3>
+        <p class="pt">Formação de equipes técnicas, workshops de BI e dados, mentoria de TI e criação de centros de treinamento para instituições do setor público.</p>
+        <p class="en">Training technical teams, BI and data workshops, IT mentoring, and establishing training centers for public sector institutions.</p>
+      </div>
+    </div>
+
+    <!-- 6 · Contact card -->
+    <div class="service-card-contact">
+      <div class="contact-icon">
+        <svg viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+      </div>
+      <h3><span class="pt">Entre em contato</span><span class="en">Get in touch</span></h3>
+      <p class="pt">Precisa de outro serviço? Entre em contato — há uma grande chance de eu poder ajudar no seu projeto!</p>
+      <p class="en">Need another service? Reach out — there's a good chance I can help with your project!</p>
+      <a href="mailto:paulo.s.amaral@outlook.com" class="contact-btn">
+        <svg viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        <span class="pt">Falar comigo</span><span class="en">Talk to me</span>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════ ABOUT ═════════════════════════ -->
+<section id="about">
+  <div class="about-inner container">
+    <div class="about-img-wrap">
+      <div class="about-img">
+        <img src="paulo-logo.png" alt="Paulo Amaral — Digital Transformation Consultant" width="912" height="1164" loading="eager" decoding="async">
+      </div>
+    </div>
+    <div class="about-content">
+      <h2>
+        <span class="pt">Quem está por trás <span class="highlight-blue">desses projetos?</span></span>
+        <span class="en">Who is behind <span class="highlight-blue">these projects?</span></span>
+      </h2>
+      <p class="pt">Profissional dedicado a criar soluções digitais de impacto, combinando estratégia, dados e tecnologia para transformar desafios em resultados mensuráveis em contextos de desenvolvimento internacional.</p>
+      <p class="en">A professional dedicated to building impactful digital solutions, combining strategy, data, and technology to turn challenges into measurable results in international development contexts.</p>
+      <div class="about-points">
+        <div class="about-point">
+          <div class="about-point-dot purple"></div>
+          <div>
+            <h3><span class="pt">20+ anos de experiência</span><span class="en">20+ years of experience</span></h3>
+            <p class="pt">Mais de duas décadas projetando sistemas digitais nacionais em parceria com PNUD, UNICEF, União Europeia e governos em mais de 5 países.</p>
+            <p class="en">Over two decades designing national digital systems in partnership with UNDP, UNICEF, European Union, and governments across 5+ countries.</p>
           </div>
-          <div class="hero-avatar-wrapper">
-            <div class="hero-avatar-glow"></div>
-            <img src="Paulo_mew.png" alt="Portrait of Paulo Amaral" class="hero-avatar" loading="eager" width="220"
-              height="220">
+        </div>
+        <div class="about-point">
+          <div class="about-point-dot pink"></div>
+          <div>
+            <h3><span class="pt">20+ projetos de alto impacto</span><span class="en">20+ high-impact projects</span></h3>
+            <p class="pt">Portfólio avaliado em mais de $100M USD — de sistemas eleitorais para 650,000+ eleitores a plataformas de proteção social para 50,000+ beneficiários.</p>
+            <p class="en">Portfolio valued at over $100M USD — from election systems for 650,000+ voters to social protection platforms serving 50,000+ beneficiaries.</p>
+          </div>
+        </div>
+        <div class="about-point">
+          <div class="about-point-dot blue"></div>
+          <div>
+            <h3><span class="pt">5+ países atendidos</span><span class="en">5+ countries served</span></h3>
+            <p class="pt">Atuação internacional em Timor-Leste, Brasil, Ilhas do Pacífico e além, sempre com foco em tecnologia para o bem social e desenvolvimento humano.</p>
+            <p class="en">International work across Timor-Leste, Brazil, Pacific Islands, and beyond — always with a focus on technology for social good and human development.</p>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <!-- About -->
-    <section class="section" id="about">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-icon">
-            <i class="fa-solid fa-user"></i>
+<!-- ══════════════════════════ EXPERIENCE ════════════════════ -->
+<section id="experience">
+  <div class="experience-inner container">
+    <div class="experience-left">
+      <h2>
+        <span class="pt">Dê uma olhada na minha <span class="highlight-purple">experiência</span></span>
+        <span class="en">Take a look at my <span class="highlight-purple">experience</span></span>
+      </h2>
+      <p class="pt">Mais de 20 anos desenvolvendo soluções digitais, liderando projetos de alto impacto e transformando desafios técnicos em resultados mensuráveis para governos e organizações internacionais.</p>
+      <p class="en">Over 20 years building digital solutions, leading high-impact projects, and turning technical challenges into measurable results for governments and international organizations.</p>
+      <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+        <a href="cv_2026_v4.pdf" download>
+          <svg viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
+          Download CV
+        </a>
+        <a href="PERSONAL_PORTFOLIO_PRESENTATION (English version).pdf" target="_blank" rel="noopener noreferrer" style="background:transparent;color:#fff;border:2px solid #fff;padding:18px 46px;">
+          <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+          Portfolio
+        </a>
+      </div>
+    </div>
+
+    <div class="experience-cards">
+
+      <!-- UN Technology Bank -->
+      <div class="exp-card">
+        <div class="exp-card-header">
+          <div class="exp-card-date">
+            <span class="pt">Abr 2026 – Presente</span>
+            <span class="en">Apr 2026 – Present</span>
           </div>
-          <h2 class="section-title" data-i18n="about.title">About Me</h2>
+          <div class="exp-card-logo" style="background:#003399;">TB</div>
         </div>
-        <div class="about-grid">
-          <div class="about-text">
-            <p data-i18n="about.p1">I'm a consultant passionate about transforming businesses and organizations through
-              technology. With extensive engagement with UN agencies, governments, and donors, I specialize in digital
-              governance, health, justice, civil registration, and social protection systems.</p>
-            <p data-i18n="about.p2">I believe in building products and solutions that make a difference from the very
-              first delivery. My approach follows the UBUNTU philosophy - believing in a sustainable society built on
-              respect and solidarity.</p>
-          </div>
-          <div class="stats-grid">
-            <div class="stat-card">
-              <div class="stat-number">20+</div>
-              <div class="stat-label" data-i18n="about.stat1">Years of Experience</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-number">20+</div>
-              <div class="stat-label" data-i18n="about.stat2">Projects Delivered</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-number">3</div>
-              <div class="stat-label" data-i18n="about.stat3">Countries Impacted</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-number">100M+</div>
-              <div class="stat-label" data-i18n="about.stat4">USD Systems Managed</div>
-            </div>
-          </div>
+        <div class="exp-card-divider"></div>
+        <div class="exp-card-body">
+          <h3>
+            <span class="pt">UN Technology Bank – Consultor</span>
+            <span class="en">UN Technology Bank – Consultant</span>
+          </h3>
+          <p class="pt">Atua no projeto regional do UN Technology Bank (Camboja, Laos, Nepal, Timor-Leste), conduzindo diagnóstico whole-of-government usando o framework ITU Digital Transformation Wheel nas dimensões de Acesso, Adoção e Criação de Valor. Entregáveis: avaliação de maturidade digital, análise de políticas, workshops ministeriais e roadmap para Infraestrutura Pública Digital.</p>
+          <p class="en">Engaged on the UN Technology Bank regional digital transformation project (Cambodia, Laos, Nepal, Timor-Leste), conducting a whole-of-government diagnostic using the ITU Digital Transformation Wheel across Access, Adoption, and Value Creation dimensions. Deliverables include digital maturity assessment, policy analysis, stakeholder workshops, and a Digital Public Infrastructure roadmap.</p>
         </div>
       </div>
-    </section>
 
-    <hr class="section-divider">
-
-    <!-- Services -->
-    <section class="section" id="services">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-icon">
-            <i class="fa-solid fa-gear"></i>
+      <!-- UNDP — Digital Transformation Consultant -->
+      <div class="exp-card">
+        <div class="exp-card-header">
+          <div class="exp-card-date">
+            <span class="pt">Jan 2026 – Presente</span>
+            <span class="en">Jan 2026 – Present</span>
           </div>
-          <h2 class="section-title" data-i18n="services.title">What I Do</h2>
+          <div class="exp-card-logo" style="background:#0080FF;">UN</div>
         </div>
-        <div class="services-grid">
-          <div class="service-card">
-            <div class="service-icon">
-              <i class="fa-solid fa-code"></i>
-            </div>
-            <h3 data-i18n="services.s1.title">Software Development</h3>
-            <p data-i18n="services.s1.desc">End-to-end handmade products and solutions, crafted with expertise.</p>
-          </div>
-          <div class="service-card">
-            <div class="service-icon">
-              <i class="fa-solid fa-brain"></i>
-            </div>
-            <h3 data-i18n="services.s2.title">Machine Learning & Data Science</h3>
-            <p data-i18n="services.s2.desc">AI-powered solutions for classification, analysis, and automation.</p>
-          </div>
-          <div class="service-card">
-            <div class="service-icon">
-              <i class="fa-solid fa-rocket"></i>
-            </div>
-            <h3 data-i18n="services.s3.title">Digital Transformation</h3>
-            <p data-i18n="services.s3.desc">Strategic guidance for public sector and organizational modernization.</p>
-          </div>
-          <div class="service-card">
-            <div class="service-icon">
-              <i class="fa-solid fa-graduation-cap"></i>
-            </div>
-            <h3 data-i18n="services.s4.title">Capacity Building</h3>
-            <p data-i18n="services.s4.desc">Training and mentoring ICT teams for sustainable development.</p>
-          </div>
-          <div class="service-card">
-            <div class="service-icon">
-              <i class="fa-solid fa-cloud"></i>
-            </div>
-            <h3 data-i18n="services.s5.title">IT Infrastructure</h3>
-            <p data-i18n="services.s5.desc">Cloud, DevOps, and enterprise infrastructure design and operations.</p>
-          </div>
-          <div class="service-card">
-            <div class="service-icon">
-              <i class="fa-solid fa-chart-line"></i>
-            </div>
-            <h3 data-i18n="services.s6.title">Business Intelligence</h3>
-            <p data-i18n="services.s6.desc">Dashboards, analytics, and data-driven decision support systems.</p>
-          </div>
+        <div class="exp-card-divider"></div>
+        <div class="exp-card-body">
+          <h3>
+            <span class="pt">PNUD – Consultor de Transformação Digital</span>
+            <span class="en">UNDP – Digital Transformation Consultant</span>
+          </h3>
+          <p class="pt">Lidera a Avaliação de Maturidade Digital Nacional no programa Dalan ba Digital em 9 ministérios, culminando em um roteiro nacional alinhado à Timor Digital 2032. Co-liderou integração de Digital Maturity Assessment e AI Readiness Assessment. Construiu plataforma customizada baseada no framework Deloitte com prototipagem assistida por IA.</p>
+          <p class="en">Leads the National Digital Maturity Assessment for Dalan ba Digital across 9 ministries, culminating in a national transformation roadmap aligned with Timor Digital 2032. Co-led the integration of a Digital Maturity and AI Readiness Assessment. Built a custom platform on the Deloitte framework with AI-assisted rapid prototyping.</p>
         </div>
       </div>
-    </section>
 
-    <hr class="section-divider">
-
-    <!-- Projects -->
-    <section class="section" id="projects">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-icon">
-            <i class="fa-solid fa-diagram-project"></i>
+      <!-- GovStack / GovMarket -->
+      <div class="exp-card">
+        <div class="exp-card-header">
+          <div class="exp-card-date">
+            <span class="pt">2026 – Presente</span>
+            <span class="en">2026 – Present</span>
           </div>
-          <h2 class="section-title" data-i18n="projects.title">Projects</h2>
+          <div class="exp-card-logo" style="background:#00A86B;">GS</div>
         </div>
-
-        <!-- Portfolio Introduction -->
-        <div class="portfolio-intro">
-          <p data-i18n="projects.intro">A curated selection of impactful projects across digital governance, social
-            protection, health systems, and enterprise technology spanning 20+ years of hands-on delivery.</p>
+        <div class="exp-card-divider"></div>
+        <div class="exp-card-body">
+          <h3>
+            <span class="pt">GovStack / GovMarket – Provedor de Serviços em DPI</span>
+            <span class="en">GovStack / GovMarket – Digital Public Infrastructure Service Provider</span>
+          </h3>
+          <p class="pt">Listado no GovMarket como provedor de serviços que apoia a abordagem GovStack para DPG/DPI. Concluiu a certificação GovStack Architecture Training e contribuiu para a arquitetura de interoperabilidade com X-Road, integrando o portal One-stop-shop com instituições governamentais no programa "dalan ba digital" em Timor-Leste. Áreas: Operação & Manutenção, Design de Serviços, Desenvolvimento de Software, Integração de Sistemas e Assessoria Técnica. Idiomas: Português e Inglês.</p>
+          <p class="en">Listed on GovMarket as a service provider supporting the GovStack approach for DPG/DPI. Completed the GovStack Architecture Training and contributed to the interoperability architecture using X-Road, integrating the One-stop-shop portal with government institutions under the "dalan ba digital" programme in Timor-Leste. Services: Operation & Maintenance, Service Design, Software Development, System Integration, and Technical Advisory. Languages: Portuguese and English.</p>
         </div>
+      </div>
 
-        <!-- Portfolio Stats -->
-        <div class="portfolio-stats">
-          <div class="portfolio-stat">
-            <div class="portfolio-stat-value">$100M+</div>
-            <div class="portfolio-stat-label" data-i18n="projects.stat1">Systems Managed</div>
+      <!-- UN Resident Coordinator's Office -->
+      <div class="exp-card">
+        <div class="exp-card-header">
+          <div class="exp-card-date">
+            <span class="pt">Ago 2025 – Presente</span>
+            <span class="en">Aug 2025 – Present</span>
           </div>
-          <div class="portfolio-stat">
-            <div class="portfolio-stat-value">650K+</div>
-            <div class="portfolio-stat-label" data-i18n="projects.stat2">Users Served</div>
-          </div>
-          <div class="portfolio-stat">
-            <div class="portfolio-stat-value">37K+</div>
-            <div class="portfolio-stat-label" data-i18n="projects.stat3">Officials on Platform</div>
-          </div>
-          <div class="portfolio-stat">
-            <div class="portfolio-stat-value">99%</div>
-            <div class="portfolio-stat-label" data-i18n="projects.stat4">System Uptime</div>
-          </div>
+          <div class="exp-card-logo" style="background:#009EDB;">RC</div>
         </div>
+        <div class="exp-card-divider"></div>
+        <div class="exp-card-body">
+          <h3>
+            <span class="pt">UN RCO – Consultor de Transformação Digital</span>
+            <span class="en">UN Resident Coordinator's Office – Digital Transformation Consultant</span>
+          </h3>
+          <p class="pt">Dirigiu o mapeamento estratégico do ecossistema digital de Timor-Leste, identificando insights, lacunas sistêmicas e oportunidades. Mapeou marcos institucionais, políticos e de financiamento da digitalização e contribuiu para um One-UN Position Paper com recomendações estratégicas e plano de ação.</p>
+          <p class="en">Directed a strategic mapping of Timor-Leste's digital ecosystem, identifying actionable insights, systemic gaps, and opportunities. Mapped institutional, policy, and financing frameworks for digitalisation, and contributed to a One-UN Position Paper with strategic recommendations and an action plan.</p>
+        </div>
+      </div>
 
-        <!-- Category Filters -->
-        <div class="portfolio-filters">
-          <button class="filter-btn active" data-filter="all">
-            <i class="fa-solid fa-border-all"></i>
-            <span data-i18n="projects.filter.all">All Projects</span>
+      <!-- Ginger Sofreco -->
+      <div class="exp-card">
+        <div class="exp-card-header">
+          <div class="exp-card-date">
+            <span class="pt">Abr 2025 – Jun 2025</span>
+            <span class="en">Apr 2025 – Jun 2025</span>
+          </div>
+          <div class="exp-card-logo" style="background:#2F81F7;">GS</div>
+        </div>
+        <div class="exp-card-divider"></div>
+        <div class="exp-card-body">
+          <h3>
+            <span class="pt">Ginger Sofreco – Senior Expert em Sistemas de Informação</span>
+            <span class="en">Ginger Sofreco – Senior Expert in Information Systems Management</span>
+          </h3>
+          <p class="pt">Team Leader do projeto e-Just (e-Governance for the Judicial System) apoiado pela UE, cobrindo o sistema judicial nacional em todos os 13 municípios. Apoiou a Delegação da UE e o TECS no escopo de um projeto para modernização e digitalização do sistema judicial do país.</p>
+          <p class="en">Team Leader for the EU-supported e-Just project covering the national court system across all 13 municipalities. Assisted the EU Delegation and TECS in scoping a project for the modernisation and digitalisation of the country's judicial system.</p>
+        </div>
+      </div>
+
+      <!-- UNICEF — T4D Health -->
+      <div class="exp-card">
+        <div class="exp-card-header">
+          <div class="exp-card-date">
+            <span class="pt">Mar 2025 – Presente</span>
+            <span class="en">Mar 2025 – Present</span>
+          </div>
+          <div class="exp-card-logo" style="background:#00AEEF;">UH</div>
+        </div>
+        <div class="exp-card-divider"></div>
+        <div class="exp-card-body">
+          <h3>
+            <span class="pt">UNICEF – Consultor T4D em Saúde</span>
+            <span class="en">UNICEF – Technology for Development (T4D) Health Consultant</span>
+          </h3>
+          <p class="pt">Fornece apoio técnico e programático em T4D e iniciativas de transformação digital, liderando formulação de políticas e desenvolvimento estratégico para fortalecimento de sistemas. Construiu e mantém parcerias estratégicas, com capacitação em níveis nacional e municipal.</p>
+          <p class="en">Provides technical and programmatic support for T4D and digital transformation initiatives, leading policy formulation and strategic development for system strengthening. Built and maintains strategic partnerships, delivering capacity-building at national and municipal levels.</p>
+        </div>
+      </div>
+
+      <!-- UNICEF — IT Consultant (CPIMS/CRVS) -->
+      <div class="exp-card">
+        <div class="exp-card-header">
+          <div class="exp-card-date">
+            <span class="pt">Ago 2024 – Presente</span>
+            <span class="en">Aug 2024 – Present</span>
+          </div>
+          <div class="exp-card-logo" style="background:#1CABE2;">UI</div>
+        </div>
+        <div class="exp-card-divider"></div>
+        <div class="exp-card-body">
+          <h3>
+            <span class="pt">UNICEF – Consultor de TI (CPIMS / CRVS)</span>
+            <span class="en">UNICEF – Information Technology Consultant (CPIMS / CRVS)</span>
+          </h3>
+          <p class="pt">Fortaleceu os sistemas nacionais CPIMS e CRVS nos 13 municípios de Timor-Leste, apoiando proteção à criança e registro civil para 1,3M+ cidadãos, em colaboração com o Ministério da Justiça e o MSSI. Facilitou a integração no ecossistema de e-governança e conduziu workshops multissetoriais.</p>
+          <p class="en">Strengthened the national CPIMS and CRVS systems across Timor-Leste's 13 municipalities, supporting child protection and civil registration for 1.3M+ citizens, with the Ministry of Justice and MSSI. Facilitated integration into the broader e-governance ecosystem and convened multi-sectoral workshops.</p>
+        </div>
+      </div>
+
+      <!-- Catalpa -->
+      <div class="exp-card">
+        <div class="exp-card-header">
+          <div class="exp-card-date">
+            <span class="pt">Abr 2023 – Presente</span>
+            <span class="en">Apr 2023 – Present</span>
+          </div>
+          <div class="exp-card-logo" style="background:#E84393;">CI</div>
+        </div>
+        <div class="exp-card-divider"></div>
+        <div class="exp-card-body">
+          <h3>
+            <span class="pt">Catalpa International – Data Analyst</span>
+            <span class="en">Catalpa International – Data Analyst</span>
+          </h3>
+          <p class="pt">Migrou dados de 9.000+ projetos (USD 100M+) para a plataforma PNDS. Executou análise para o projeto Jerasaun Foun Bolsa da Mãe, facilitando USD 8M+ em pagamentos para 40.000+ beneficiárias, 50.000 crianças e 10.000+ gestantes. Capacitou 12+ profissionais no Pacific eLearning Programme.</p>
+          <p class="en">Migrated data for 9,000+ projects (USD 100M+) into the PNDS platform. Delivered analysis for the Jerasaun Foun Bolsa da Mãe project, facilitating USD 8M+ in payments to 40,000+ beneficiaries, 50,000 children, and 10,000+ pregnant women. Coached 12+ professionals across the Pacific eLearning Programme.</p>
+        </div>
+      </div>
+
+      <!-- UNDP / CNE — Digital Transformation Specialist -->
+      <div class="exp-card">
+        <div class="exp-card-header">
+          <div class="exp-card-date">
+            <span class="pt">Fev 2022 – Jun 2023</span>
+            <span class="en">Feb 2022 – Jun 2023</span>
+          </div>
+          <div class="exp-card-logo" style="background:#009EDB;">UC</div>
+        </div>
+        <div class="exp-card-divider"></div>
+        <div class="exp-card-body">
+          <h3>
+            <span class="pt">PNUD / CNE – Especialista em Transformação Digital (Eleitoral)</span>
+            <span class="en">UNDP / CNE – Digital Transformation Specialist (Electoral)</span>
+          </h3>
+          <p class="pt">Liderou o design e deploy do Centro Nacional de Tabulação do CNE e da Plataforma de Transformação Digital para as eleições nacionais de 2022 e 2023. Apoio técnico abrangente validando resultados de mais de 650.000 eleitores em 1.400 centros de votação.</p>
+          <p class="en">Led the design and deployment of the CNE National Tabulation Centre and Digital Transformation Platform for the 2022 and 2023 national elections. Provided comprehensive technical support validating results from 650,000+ voters across 1,400 voting centres.</p>
+        </div>
+      </div>
+
+      <!-- MOEYS — World Bank -->
+      <div class="exp-card">
+        <div class="exp-card-header">
+          <div class="exp-card-date">
+            <span class="pt">Nov 2022 – Abr 2023</span>
+            <span class="en">Nov 2022 – Apr 2023</span>
+          </div>
+          <div class="exp-card-logo" style="background:#FDB927;">ME</div>
+        </div>
+        <div class="exp-card-divider"></div>
+        <div class="exp-card-body">
+          <h3>
+            <span class="pt">MOEYS – Consultor</span>
+            <span class="en">Ministry of Education (MOEYS) – Consultant</span>
+          </h3>
+          <p class="pt">Planejou e executou um sistema CAPI nacional para o censo escolar e pesquisa de base, cobrindo 1.700+ escolas em 13 municípios. Treinou 70+ entrevistadores e implantou infraestrutura cloud para suporte e manutenção dos dados do censo.</p>
+          <p class="en">Planned and executed a nationwide CAPI system for the national school census and baseline survey, covering 1,700+ schools across 13 municipalities. Trained 70+ enumerators and deployed cloud-hosted infrastructure for census data.</p>
+        </div>
+      </div>
+
+      <!-- Office of the Prosecutor General — Senior System Engineer -->
+      <div class="exp-card">
+        <div class="exp-card-header">
+          <div class="exp-card-date">
+            <span class="pt">Dez 2022 – Abr 2023</span>
+            <span class="en">Dec 2022 – Apr 2023</span>
+          </div>
+          <div class="exp-card-logo" style="background:#6366F1;">PG</div>
+        </div>
+        <div class="exp-card-divider"></div>
+        <div class="exp-card-body">
+          <h3>
+            <span class="pt">Procuradoria Geral – Senior System Engineer</span>
+            <span class="en">Office of the Prosecutor General – Senior System Engineer</span>
+          </h3>
+          <p class="pt">Liderou sessões de capacitação para equipe de TI com 10+ profissionais utilizando tecnologias open-source e simuladores de laboratório de rede. Modernizou a infraestrutura de TI e implantou soluções open-source, reforçando segurança de rede e eficiência operacional.</p>
+          <p class="en">Led training and capacity-building sessions for the 10+ IT team using open-source technologies and network training lab simulators. Modernised IT infrastructure and rolled out open-source solutions, enhancing network security and operational efficiency.</p>
+        </div>
+      </div>
+
+      <!-- EYETRUST LDA -->
+      <div class="exp-card">
+        <div class="exp-card-header">
+          <div class="exp-card-date">
+            <span class="pt">Jan 2020 – Abr 2024</span>
+            <span class="en">Jan 2020 – Apr 2024</span>
+          </div>
+          <div class="exp-card-logo" style="background:#0b0b0b;">ET</div>
+        </div>
+        <div class="exp-card-divider"></div>
+        <div class="exp-card-body">
+          <h3>
+            <span class="pt">EYETRUST LDA – Head of Technology</span>
+            <span class="en">EYETRUST LDA – Head of Technology</span>
+          </h3>
+          <p class="pt">Supervisionou operações de TI em 5+ projetos simultâneos nos setores bancário, judicial e público. Ponto focal de integração entre Temenos T24 (Índia), IrisGuard (Reino Unido) e a equipe de TI do BNCTL, implantando reconhecimento biométrico por íris para KYC e prevenção de fraude.</p>
+          <p class="en">Oversaw IT operations across a 5+ project portfolio in banking, justice, and public sectors. Served as integration focal point between Temenos T24 (India), IrisGuard (UK), and BNCTL's IT team, deploying biometric iris recognition for KYC and fraud prevention.</p>
+        </div>
+      </div>
+
+      <!-- Court of Appeals -->
+      <div class="exp-card">
+        <div class="exp-card-header">
+          <div class="exp-card-date">
+            <span class="pt">Abr 2019 – Fev 2022</span>
+            <span class="en">Apr 2019 – Feb 2022</span>
+          </div>
+          <div class="exp-card-logo" style="background:#1A1A1A;">TJ</div>
+        </div>
+        <div class="exp-card-divider"></div>
+        <div class="exp-card-body">
+          <h3>
+            <span class="pt">Tribunal de Recurso – Consultor de TI</span>
+            <span class="en">Court of Appeals – Information Technology Advisor</span>
+          </h3>
+          <p class="pt">Assessorou o Chefe de TI e orientou equipe de 6 em iniciativas de modernização digital em 7 tribunais distritais e o Tribunal de Recurso. Aumentou disponibilidade de sistemas de 40% para 99%. Reduziu custos anuais em USD 60.000+ com padronização e adoção de open-source.</p>
+          <p class="en">Advised the IT Chief and guided a team of 6 through modernisation initiatives across 7 District Courts and the Court of Appeals. Increased system availability from 40% to 99%. Reduced annual costs by USD 60,000+ via standardisation and open-source adoption.</p>
+        </div>
+      </div>
+
+      <!-- Office of the Prosecutor General — IT Advisor (UNDP Justice) -->
+      <div class="exp-card">
+        <div class="exp-card-header">
+          <div class="exp-card-date">
+            <span class="pt">Jul 2014 – Mar 2019</span>
+            <span class="en">Jul 2014 – Mar 2019</span>
+          </div>
+          <div class="exp-card-logo" style="background:#4A90E2;">PG</div>
+        </div>
+        <div class="exp-card-divider"></div>
+        <div class="exp-card-body">
+          <h3>
+            <span class="pt">Procuradoria Geral – Consultor de TI (PNUD Justice System)</span>
+            <span class="en">Office of the Prosecutor General – IT Advisor (UNDP Justice System Project)</span>
+          </h3>
+          <p class="pt">Formulou e executou estratégias ICT incluindo o rollout de IIMS (Case Management), RH, LMS, e-mail e videoconferência. Liderou o primeiro Centro de Treinamento ICT da Procuradoria em parceria com a KOICA. Aumentou disponibilidade de sistemas de 50% para 99%.</p>
+          <p class="en">Formulated and executed ICT strategies including IIMS (Case Management), HR, LMS, email, and videoconferencing rollouts. Spearheaded the first ICT Training Centre for the Prosecutor General in partnership with KOICA. Increased system availability from 50% to 99%.</p>
+        </div>
+      </div>
+
+      <!-- Otimizai LDA -->
+      <div class="exp-card">
+        <div class="exp-card-header">
+          <div class="exp-card-date">
+            <span class="pt">Jul 2015 – Dez 2023</span>
+            <span class="en">Jul 2015 – Dec 2023</span>
+          </div>
+          <div class="exp-card-logo" style="background:#FF6B7A;">OT</div>
+        </div>
+        <div class="exp-card-divider"></div>
+        <div class="exp-card-body">
+          <h3>
+            <span class="pt">Otimizai LDA – Head of Technology</span>
+            <span class="en">Otimizai LDA – Head of Technology</span>
+          </h3>
+          <p class="pt">Dirigiu operações ICT empresariais — planejamento de infraestrutura, controles de segurança e entrega de serviços mission-critical em banca, justiça e setor público. Entregou soluções de IA/ML, incluindo uma plataforma de classificação fiscal que identificou USD 1M+ em oportunidades de otimização tributária.</p>
+          <p class="en">Directed enterprise ICT operations — infrastructure planning, security controls, and mission-critical service delivery across banking, justice, and public sector. Delivered AI/ML solutions including a tax classification platform that identified USD 1M+ in tax optimisation opportunities.</p>
+        </div>
+      </div>
+
+      <!-- FH Consulting – NTT -->
+      <div class="exp-card">
+        <div class="exp-card-header">
+          <div class="exp-card-date">
+            <span class="pt">Jun 2013 – Jul 2014</span>
+            <span class="en">Jun 2013 – Jul 2014</span>
+          </div>
+          <div class="exp-card-logo" style="background:#0080FF;">FH</div>
+        </div>
+        <div class="exp-card-divider"></div>
+        <div class="exp-card-body">
+          <h3>
+            <span class="pt">FH Consulting – NTT – Consultor SAP ABAP</span>
+            <span class="en">FH Consulting – NTT – SAP ABAP Consultant</span>
+          </h3>
+          <p class="pt">Desenvolvimento ABAP, testes, migração de dados e integração para projetos SAP ERP em grandes empresas brasileiras (módulos MM, SD, AFS, WM, PI). Implantou SAP ECC e AFS para o Grupo Malwee (2 empresas, 5 fábricas, 90 lojas). Integrou controle estatístico .NET ao SAP ECC via RFC.</p>
+          <p class="en">ABAP development, testing, data migration, and integration for SAP ERP projects at large Brazilian enterprises (MM, SD, AFS, WM, PI modules). Deployed SAP ECC and AFS for Malwee Group (2 company codes, 5 factories, 90 retail locations). Integrated a .NET SPC system with SAP ECC via RFC.</p>
+        </div>
+      </div>
+
+      <!-- SONDA IT -->
+      <div class="exp-card">
+        <div class="exp-card-header">
+          <div class="exp-card-date">
+            <span class="pt">Jan 2013 – Jun 2013</span>
+            <span class="en">Jan 2013 – Jun 2013</span>
+          </div>
+          <div class="exp-card-logo" style="background:#2F81F7;">SO</div>
+        </div>
+        <div class="exp-card-divider"></div>
+        <div class="exp-card-body">
+          <h3>
+            <span class="pt">SONDA IT – Consultor SAP ABAP</span>
+            <span class="en">SONDA IT – SAP ABAP Consultant</span>
+          </h3>
+          <p class="pt">Desenvolvimento ABAP, migração de dados e integração de sistemas legados. Aplicou requisitos fiscais do governo brasileiro para a BRF Foods e criou novos módulos ABAP para a plataforma pw-CE da Solway (Química).</p>
+          <p class="en">ABAP development, data migration, and legacy system integration. Applied Brazilian Government fiscal requirements for BRF Foods and created new ABAP modules for Solway's pw-CE trade management platform (Chemical).</p>
+        </div>
+      </div>
+
+      <!-- CKBV FLORESTAL -->
+      <div class="exp-card">
+        <div class="exp-card-header">
+          <div class="exp-card-date">
+            <span class="pt">Nov 2002 – Dez 2011</span>
+            <span class="en">Nov 2002 – Dec 2011</span>
+          </div>
+          <div class="exp-card-logo" style="background:#6366F1;">CK</div>
+        </div>
+        <div class="exp-card-divider"></div>
+        <div class="exp-card-body">
+          <h3>
+            <span class="pt">CKBV Florestal – Analista de Desenvolvimento de Sistemas</span>
+            <span class="en">CKBV Florestal – System Development Analyst</span>
+          </h3>
+          <p class="pt">Administrou ERP Datasul/Totvs, HCM TOTVS e CRM, incluindo DBA, segurança, backups e virtualização. Implantou IBM Tivoli para backup/recovery e adotou gestão open-source, reduzindo custos operacionais em até 30%. Entregou relatórios Balanced Scorecard (BSC) em todas as unidades de negócio.</p>
+          <p class="en">Administered ERP Datasul/Totvs, HCM TOTVS, and CRM including DBA, security, backups, and virtualisation. Deployed IBM Tivoli for backup/recovery and adopted open-source server management, reducing operational costs by up to 30%. Delivered Balanced Scorecard (BSC) reporting across all business units.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════ CONTACT ════════════════════════ -->
+<section id="contact">
+  <div class="contact-inner container">
+
+    <div class="contact-left">
+      <h2>
+        <span class="pt">Vamos <span class="highlight-pink">trabalhar</span> juntos</span>
+        <span class="en">Let's <span class="highlight-pink">work</span> together</span>
+      </h2>
+      <p class="pt">Disponível para projetos de consultoria em transformação digital, sistemas de dados e assessoria tecnológica para governos e organizações internacionais.</p>
+      <p class="en">Available for consulting engagements in digital transformation, data systems, and technology advisory for governments and international organizations.</p>
+
+      <div class="contact-email-box">
+        <svg viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        <a href="mailto:paulo.s.amaral@outlook.com">
+          paulo.s.amaral<span class="at">[at]</span>outlook<span class="at">[dot]</span>com
+        </a>
+      </div>
+
+      <a href="https://calendly.com/paulo-s-amaral" target="_blank" rel="noopener noreferrer" class="contact-book-btn">
+        <svg viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        <span class="pt">Agendar uma call</span><span class="en">Book a Call</span>
+      </a>
+    </div>
+
+    <div class="contact-right">
+      <div class="qr-card">
+        <div class="qr-card-frame">
+          <img src="whatsapp-qr.png" alt="WhatsApp QR Code">
+        </div>
+        <div class="qr-card-caption">
+          <span class="pt">Aponte a câmera</span>
+          <span class="en">Point your camera</span>
+        </div>
+        <a href="https://wa.me/67078461740" target="_blank" rel="noopener noreferrer" class="qr-whatsapp-btn">
+          <!-- WhatsApp icon -->
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+          </svg>
+          <span class="pt">Scan para WhatsApp</span><span class="en">Scan to chat on WhatsApp</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════ FOOTER ════════════════════════ -->
+<footer>
+  <div class="footer-inner">
+
+    <div class="footer-newsletter">
+      <div class="newsletter-icon"><img src="coffee-icon.webp" alt="Newsletter" loading="lazy"></div>
+      <div class="newsletter-form-wrap">
+        <div class="newsletter-title">
+          <span class="pt">Inscreva-se na newsletter</span>
+          <span class="en">Subscribe to the newsletter</span>
+        </div>
+        <form action="https://substack.com/@matenek" method="get" target="_blank" class="newsletter-input-wrap">
+          <input type="email" name="email" class="newsletter-input"
+            data-placeholder-pt="Digite seu e-mail"
+            data-placeholder-en="Enter your email"
+            placeholder="Digite seu e-mail" required>
+          <button class="newsletter-submit" type="submit">
+            <span class="pt">Inscrever-se</span><span class="en">Subscribe</span>
           </button>
-          <button class="filter-btn" data-filter="governance">
-            <i class="fa-solid fa-landmark"></i>
-            <span data-i18n="projects.filter.governance">Governance</span>
-          </button>
-          <button class="filter-btn" data-filter="health">
-            <i class="fa-solid fa-heart-pulse"></i>
-            <span data-i18n="projects.filter.health">Health</span>
-          </button>
-          <button class="filter-btn" data-filter="social">
-            <i class="fa-solid fa-hand-holding-heart"></i>
-            <span data-i18n="projects.filter.social">Social</span>
-          </button>
-          <button class="filter-btn" data-filter="enterprise">
-            <i class="fa-solid fa-building"></i>
-            <span data-i18n="projects.filter.enterprise">Enterprise</span>
-          </button>
-        </div>
+        </form>
+      </div>
+    </div>
 
-        <!-- Bento Grid Projects -->
-        <div class="projects-bento" id="projectsGrid">
-
-          <!-- FEATURED: National Election Systems -->
-          <div class="project-card featured" data-category="governance">
-            <div class="featured-badge">
-              <i class="fa-solid fa-star"></i>
-              Featured Project
-            </div>
-            <div class="featured-content">
-              <div class="featured-main">
-                <div class="project-header">
-                  <div class="project-icon">
-                    <i class="fa-solid fa-check-to-slot"></i>
-                  </div>
-                  <div class="project-meta">
-                    <h3>National Election Tabulation System</h3>
-                    <span class="project-org">CNE / UNDP Timor-Leste</span>
-                  </div>
-                </div>
-                <p>Led the development and deployment of the National Tabulation Center platform for Presidential and
-                  Parliamentary elections (2022-2023). Zero system failures during critical election periods.</p>
-                <div class="project-tags">
-                  <span class="tag tag-governance">Digital Governance</span>
-                  <span class="tag">Real-time Analytics</span>
-                  <span class="tag">Mission Critical</span>
-                </div>
-              </div>
-              <div class="featured-sidebar">
-                <div class="project-impact">
-                  <div class="impact-item">
-                    <div class="impact-value">650K+</div>
-                    <div class="impact-label">Voters</div>
-                  </div>
-                  <div class="impact-item">
-                    <div class="impact-value">1,400</div>
-                    <div class="impact-label">Voting Centers</div>
-                  </div>
-                  <div class="impact-item">
-                    <div class="impact-value">0</div>
-                    <div class="impact-label">System Failures</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- FEATURED: Digital Maturity Assessment -->
-          <div class="project-card featured" data-category="governance">
-            <div class="featured-badge">
-              <i class="fa-solid fa-wand-magic-sparkles"></i>
-              AI-Powered
-            </div>
-            <div class="featured-content">
-              <div class="featured-main">
-                <div class="project-header">
-                  <div class="project-icon">
-                    <i class="fa-solid fa-clipboard-check"></i>
-                  </div>
-                  <div class="project-meta">
-                    <h3>Digital Maturity Assessment Platform</h3>
-                    <span class="project-org">UNDP / Timor Digital 2032</span>
-                  </div>
-                </div>
-                <p>Designed and delivered custom Digital Maturity Assessment web platform using AI-assisted rapid
-                  prototyping. Automated scoring across 15+ government institutions for Timor-Leste's digital
-                  transformation roadmap.</p>
-                <div class="project-tags">
-                  <span class="tag tag-ai">AI-Assisted</span>
-                  <span class="tag">Deloitte Framework</span>
-                  <span class="tag">National Strategy</span>
-                </div>
-              </div>
-              <div class="featured-sidebar">
-                <div class="project-impact">
-                  <div class="impact-item">
-                    <div class="impact-value">15+</div>
-                    <div class="impact-label">Institutions</div>
-                  </div>
-                  <div class="impact-item">
-                    <div class="impact-value">AI</div>
-                    <div class="impact-label">Automated</div>
-                  </div>
-                  <div class="impact-item">
-                    <div class="impact-value">2032</div>
-                    <div class="impact-label">Strategy</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Social Protection -->
-          <div class="project-card" data-category="social">
-            <div class="project-header">
-              <div class="project-icon">
-                <i class="fa-solid fa-children"></i>
-              </div>
-              <div class="project-meta">
-                <h3>Jerasaun Foun Social Protection</h3>
-                <span class="project-org">MSSI / Catalpa</span>
-              </div>
-            </div>
-            <p>Led data analytics enabling $8M+ in payments to vulnerable families, including 50,000 children and
-              10,000+ pregnant women.</p>
-            <div class="project-impact">
-              <div class="impact-item">
-                <div class="impact-value">$8M+</div>
-                <div class="impact-label">Payments</div>
-              </div>
-              <div class="impact-item">
-                <div class="impact-value">50K</div>
-                <div class="impact-label">Children</div>
-              </div>
-            </div>
-            <div class="project-tags">
-              <span class="tag tag-social">Social Protection</span>
-              <span class="tag">Data Analytics</span>
-            </div>
-          </div>
-
-          <!-- DRBI Platform -->
-          <div class="project-card" data-category="governance">
-            <div class="project-header">
-              <div class="project-icon">
-                <i class="fa-solid fa-scale-balanced"></i>
-              </div>
-              <div class="project-meta">
-                <h3>DRBI Asset Declaration Platform</h3>
-                <span class="project-org">Court of Appeals</span>
-              </div>
-            </div>
-            <p>Built digital asset and interest declaration platform for courts and anti-corruption bodies, serving
-              37,000+ public officials.</p>
-            <div class="project-tags">
-              <span class="tag tag-governance">Anti-Corruption</span>
-              <span class="tag">Justice Sector</span>
-            </div>
-          </div>
-
-          <!-- PNDS -->
-          <div class="project-card" data-category="social">
-            <div class="project-header">
-              <div class="project-icon">
-                <i class="fa-solid fa-seedling"></i>
-              </div>
-              <div class="project-meta">
-                <h3>PNDS Rural Development</h3>
-                <span class="project-org">Government of Timor-Leste</span>
-              </div>
-            </div>
-            <p>Managed data migration for 9,000+ development projects totaling $100M+ in rural community investments.
-            </p>
-            <div class="project-tags">
-              <span class="tag tag-social">Rural Development</span>
-              <span class="tag">$100M+ Data</span>
-            </div>
-          </div>
-
-          <!-- DHIS2 Health -->
-          <div class="project-card" data-category="health">
-            <div class="project-header">
-              <div class="project-icon">
-                <i class="fa-solid fa-syringe"></i>
-              </div>
-              <div class="project-meta">
-                <h3>DHIS2 Health Analytics</h3>
-                <span class="project-org">UNICEF / MOH</span>
-              </div>
-            </div>
-            <p>Strengthened national health information systems with improved data collection, validation, and EPI
-              dashboards for immunization monitoring.</p>
-            <div class="project-tags">
-              <span class="tag tag-health">DHIS2</span>
-              <span class="tag">Immunization</span>
-            </div>
-          </div>
-
-          <!-- CPIMS -->
-          <div class="project-card" data-category="health">
-            <div class="project-header">
-              <div class="project-icon">
-                <i class="fa-solid fa-hand-holding-heart"></i>
-              </div>
-              <div class="project-meta">
-                <h3>PRIMERO CPIMS Dashboards</h3>
-                <span class="project-org">UNICEF / MSSI</span>
-              </div>
-            </div>
-            <p>Developed Power BI dashboards and analytics for child protection case management supporting policy and
-              operational decisions.</p>
-            <div class="project-tags">
-              <span class="tag tag-health">Child Protection</span>
-              <span class="tag">Power BI</span>
-            </div>
-          </div>
-
-          <!-- Iris Recognition -->
-          <div class="project-card" data-category="enterprise">
-            <div class="project-header">
-              <div class="project-icon">
-                <i class="fa-solid fa-eye"></i>
-              </div>
-              <div class="project-meta">
-                <h3>BNCTL Iris Recognition Banking</h3>
-                <span class="project-org">EYETRUST / BNCTL</span>
-              </div>
-            </div>
-            <p>Integrated iris biometric authentication with Temenos T24 core banking, strengthening KYC compliance and
-              fraud prevention.</p>
-            <div class="project-tags">
-              <span class="tag tag-fintech">Biometrics</span>
-              <span class="tag">Banking</span>
-            </div>
-          </div>
-
-          <!-- Tax AI -->
-          <div class="project-card" data-category="enterprise">
-            <div class="project-header">
-              <div class="project-icon">
-                <i class="fa-solid fa-robot"></i>
-              </div>
-              <div class="project-meta">
-                <h3>Tax Classification AI Tool</h3>
-                <span class="project-org">Becomex (Brazil)</span>
-              </div>
-            </div>
-            <p>Led AI/ML pilot for automated tax classification using GCP and BigQuery, identifying $1M+ in revenue
-              optimization opportunities.</p>
-            <div class="project-tags">
-              <span class="tag tag-ai">Machine Learning</span>
-              <span class="tag">GCP</span>
-            </div>
-          </div>
-
-          <!-- Hidden Projects (Show More) -->
-          <div class="project-card hidden-project" data-category="governance">
-            <div class="project-header">
-              <div class="project-icon">
-                <i class="fa-solid fa-comment-dots"></i>
-              </div>
-              <div class="project-meta">
-                <h3>ROSA Sexual Harassment Chatbot</h3>
-                <span class="project-org">UN Women</span>
-              </div>
-            </div>
-            <p>Developed secure digital reporting system for sexual harassment complaints in public sector via Facebook
-              Messenger.</p>
-            <div class="project-tags">
-              <span class="tag">Chatbot</span>
-              <span class="tag">Accountability</span>
-            </div>
-          </div>
-
-          <div class="project-card hidden-project" data-category="governance">
-            <div class="project-header">
-              <div class="project-icon">
-                <i class="fa-solid fa-gavel"></i>
-              </div>
-              <div class="project-meta">
-                <h3>IIMS Case Management System</h3>
-                <span class="project-org">Prosecutor's General</span>
-              </div>
-            </div>
-            <p>Deployed and maintained Case Management System with Metabase dashboards for case tracking across
-              prosecution offices.</p>
-            <div class="project-tags">
-              <span class="tag">Metabase</span>
-              <span class="tag">Justice</span>
-            </div>
-          </div>
-
-          <div class="project-card hidden-project" data-category="social">
-            <div class="project-header">
-              <div class="project-icon">
-                <i class="fa-solid fa-money-bill-transfer"></i>
-              </div>
-              <div class="project-meta">
-                <h3>Kartaun Bele Cash Transfer</h3>
-                <span class="project-org">World Vision</span>
-              </div>
-            </div>
-            <p>Digital cash transfer platform for 3,000+ low-income beneficiaries supporting social protection in Ermera
-              District.</p>
-            <div class="project-tags">
-              <span class="tag tag-social">Digital Payments</span>
-              <span class="tag">Financial Inclusion</span>
-            </div>
-          </div>
-
-          <div class="project-card hidden-project" data-category="governance">
-            <div class="project-header">
-              <div class="project-icon">
-                <i class="fa-solid fa-shield-halved"></i>
-              </div>
-              <div class="project-meta">
-                <h3>National Police Systems (PNTL)</h3>
-                <span class="project-org">PNTL / AFP</span>
-              </div>
-            </div>
-            <p>Scaled and operated 40+ servers and 20+ databases for police intelligence and case management systems.
-            </p>
-            <div class="project-tags">
-              <span class="tag">Infrastructure</span>
-              <span class="tag">Security</span>
-            </div>
-          </div>
-
-          <div class="project-card hidden-project" data-category="enterprise">
-            <div class="project-header">
-              <div class="project-icon">
-                <i class="fa-solid fa-cubes"></i>
-              </div>
-              <div class="project-meta">
-                <h3>SAP ERP Implementations</h3>
-                <span class="project-org">Malwee, Votorantim, BRF</span>
-              </div>
-            </div>
-            <p>SAP ABAP integrations across MM, PP, SD, AFS, WM, PI modules for large-scale manufacturing and retail in
-              Brazil.</p>
-            <div class="project-tags">
-              <span class="tag">SAP ABAP</span>
-              <span class="tag">Enterprise</span>
-            </div>
-          </div>
-
-          <div class="project-card hidden-project" data-category="social">
-            <div class="project-header">
-              <div class="project-icon">
-                <i class="fa-solid fa-school"></i>
-              </div>
-              <div class="project-meta">
-                <h3>School Census System</h3>
-                <span class="project-org">MOEYS / World Bank</span>
-              </div>
-            </div>
-            <p>Designed and implemented nationwide school census, trained 70+ enumerators, collecting data from 1,500+
-              schools.</p>
-            <div class="project-tags">
-              <span class="tag">Census</span>
-              <span class="tag">World Bank</span>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- Show More Button -->
-        <div class="projects-show-more">
-          <button class="btn-show-more" id="showMoreBtn">
-            <span data-i18n="projects.showMore">Show More Projects</span>
-            <i class="fa-solid fa-chevron-down"></i>
-          </button>
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name">Paulo Amaral</div>
+        <p class="footer-brand-desc pt">Transformando ideias em soluções digitais de impacto. Consultor em transformação digital com paixão por tecnologia para o desenvolvimento humano.</p>
+        <p class="footer-brand-desc en">Transforming ideas into impactful digital solutions. Digital transformation consultant passionate about technology for human development.</p>
+        <div class="footer-socials">
+          <a href="https://github.com/paulo-amaral" target="_blank" rel="noopener noreferrer" class="footer-social github">
+            <svg viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+          </a>
+          <a href="https://linkedin.com/in/paulosergioamaral" target="_blank" rel="noopener noreferrer" class="footer-social linkedin">
+            <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
         </div>
       </div>
-    </section>
 
-    <hr class="section-divider">
-
-    <!-- Experience -->
-    <section class="section" id="experience">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-icon">
-            <i class="fa-solid fa-briefcase"></i>
-          </div>
-          <h2 class="section-title" data-i18n="experience.title">Experience</h2>
-        </div>
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-header">
-              <div class="timeline-title">Digital Transformation Consultant <span class="timeline-company">@ UNDP</span>
-              </div>
-              <span class="timeline-date">Jan 2026 - Present</span>
-            </div>
-            <div class="timeline-location">
-              <i class="fa-solid fa-location-dot"></i>
-              Dili, Timor-Leste
-            </div>
-            <ul class="timeline-desc">
-              <li data-i18n="exp.undp1">Led the National Digital Maturity Assessment for Dalan ba Digital programme</li>
-              <li data-i18n="exp.undp2">Designed custom Digital Maturity Assessment web platform using AI-assisted rapid
-                prototyping</li>
-            </ul>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-header">
-              <div class="timeline-title">T4D Health Consultant <span class="timeline-company">@ UNICEF</span></div>
-              <span class="timeline-date">Mar 2025 - Present</span>
-            </div>
-            <div class="timeline-location">
-              <i class="fa-solid fa-location-dot"></i>
-              Dili, Timor-Leste
-            </div>
-            <ul class="timeline-desc">
-              <li data-i18n="exp.unicef1">Delivered technical support for T4D and Digital Transformation initiatives
-              </li>
-              <li data-i18n="exp.unicef2">Led policy formulation for health system strengthening</li>
-            </ul>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-header">
-              <div class="timeline-title">Digital Transformation Consultant <span class="timeline-company">@ UN Resident
-                  Coordinator's Office</span></div>
-              <span class="timeline-date">Aug 2025 - Present</span>
-            </div>
-            <div class="timeline-location">
-              <i class="fa-solid fa-location-dot"></i>
-              Dili, Timor-Leste
-            </div>
-            <ul class="timeline-desc">
-              <li data-i18n="exp.unrco1">Mapped institutional, policy, and financing frameworks for digitalization</li>
-              <li data-i18n="exp.unrco2">Supported production of One-UN Position Paper on Digital Transformation</li>
-            </ul>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-header">
-              <div class="timeline-title">Data Analyst <span class="timeline-company">@ Catalpa International</span>
-              </div>
-              <span class="timeline-date">Apr 2023 - Present</span>
-            </div>
-            <div class="timeline-location">
-              <i class="fa-solid fa-location-dot"></i>
-              Dili, Timor-Leste
-            </div>
-            <ul class="timeline-desc">
-              <li data-i18n="exp.catalpa1">Managed data for PNDS with 9,000+ projects totaling $100M+</li>
-              <li data-i18n="exp.catalpa2">Facilitated $8M+ in payments through Jerasaun Foun social protection</li>
-            </ul>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-header">
-              <div class="timeline-title">Head of Technology <span class="timeline-company">@ EYETRUST LDA</span></div>
-              <span class="timeline-date">Jan 2020 - Apr 2024</span>
-            </div>
-            <div class="timeline-location">
-              <i class="fa-solid fa-location-dot"></i>
-              Dili, Timor-Leste
-            </div>
-            <ul class="timeline-desc">
-              <li data-i18n="exp.eyetrust1">Integrated iris recognition with Temenos T24 core banking (BNCTL)</li>
-              <li data-i18n="exp.eyetrust2">Coordinated international teams across India, England, and Timor-Leste</li>
-            </ul>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-header">
-              <div class="timeline-title">IT Advisor <span class="timeline-company">@ Court of Appeals</span></div>
-              <span class="timeline-date">Apr 2019 - Feb 2022</span>
-            </div>
-            <div class="timeline-location">
-              <i class="fa-solid fa-location-dot"></i>
-              Dili, Timor-Leste
-            </div>
-            <ul class="timeline-desc">
-              <li data-i18n="exp.court1">Led IT team and digital transformation across 7 District Courts</li>
-              <li data-i18n="exp.court2">Increased system availability from 40% to 99%</li>
-            </ul>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-header">
-              <div class="timeline-title">Head of Technology <span class="timeline-company">@ Otimizai LDA</span></div>
-              <span class="timeline-date">Jul 2015 - Dec 2023</span>
-            </div>
-            <div class="timeline-location">
-              <i class="fa-solid fa-location-dot"></i>
-              Dili, Timor-Leste
-            </div>
-            <ul class="timeline-desc">
-              <li data-i18n="exp.otimizai1">Delivered digital solutions for UN Women, World Vision, MOEYS, EU, and
-                Police</li>
-              <li data-i18n="exp.otimizai2">Led AI/ML tax classification pilot identifying $1M+ optimization (Brazil)
-              </li>
-            </ul>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-header">
-              <div class="timeline-title">IT Advisor <span class="timeline-company">@ Prosecutor's General Office
-                  (UNDP)</span></div>
-              <span class="timeline-date">Jul 2014 - Mar 2019</span>
-            </div>
-            <div class="timeline-location">
-              <i class="fa-solid fa-location-dot"></i>
-              Dili, Timor-Leste
-            </div>
-            <ul class="timeline-desc">
-              <li data-i18n="exp.pgr1">Deployed Case Management System (IIMS), HR systems, and LMS</li>
-              <li data-i18n="exp.pgr2">Created first ICT Training Center for justice sector with KOICA</li>
-            </ul>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-header">
-              <div class="timeline-title">SAP ABAP Consultant <span class="timeline-company">@ FH Consulting -
-                  NTT</span></div>
-              <span class="timeline-date">Jun 2013 - Jul 2014</span>
-            </div>
-            <div class="timeline-location">
-              <i class="fa-solid fa-location-dot"></i>
-              Curitiba, Brazil
-            </div>
-            <ul class="timeline-desc">
-              <li data-i18n="exp.sap1">SAP implementations for Malwee Group (Retail), Votorantim Cement, BRF Foods</li>
-              <li data-i18n="exp.sap2">ABAP development for MM, SD, AFS, WM, and PI modules</li>
-            </ul>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-header">
-              <div class="timeline-title">System Development Analyst <span class="timeline-company">@ CKBV
-                  Florestal</span></div>
-              <span class="timeline-date">Nov 2002 - Dec 2011</span>
-            </div>
-            <div class="timeline-location">
-              <i class="fa-solid fa-location-dot"></i>
-              Curitiba, Brazil
-            </div>
-            <ul class="timeline-desc">
-              <li data-i18n="exp.ckbv1">Managed ERP Datasul/TOTVS, HCM, and CRM systems across multiple branches</li>
-              <li data-i18n="exp.ckbv2">Reduced costs by 30% through open-source adoption and virtualization</li>
-            </ul>
-          </div>
-        </div>
+      <div class="footer-col">
+        <h3><span class="pt">Entre em contato</span><span class="en">Get in touch</span></h3>
+        <ul>
+          <li>
+            <svg viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            <a href="mailto:paulo.s.amaral@outlook.com">paulo.s.amaral@outlook.com</a>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <a href="tel:+67078461740">+670 78461740</a>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            Dili, Timor-Leste
+          </li>
+        </ul>
       </div>
-    </section>
 
-    <hr class="section-divider">
-
-    <!-- Skills -->
-    <section class="section" id="skills">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-icon">
-            <i class="fa-solid fa-toolbox"></i>
-          </div>
-          <h2 class="section-title" data-i18n="skills.title">Skills</h2>
-        </div>
-        <div class="skills-grid">
-          <div class="skill-category">
-            <h3>
-              <i class="fa-solid fa-cloud"></i>
-              <span data-i18n="skills.cloud">Cloud & DevOps</span>
-            </h3>
-            <div class="skill-list">
-              <span class="skill-item">AWS</span>
-              <span class="skill-item">GCP</span>
-              <span class="skill-item">Docker</span>
-              <span class="skill-item">Kubernetes</span>
-              <span class="skill-item">Terraform</span>
-              <span class="skill-item">CI/CD</span>
-            </div>
-          </div>
-          <div class="skill-category">
-            <h3>
-              <i class="fa-solid fa-database"></i>
-              <span data-i18n="skills.data">Data & Analytics</span>
-            </h3>
-            <div class="skill-list">
-              <span class="skill-item">Python</span>
-              <span class="skill-item">SQL / PostgreSQL</span>
-              <span class="skill-item">Power BI</span>
-              <span class="skill-item">Metabase</span>
-              <span class="skill-item">Machine Learning</span>
-              <span class="skill-item">DHIS2</span>
-            </div>
-          </div>
-          <div class="skill-category">
-            <h3>
-              <i class="fa-solid fa-server"></i>
-              <span data-i18n="skills.systems">Systems</span>
-            </h3>
-            <div class="skill-list">
-              <span class="skill-item">Linux / Windows</span>
-              <span class="skill-item">Networking</span>
-              <span class="skill-item">Cybersecurity</span>
-              <span class="skill-item">LDAP / AD</span>
-              <span class="skill-item">ERP / SAP</span>
-              <span class="skill-item">ITIL</span>
-            </div>
-          </div>
-          <div class="skill-category">
-            <h3>
-              <i class="fa-solid fa-handshake"></i>
-              <span data-i18n="skills.professional">Professional</span>
-            </h3>
-            <div class="skill-list">
-              <span class="skill-item">Project Management</span>
-              <span class="skill-item">Human-Centered Design</span>
-              <span class="skill-item">Capacity Building</span>
-              <span class="skill-item">MEL</span>
-              <span class="skill-item">GovStack</span>
-              <span class="skill-item">Stakeholder Mgmt</span>
-            </div>
-          </div>
-        </div>
+      <div class="footer-col">
+        <h3>Links</h3>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services"><span class="pt">Serviços</span><span class="en">Services</span></a></li>
+          <li><a href="#about"><span class="pt">Sobre</span><span class="en">About</span></a></li>
+          <li><a href="#experience"><span class="pt">Experiência</span><span class="en">Experience</span></a></li>
+        </ul>
       </div>
-    </section>
+    </div>
 
-    <hr class="section-divider">
-
-    <!-- Values -->
-    <section class="section" id="values">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-icon">
-            <i class="fa-solid fa-star"></i>
-          </div>
-          <h2 class="section-title" data-i18n="values.title">Values & Culture</h2>
-        </div>
-        <div class="values-grid">
-          <div class="value-card">
-            <div class="value-icon">
-              <i class="fa-solid fa-lightbulb"></i>
-            </div>
-            <h3 data-i18n="values.v1.title">Excellence & Innovation</h3>
-            <p data-i18n="values.v1.desc">Delivering WOW to every client through creative and agile solutions.</p>
-          </div>
-          <div class="value-card">
-            <div class="value-icon">
-              <i class="fa-solid fa-people-group"></i>
-            </div>
-            <h3 data-i18n="values.v2.title">UBUNTU Philosophy</h3>
-            <p data-i18n="values.v2.desc">"I am because we are" - building sustainable society through respect and
-              solidarity.</p>
-          </div>
-          <div class="value-card">
-            <div class="value-icon">
-              <i class="fa-solid fa-bolt"></i>
-            </div>
-            <h3 data-i18n="values.v3.title">Do More With Less</h3>
-            <p data-i18n="values.v3.desc">Transparency, proactivity, and efficiency in every engagement.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <hr class="section-divider">
-
-    <!-- Contact -->
-    <section class="section" id="contact">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-icon">
-            <i class="fa-solid fa-envelope"></i>
-          </div>
-          <h2 class="section-title" data-i18n="contact.title">Get in Touch</h2>
-        </div>
-        <div class="contact-grid contact-grid-centered">
-          <div class="contact-cta contact-cta-full">
-            <div class="cta-content">
-              <h3 data-i18n="contact.cta.title">Let's Work Together</h3>
-              <p data-i18n="contact.cta.desc">I'm available for consulting engagements in digital transformation, data
-                systems, and technology advisory.</p>
-              <a href="mailto:paulo.s.amaral@outlook.com" class="cta-email">
-                <i class="fa-solid fa-envelope"></i>
-                <span>paulo.s.amaral <span class="email-at">[at]</span> outlook <span class="email-dot">[dot]</span>
-                  com</span>
-              </a>
-              <a href="https://calendly.com/matenek/15min" target="_blank" rel="noopener noreferrer"
-                class="btn btn-primary">
-                <i class="fa-regular fa-calendar"></i>
-                <span data-i18n="contact.cta.button">Book a Call</span>
-              </a>
-              <div class="social-links">
-                <a href="https://linkedin.com/in/paulosergioamaral" target="_blank" rel="noopener noreferrer"
-                  class="social-link" aria-label="LinkedIn">
-                  <i class="fa-brands fa-linkedin-in"></i>
-                </a>
-                <a href="https://github.com/paulo-amaral" target="_blank" rel="noopener noreferrer" class="social-link"
-                  aria-label="GitHub">
-                  <i class="fa-brands fa-github"></i>
-                </a>
-                <a href="https://x.com/askamaral" target="_blank" rel="noopener noreferrer" class="social-link"
-                  aria-label="X/Twitter">
-                  <i class="fa-brands fa-x-twitter"></i>
-                </a>
-                <a href="https://wa.me/67078461740" target="_blank" rel="noopener noreferrer" class="social-link"
-                  aria-label="WhatsApp">
-                  <i class="fa-brands fa-whatsapp"></i>
-                </a>
-                <a href="https://www.instagram.com/paulo_s_amaral" target="_blank" rel="noopener noreferrer"
-                  class="social-link" aria-label="Instagram">
-                  <i class="fa-brands fa-instagram"></i>
-                </a>
-                <a href="https://www.facebook.com/paulo.s.amaral" target="_blank" rel="noopener noreferrer"
-                  class="social-link" aria-label="Facebook">
-                  <i class="fa-brands fa-facebook-f"></i>
-                </a>
-              </div>
-            </div>
-            <div class="qr-section">
-              <a href="https://wa.me/67078461740" target="_blank" rel="noopener noreferrer" class="qr-card-modern">
-                <div class="qr-glow"></div>
-                <img src="whatsapp-qr.png" alt="WhatsApp QR Code" class="qr-image">
-                <div class="qr-badge">
-                  <i class="fa-brands fa-whatsapp"></i>
-                  <span data-i18n="contact.qr.label">Scan to chat on WhatsApp</span>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2026 Paulo Amaral. <span data-i18n="footer.rights">All rights reserved.</span></p>
-      <p class="footer-tagline">
-        <span data-i18n="footer.made">Made with</span>
-        <i class="fa-solid fa-heart footer-icon heart"></i>
-        <span data-i18n="footer.and">and</span>
-        <i class="fa-solid fa-mug-hot footer-icon coffee"></i>
-        <span data-i18n="footer.in">in the</span>
-        <span class="footer-icon crocodile" title="Timor-Leste">🐊</span>
-        <span data-i18n="footer.island">island</span>
+    <div class="footer-divider">
+      <p>© 2026 Paulo Amaral. <span class="pt">Todos os direitos reservados.</span><span class="en">All rights reserved.</span></p>
+      <p style="margin-top:8px;font-size:13px;">
+        <span class="pt">Feito com ❤️ e ☕ na ilha do 🐊</span>
+        <span class="en">Made with ❤️ and ☕ in the 🐊 island</span>
       </p>
     </div>
-  </footer>
+  </div>
+</footer>
 
-  <!-- Scroll to top button -->
-  <button class="scroll-top" aria-label="Scroll to top">
-    <i class="fa-solid fa-arrow-up"></i>
-  </button>
-
-  <script>
-    // Translations
-    const translations = {
-      en: {
-        "nav.about": "About",
-        "nav.services": "Services",
-        "nav.projects": "Projects",
-        "nav.experience": "Experience",
-        "nav.contact": "Contact",
-        "hero.available": "Available for consulting",
-        "hero.greeting": "Hi, I'm Paulo Amaral",
-        "hero.tagline": "Tech-for-good meets get-it-done. Hands-on consultant with a learn-by-doing approach to building systems that matter.",
-        "hero.book": "Book a Call",
-        "hero.viewwork": "View My Work",
-        "hero.connect": "Connect with me",
-        "about.title": "About Me",
-        "about.p1": "I'm a consultant passionate about transforming businesses and organizations through technology. With extensive engagement with UN agencies, governments, and donors, I specialize in digital governance, health, justice, civil registration, and social protection systems.",
-        "about.p2": "I believe in building products and solutions that make a difference from the very first delivery. My approach follows the UBUNTU philosophy - believing in a sustainable society built on respect and solidarity.",
-        "about.stat1": "Years of Experience",
-        "about.stat2": "Projects Delivered",
-        "about.stat3": "Countries Impacted",
-        "about.stat4": "USD Systems Managed",
-        "services.title": "What I Do",
-        "services.s1.title": "Software Development",
-        "services.s1.desc": "End-to-end handmade products and solutions, crafted with expertise.",
-        "services.s2.title": "Machine Learning & Data Science",
-        "services.s2.desc": "AI-powered solutions for classification, analysis, and automation.",
-        "services.s3.title": "Digital Transformation",
-        "services.s3.desc": "Strategic guidance for public sector and organizational modernization.",
-        "services.s4.title": "Capacity Building",
-        "services.s4.desc": "Training and mentoring ICT teams for sustainable development.",
-        "services.s5.title": "IT Infrastructure",
-        "services.s5.desc": "Cloud, DevOps, and enterprise infrastructure design and operations.",
-        "services.s6.title": "Business Intelligence",
-        "services.s6.desc": "Dashboards, analytics, and data-driven decision support systems.",
-        "projects.title": "Projects",
-        "projects.intro": "A curated selection of impactful projects across digital governance, social protection, health systems, and enterprise technology spanning 20+ years of hands-on delivery.",
-        "projects.stat1": "Systems Managed",
-        "projects.stat2": "Users Served",
-        "projects.stat3": "Officials on Platform",
-        "projects.stat4": "System Uptime",
-        "projects.filter.all": "All Projects",
-        "projects.filter.governance": "Governance",
-        "projects.filter.health": "Health",
-        "projects.filter.social": "Social",
-        "projects.filter.enterprise": "Enterprise",
-        "projects.showMore": "Show More Projects",
-        "projects.showLess": "Show Less",
-        "experience.title": "Experience",
-        "exp.undp1": "Led the National Digital Maturity Assessment for Dalan ba Digital programme",
-        "exp.undp2": "Designed custom Digital Maturity Assessment web platform using AI-assisted rapid prototyping",
-        "exp.unicef1": "Delivered technical support for T4D and Digital Transformation initiatives",
-        "exp.unicef2": "Led policy formulation for health system strengthening",
-        "exp.unrco1": "Mapped institutional, policy, and financing frameworks for digitalization",
-        "exp.unrco2": "Supported production of One-UN Position Paper on Digital Transformation",
-        "exp.catalpa1": "Managed data for PNDS with 9,000+ projects totaling $100M+",
-        "exp.catalpa2": "Facilitated $8M+ in payments through Jerasaun Foun social protection",
-        "exp.eyetrust1": "Integrated iris recognition with Temenos T24 core banking (BNCTL)",
-        "exp.eyetrust2": "Coordinated international teams across India, England, and Timor-Leste",
-        "exp.court1": "Led IT team and digital transformation across 7 District Courts",
-        "exp.court2": "Increased system availability from 40% to 99%",
-        "exp.otimizai1": "Delivered digital solutions for UN Women, World Vision, MOEYS, EU, and Police",
-        "exp.otimizai2": "Led AI/ML tax classification pilot identifying $1M+ optimization (Brazil)",
-        "exp.pgr1": "Deployed Case Management System (IIMS), HR systems, and LMS",
-        "exp.pgr2": "Created first ICT Training Center for justice sector with KOICA",
-        "exp.sap1": "SAP implementations for Malwee Group (Retail), Votorantim Cement, BRF Foods",
-        "exp.sap2": "ABAP development for MM, SD, AFS, WM, and PI modules",
-        "exp.ckbv1": "Managed ERP Datasul/TOTVS, HCM, and CRM systems across multiple branches",
-        "exp.ckbv2": "Reduced costs by 30% through open-source adoption and virtualization",
-        "skills.title": "Skills",
-        "skills.cloud": "Cloud & DevOps",
-        "skills.data": "Data & Analytics",
-        "skills.systems": "Systems",
-        "skills.professional": "Professional",
-        "values.title": "Values & Culture",
-        "values.v1.title": "Excellence & Innovation",
-        "values.v1.desc": "Delivering WOW to every client through creative and agile solutions.",
-        "values.v2.title": "UBUNTU Philosophy",
-        "values.v2.desc": "\"I am because we are\" - building sustainable society through respect and solidarity.",
-        "values.v3.title": "Do More With Less",
-        "values.v3.desc": "Transparency, proactivity, and efficiency in every engagement.",
-        "contact.title": "Get in Touch",
-        "contact.cta.title": "Let's Work Together",
-        "contact.cta.desc": "I'm available for consulting engagements in digital transformation, data systems, and technology advisory.",
-        "contact.cta.button": "Book a Call",
-        "contact.qr.label": "Scan to chat on WhatsApp",
-        "footer.rights": "All rights reserved.",
-        "footer.made": "Made with",
-        "footer.and": "and",
-        "footer.in": "in the",
-        "footer.island": "island"
-      },
-      pt: {
-        "nav.about": "Sobre",
-        "nav.services": "Servicos",
-        "nav.projects": "Projetos",
-        "nav.experience": "Experiencia",
-        "nav.contact": "Contato",
-        "hero.available": "Disponivel para consultoria",
-        "hero.greeting": "Ola, sou Paulo Amaral",
-        "hero.tagline": "Tecnologia para o bem com resultados concretos. Consultor hands-on com abordagem aprenda-fazendo para construir sistemas que importam.",
-        "hero.book": "Agendar Reuniao",
-        "hero.viewwork": "Ver Meu Trabalho",
-        "hero.connect": "Conecte-se comigo",
-        "about.title": "Sobre Mim",
-        "about.p1": "Sou um consultor apaixonado por transformar empresas e organizacoes atraves da tecnologia. Com amplo envolvimento com agencias da ONU, governos e doadores, especializo-me em governanca digital, saude, justica, registro civil e sistemas de protecao social.",
-        "about.p2": "Acredito em construir produtos e solucoes que fazem a diferenca desde a primeira entrega. Minha abordagem segue a filosofia UBUNTU - acreditando em uma sociedade sustentavel construida sobre respeito e solidariedade.",
-        "about.stat1": "Anos de Experiencia",
-        "about.stat2": "Projetos Entregues",
-        "about.stat3": "Paises Impactados",
-        "about.stat4": "USD Sistemas Gerenciados",
-        "services.title": "O Que Faco",
-        "services.s1.title": "Desenvolvimento de Software",
-        "services.s1.desc": "Produtos e solucoes artesanais de ponta a ponta, criados com expertise.",
-        "services.s2.title": "Machine Learning e Ciencia de Dados",
-        "services.s2.desc": "Solucoes baseadas em IA para classificacao, analise e automacao.",
-        "services.s3.title": "Transformacao Digital",
-        "services.s3.desc": "Orientacao estrategica para modernizacao do setor publico e organizacional.",
-        "services.s4.title": "Capacitacao",
-        "services.s4.desc": "Treinamento e mentoria de equipes de TIC para desenvolvimento sustentavel.",
-        "services.s5.title": "Infraestrutura de TI",
-        "services.s5.desc": "Design e operacoes de cloud, DevOps e infraestrutura empresarial.",
-        "services.s6.title": "Business Intelligence",
-        "services.s6.desc": "Dashboards, analytics e sistemas de apoio a decisao baseados em dados.",
-        "projects.title": "Projetos",
-        "projects.intro": "Uma selecao curada de projetos impactantes em governanca digital, protecao social, sistemas de saude e tecnologia empresarial ao longo de 20+ anos de entrega hands-on.",
-        "projects.stat1": "Sistemas Gerenciados",
-        "projects.stat2": "Usuarios Atendidos",
-        "projects.stat3": "Funcionarios na Plataforma",
-        "projects.stat4": "Disponibilidade",
-        "projects.filter.all": "Todos os Projetos",
-        "projects.filter.governance": "Governanca",
-        "projects.filter.health": "Saude",
-        "projects.filter.social": "Social",
-        "projects.filter.enterprise": "Empresarial",
-        "projects.showMore": "Ver Mais Projetos",
-        "projects.showLess": "Mostrar Menos",
-        "experience.title": "Experiencia",
-        "exp.undp1": "Liderei a Avaliacao Nacional de Maturidade Digital para o programa Dalan ba Digital",
-        "exp.undp2": "Projetei plataforma web de Avaliacao de Maturidade Digital usando prototipagem rapida assistida por IA",
-        "exp.unicef1": "Entreguei suporte tecnico para iniciativas T4D e Transformacao Digital",
-        "exp.unicef2": "Liderei formulacao de politicas para fortalecimento de sistemas de saude",
-        "exp.unrco1": "Mapeei estruturas institucionais, politicas e de financiamento para digitalizacao",
-        "exp.unrco2": "Apoiei producao do Position Paper One-UN sobre Transformacao Digital",
-        "exp.catalpa1": "Gerenciei dados do PNDS com 9.000+ projetos totalizando $100M+",
-        "exp.catalpa2": "Facilitei $8M+ em pagamentos atraves da protecao social Jerasaun Foun",
-        "exp.eyetrust1": "Integrei reconhecimento de iris com core banking Temenos T24 (BNCTL)",
-        "exp.eyetrust2": "Coordenei equipes internacionais na India, Inglaterra e Timor-Leste",
-        "exp.court1": "Liderei equipe de TI e transformacao digital em 7 Tribunais Distritais",
-        "exp.court2": "Aumentei disponibilidade do sistema de 40% para 99%",
-        "exp.otimizai1": "Entreguei solucoes digitais para ONU Mulheres, World Vision, MOEYS, UE e Policia",
-        "exp.otimizai2": "Liderei piloto de IA/ML para classificacao fiscal identificando $1M+ em otimizacao (Brasil)",
-        "exp.pgr1": "Implantei Sistema de Gestao de Casos (IIMS), sistemas de RH e LMS",
-        "exp.pgr2": "Criei primeiro Centro de Treinamento TIC para setor de justica com KOICA",
-        "exp.sap1": "Implementacoes SAP para Grupo Malwee (Varejo), Votorantim Cimentos, BRF Foods",
-        "exp.sap2": "Desenvolvimento ABAP para modulos MM, SD, AFS, WM e PI",
-        "exp.ckbv1": "Gerenciei sistemas ERP Datasul/TOTVS, HCM e CRM em multiplas filiais",
-        "exp.ckbv2": "Reduzi custos em 30% atraves de adocao de open-source e virtualizacao",
-        "skills.title": "Habilidades",
-        "skills.cloud": "Cloud e DevOps",
-        "skills.data": "Dados e Analytics",
-        "skills.systems": "Sistemas",
-        "skills.professional": "Profissional",
-        "values.title": "Valores e Cultura",
-        "values.v1.title": "Excelencia e Inovacao",
-        "values.v1.desc": "Entregando WOW para cada cliente atraves de solucoes criativas e ageis.",
-        "values.v2.title": "Filosofia UBUNTU",
-        "values.v2.desc": "\"Eu sou porque nos somos\" - construindo sociedade sustentavel atraves de respeito e solidariedade.",
-        "values.v3.title": "Fazer Mais Com Menos",
-        "values.v3.desc": "Transparencia, proatividade e eficiencia em cada engajamento.",
-        "contact.title": "Entre em Contato",
-        "contact.cta.title": "Vamos Trabalhar Juntos",
-        "contact.cta.desc": "Estou disponivel para consultorias em transformacao digital, sistemas de dados e assessoria tecnologica.",
-        "contact.cta.button": "Agendar Reuniao",
-        "contact.qr.label": "Escaneie para conversar no WhatsApp",
-        "footer.rights": "Todos os direitos reservados.",
-        "footer.made": "Feito com",
-        "footer.and": "e"
-      }
-    };
-
-    let currentLang = localStorage.getItem('language') || 'en';
-
-    function changeLanguage(lang) {
-      currentLang = lang;
-      localStorage.setItem('language', lang);
-      updatePage();
-    }
-
-    function updatePage() {
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (translations[currentLang][key]) {
-          el.textContent = translations[currentLang][key];
-        }
-      });
-
-      document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.dataset.lang === currentLang);
-      });
-
-      document.documentElement.lang = currentLang;
-    }
-
-    function toggleNav() {
-      const nav = document.getElementById('nav');
-      const toggle = document.querySelector('.mobile-nav-toggle');
-      if (!nav || !toggle) return;
-      const isOpen = nav.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      toggle.innerHTML = isOpen ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
-    }
-
-    // Initialize
-    document.addEventListener('DOMContentLoaded', () => {
-      updatePage();
-
-      // Language switcher buttons
-      document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-          const lang = btn.dataset.lang;
-          if (lang) {
-            changeLanguage(lang);
-          }
-        });
-      });
-
-      // Mobile nav toggle
-      const navToggle = document.querySelector('.mobile-nav-toggle');
-      if (navToggle) {
-        navToggle.addEventListener('click', toggleNav);
-      }
-
-      // Smooth scroll with reduced motion support
-      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-          const href = this.getAttribute('href');
-          if (!href || href === '#') return;
-          const target = document.querySelector(href);
-          if (target) {
-            e.preventDefault();
-            const headerHeight = document.querySelector('.header').offsetHeight;
-            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
-            window.scrollTo({
-              top: targetPosition,
-              behavior: prefersReducedMotion ? 'auto' : 'smooth'
-            });
-            const nav = document.getElementById('nav');
-            const toggle = document.querySelector('.mobile-nav-toggle');
-            if (nav && toggle) {
-              nav.classList.remove('open');
-              toggle.setAttribute('aria-expanded', 'false');
-              toggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
-            }
-          }
-        });
-      });
-
-      // Scroll to top button
-      const scrollTopBtn = document.querySelector('.scroll-top');
-      if (scrollTopBtn) {
-        window.addEventListener('scroll', () => {
-          if (window.pageYOffset > 500) {
-            scrollTopBtn.classList.add('visible');
-          } else {
-            scrollTopBtn.classList.remove('visible');
-          }
-        });
-
-        scrollTopBtn.addEventListener('click', () => {
-          window.scrollTo({
-            top: 0,
-            behavior: prefersReducedMotion ? 'auto' : 'smooth'
-          });
-        });
-      }
-
-      // Active nav link on scroll
-      const sections = document.querySelectorAll('section[id]');
-      const navLinks = document.querySelectorAll('.nav-link');
-
-      function updateActiveNav() {
-        const scrollPos = window.pageYOffset + 100;
-
-        sections.forEach(section => {
-          const sectionTop = section.offsetTop;
-          const sectionHeight = section.offsetHeight;
-          const sectionId = section.getAttribute('id');
-
-          if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
-            navLinks.forEach(link => {
-              link.classList.remove('active');
-              if (link.getAttribute('href') === `#${sectionId}`) {
-                link.classList.add('active');
-              }
-            });
-          }
-        });
-      }
-
-      window.addEventListener('scroll', updateActiveNav);
-      updateActiveNav();
-
-      // Portfolio Filter Functionality
-      const filterBtns = document.querySelectorAll('.filter-btn');
-      const projectCards = document.querySelectorAll('.project-card');
-
-      filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-          // Update active button
-          filterBtns.forEach(b => b.classList.remove('active'));
-          btn.classList.add('active');
-
-          const filter = btn.dataset.filter;
-
-          projectCards.forEach(card => {
-            if (filter === 'all' || card.dataset.category === filter) {
-              card.classList.remove('filter-hidden');
-            } else {
-              card.classList.add('filter-hidden');
-            }
-          });
-        });
-      });
-
-      // Show More Projects Functionality
-      const showMoreBtn = document.getElementById('showMoreBtn');
-      const projectsGrid = document.getElementById('projectsGrid');
-
-      if (showMoreBtn && projectsGrid) {
-        showMoreBtn.addEventListener('click', () => {
-          projectsGrid.classList.toggle('show-all');
-          showMoreBtn.classList.toggle('expanded');
-
-          const isExpanded = projectsGrid.classList.contains('show-all');
-          const btnText = showMoreBtn.querySelector('span');
-          const currentLang = localStorage.getItem('language') || 'en';
-
-          if (isExpanded) {
-            btnText.textContent = currentLang === 'pt' ? 'Mostrar Menos' : 'Show Less';
-          } else {
-            btnText.textContent = currentLang === 'pt' ? 'Ver Mais Projetos' : 'Show More Projects';
-          }
-        });
-      }
+<script>
+  function setLang(lang) {
+    document.documentElement.lang = lang;
+    document.querySelectorAll('.lang-btn').forEach(function(b) {
+      var on = b.dataset.lang === lang;
+      b.classList.toggle('active', on);
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
     });
-  </script>
-</body>
+    var ph = lang === 'pt' ? 'Digite seu e-mail' : 'Enter your email';
+    document.querySelectorAll('.newsletter-input').forEach(function(el) { el.placeholder = ph; });
+    try { localStorage.setItem('lang', lang); } catch(e) {}
+  }
 
+  // Init priority: URL (?lang=) > localStorage > browser language
+  (function() {
+    var urlLang = (new URLSearchParams(location.search).get('lang') || '').toLowerCase();
+    var saved;
+    try { saved = localStorage.getItem('lang'); } catch(e) {}
+    var lang;
+    if (urlLang === 'pt' || urlLang === 'en') lang = urlLang;
+    else if (saved === 'pt' || saved === 'en') lang = saved;
+    else lang = (navigator.language && navigator.language.toLowerCase().startsWith('pt')) ? 'pt' : 'en';
+    setLang(lang);
+  })();
+</script>
+</body>
 </html>
