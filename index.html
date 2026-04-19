@@ -361,7 +361,7 @@
       align-items: center;
       gap: 64px;
       width: max-content;
-      animation: logos-scroll 30s linear infinite;
+      animation: logos-scroll 50s linear infinite;
     }
     .logos-track:hover { animation-play-state: paused; }
     .logo-card {
@@ -509,6 +509,41 @@
     .exp-card-body { padding: 20px 32px 32px; }
     .exp-card-body h3 { font-size: 22px; font-weight: 800; color: #0b0b0b; margin-bottom: 12px; line-height: 1.3; }
     .exp-card-body p  { font-size: 16px; font-weight: 500; color: #393939; line-height: 1.7; }
+
+    /* ── Show more/less toggle ── */
+    .experience-cards > .exp-card:nth-child(n+7) { display: none; }
+    .experience-cards.show-all > .exp-card:nth-child(n+7) { display: block; }
+    .exp-show-more-wrap { display: flex; justify-content: center; margin-top: 32px; }
+    .exp-show-more {
+      display: inline-flex; align-items: center; gap: 12px;
+      padding: 14px 28px;
+      font-family: inherit;
+      font-size: 15px; font-weight: 800; letter-spacing: 1px;
+      color: #0b0b0b;
+      background: #FDB927;
+      border: 3px solid #000;
+      border-radius: 999px;
+      box-shadow: 5px 5px 0 #000;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .exp-show-more:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 7px 7px 0 #000;
+    }
+    .exp-show-more:active {
+      transform: translate(2px, 2px);
+      box-shadow: 1px 1px 0 #000;
+    }
+    .exp-show-more:focus-visible {
+      outline: 3px solid #2F81F7;
+      outline-offset: 3px;
+    }
+    .exp-show-more .chev { width: 18px; height: 18px; transition: transform 0.3s ease; }
+    .exp-show-more .exp-label-less { display: none; }
+    .exp-show-more.is-expanded .exp-label-more { display: none; }
+    .exp-show-more.is-expanded .exp-label-less { display: inline; }
+    .exp-show-more.is-expanded .chev { transform: rotate(180deg); }
 
     /* ── FOOTER ── */
     footer { background: #fff; padding: 64px 16px; }
@@ -896,7 +931,7 @@
       <div class="logo-card tall"><img src="customers%20logos/un%20technology%20bank.png" alt="UN Technology Bank" loading="lazy" decoding="async"></div>
       <div class="logo-card"><img src="customers%20logos/Catalpa-Logo-Blue.svg" alt="Catalpa International" loading="lazy" decoding="async"></div>
       <div class="logo-card"><img src="customers%20logos/ginger%20sofreco.svg" alt="Ginger Sofreco" loading="lazy" decoding="async" style="transform: scale(1.25);"></div>
-      <div class="logo-card"><img src="customers%20logos/jus.jpg" alt="Ministério da Justiça" loading="lazy" decoding="async" style="transform: scale(1.4);"></div>
+      <div class="logo-card"><img src="customers%20logos/jus.jpg" alt="Jurico Social" loading="lazy" decoding="async" style="transform: scale(1.4);"></div>
 
       <!-- set 2 (duplicate for seamless loop) -->
       <div class="logo-card"><img src="customers%20logos/UNICEF_Logo.png" alt="UNICEF" loading="lazy" decoding="async"></div>
@@ -906,7 +941,7 @@
       <div class="logo-card tall"><img src="customers%20logos/un%20technology%20bank.png" alt="UN Technology Bank" loading="lazy" decoding="async"></div>
       <div class="logo-card"><img src="customers%20logos/Catalpa-Logo-Blue.svg" alt="Catalpa International" loading="lazy" decoding="async"></div>
       <div class="logo-card"><img src="customers%20logos/ginger%20sofreco.svg" alt="Ginger Sofreco" loading="lazy" decoding="async" style="transform: scale(1.25);"></div>
-      <div class="logo-card"><img src="customers%20logos/jus.jpg" alt="Ministério da Justiça" loading="lazy" decoding="async" style="transform: scale(1.4);"></div>
+      <div class="logo-card"><img src="customers%20logos/jus.jpg" alt="Jurico Social" loading="lazy" decoding="async" style="transform: scale(1.4);"></div>
 
     </div>
   </div>
@@ -1099,7 +1134,7 @@
       </div>
     </div>
 
-    <div class="experience-cards">
+    <div class="experience-cards" id="experienceCards">
 
       <!-- UN Technology Bank -->
       <div class="exp-card">
@@ -1441,7 +1476,7 @@
         </div>
       </div>
 
-      <!-- CKBV FLORESTAL -->
+      <!-- CKBV FLORESTAL (hidden until expanded) -->
       <div class="exp-card">
         <div class="exp-card-header">
           <div class="exp-card-date">
@@ -1459,6 +1494,22 @@
           <p class="pt">Administrou ERP Datasul/Totvs, HCM TOTVS e CRM, incluindo DBA, segurança, backups e virtualização. Implantou IBM Tivoli para backup/recovery e adotou gestão open-source, reduzindo custos operacionais em até 30%. Entregou relatórios Balanced Scorecard (BSC) em todas as unidades de negócio.</p>
           <p class="en">Administered ERP Datasul/Totvs, HCM TOTVS, and CRM including DBA, security, backups, and virtualisation. Deployed IBM Tivoli for backup/recovery and adopted open-source server management, reducing operational costs by up to 30%. Delivered Balanced Scorecard (BSC) reporting across all business units.</p>
         </div>
+      </div>
+
+      <div class="exp-show-more-wrap">
+        <button type="button" class="exp-show-more" id="expShowMoreBtn" aria-expanded="false" aria-controls="experienceCards" onclick="toggleExpCards(this)">
+          <span class="exp-label-more">
+            <span class="pt">Ver todas as experiências</span>
+            <span class="en">Show all experience</span>
+          </span>
+          <span class="exp-label-less">
+            <span class="pt">Mostrar menos</span>
+            <span class="en">Show less</span>
+          </span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
+        </button>
       </div>
 
     </div>
@@ -1523,11 +1574,14 @@
           <span class="pt">Inscreva-se na newsletter</span>
           <span class="en">Subscribe to the newsletter</span>
         </div>
-        <form action="https://substack.com/@matenek" method="get" target="_blank" class="newsletter-input-wrap">
+        <form action="https://matenek.substack.com/subscribe" method="get" target="_blank" rel="noopener noreferrer" class="newsletter-input-wrap">
           <input type="email" name="email" class="newsletter-input"
             data-placeholder-pt="Digite seu e-mail"
             data-placeholder-en="Enter your email"
-            placeholder="Digite seu e-mail" required>
+            placeholder="Digite seu e-mail"
+            autocomplete="email" required>
+          <input type="hidden" name="utm_source" value="paulo-amaral.github.io">
+          <input type="hidden" name="utm_medium" value="footer-newsletter">
           <button class="newsletter-submit" type="submit">
             <span class="pt">Inscrever-se</span><span class="en">Subscribe</span>
           </button>
@@ -1600,6 +1654,15 @@
     var ph = lang === 'pt' ? 'Digite seu e-mail' : 'Enter your email';
     document.querySelectorAll('.newsletter-input').forEach(function(el) { el.placeholder = ph; });
     try { localStorage.setItem('lang', lang); } catch(e) {}
+  }
+
+  // Experience cards: show more / show less
+  function toggleExpCards(btn) {
+    var cards = document.getElementById('experienceCards');
+    if (!cards) return;
+    var expanded = cards.classList.toggle('show-all');
+    btn.classList.toggle('is-expanded', expanded);
+    btn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
   }
 
   // Init priority: URL (?lang=) > localStorage > browser language
