@@ -1,7 +1,11 @@
 {
   "permissions": {
     "allow": [
-      "Bash(git -C /Users/paulo/Projects/dev/paulo.github.io remote -v)"
+      "Bash(git -C /Users/paulo/Projects/dev/paulo.github.io remote -v)",
+      "Bash(git mv *)"
+    ],
+    "additionalDirectories": [
+      "/Users/paulo/Projects/dev/paulo.github.io/images"
     ]
   }
 }
