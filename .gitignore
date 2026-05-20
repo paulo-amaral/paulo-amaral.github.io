@@ -72,6 +72,9 @@ coverage/
 .eslintcache
 .stylelintcache
 
+# ─── Local assistant/tooling config ───────────────────────────────
+.claude/
+
 # ─── Private / personal documents ─────────────────────────────────
 *.md
 cv.md
