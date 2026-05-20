@@ -4,7 +4,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://paulo-amaral.github.io/</loc>
-    <lastmod>2026-04-19</lastmod>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="pt" href="https://paulo-amaral.github.io/?lang=pt"/>
@@ -15,5 +15,17 @@
       <image:title>Paulo Amaral — Digital Transformation Consultant</image:title>
       <image:caption>Portrait of Paulo Amaral, Digital Transformation Consultant.</image:caption>
     </image:image>
+  </url>
+  <url>
+    <loc>https://paulo-amaral.github.io/documents/cv/paulo-amaral-cv-2026-v7.pdf</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://paulo-amaral.github.io/documents/portfolio/paulo-amaral-portfolio-2026-v2.pdf</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>

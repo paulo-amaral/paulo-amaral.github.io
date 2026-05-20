@@ -226,6 +226,7 @@ Paulo Amaral is a senior Brazilian IT professional with over 20 years of experie
 
 ## Key Projects
 
+- **GitHub & Community Contributions** -- Maintains public repositories for DPI/DPG, DevOps, automation, data, and technical documentation, including curated Digital Public Infrastructure resources, infrastructure scripts, KoboToolbox/Google Sheets integrations, Primero data extraction, and Python/Shell/JavaScript tooling.
 - **Kartaun Bele** -- Designed and delivered a digital cash transfer platform for low-income households, supporting social protection, beneficiary management, and secure payments in Timor-Leste.
 - **Jerasaun Foun** -- Directed data analytics and reporting for a national social protection programme, enabling evidence-based decision-making and payment validation at scale.
 - **Iris Recognition Banking System (BNCTL)** -- Deployed biometric authentication to strengthen KYC, fraud prevention, and banking security in a national financial institution.

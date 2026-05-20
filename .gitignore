@@ -83,6 +83,7 @@ PERSONAL_*.pdf
 presentation*.pdf
 
 # Public website downloads
+!README.md
 !cv.md
 !documents/
 !documents/cv/
