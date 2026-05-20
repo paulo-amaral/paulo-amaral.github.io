@@ -638,6 +638,25 @@
     }
     .project-card.featured .project-tags span { background: #FDB927; }
     .project-card.moderate .project-tags span { background: #EAF3FF; }
+    .project-links { display: flex; flex-wrap: wrap; gap: 10px; }
+    .project-links a {
+      display: inline-flex;
+      align-items: center;
+      background: #0b0b0b;
+      color: #fff;
+      border: 3px solid #000;
+      border-radius: 8px;
+      box-shadow: 3px 3px 0 #000;
+      padding: 8px 12px;
+      font-size: 12px;
+      font-weight: 800;
+      text-decoration: none;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .project-links a:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 5px 5px 0 #000;
+    }
     .projects-grid > .project-card:nth-child(n+7) { display: none; }
     .projects-grid.show-all > .project-card:nth-child(n+7) { display: flex; }
     .projects-show-more-wrap { display: flex; justify-content: center; margin-top: 36px; }
@@ -1379,16 +1398,22 @@
           <div class="project-badge" style="background:#0b0b0b;">GH</div>
         </div>
         <h3>
-          <span class="pt">Contribuições GitHub & Comunidade</span>
-          <span class="en">GitHub & Community Contributions</span>
+          <span class="pt">Contribuições GitHub para DPI/DPG</span>
+          <span class="en">GitHub Contributions for DPI/DPG</span>
         </h3>
-        <p class="pt">Mantém repositórios públicos para DPI/DPG, DevOps, automação, dados e documentação técnica, incluindo listas curadas, scripts de infraestrutura, integrações KoboToolbox/Google Sheets e ferramentas Python para workflows de desenvolvimento.</p>
-        <p class="en">Maintains public repositories for DPI/DPG, DevOps, automation, data, and technical documentation, including curated lists, infrastructure scripts, KoboToolbox/Google Sheets integrations, and Python tools for development workflows.</p>
+        <p class="pt">Mantém contribuições públicas focadas em Infraestrutura Pública Digital e Bens Públicos Digitais, com destaque para Awesome DPI, além de ferramentas como n8nverse, ai-video-translator-dubbing, Easy-ELK, integrações KoboToolbox/Google Sheets, Primero extractor e scripts DevOps.</p>
+        <p class="en">Maintains public contributions focused on Digital Public Infrastructure and Digital Public Goods, led by Awesome DPI, plus tools such as n8nverse, ai-video-translator-dubbing, Easy-ELK, KoboToolbox/Google Sheets integrations, Primero extractor, and DevOps scripts.</p>
+        <div class="project-links">
+          <a href="https://paulo-amaral.github.io/awesome-digital-public-infrastructure/" target="_blank" rel="noopener noreferrer">Awesome DPI</a>
+          <a href="https://github.com/paulo-amaral/n8nverse" target="_blank" rel="noopener noreferrer">n8nverse</a>
+          <a href="https://github.com/paulo-amaral?tab=repositories" target="_blank" rel="noopener noreferrer">GitHub repos</a>
+        </div>
         <div class="project-tags">
-          <span>GitHub</span>
-          <span>Open source</span>
           <span>DPI/DPG</span>
-          <span>DevOps</span>
+          <span>Awesome DPI</span>
+          <span>n8n + Docker</span>
+          <span>AI video tools</span>
+          <span>Easy-ELK</span>
         </div>
       </article>
 
