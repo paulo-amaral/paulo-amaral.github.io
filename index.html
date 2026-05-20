@@ -133,7 +133,7 @@
     html[lang="en"] .pt { display: none !important; }
 
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
     body {
       font-family: 'Sora', -apple-system, BlinkMacSystemFont, sans-serif;
       background: #fff;
@@ -195,7 +195,7 @@
       border: 4px solid #000;
       border-radius: 16px;
       padding: 10px 16px;
-      max-width: 700px;
+      max-width: 820px;
       margin: 0 auto;
       box-shadow: 6px 6px 0px 0px rgba(0,0,0,1);
       gap: 12px;
@@ -207,7 +207,7 @@
       flex-shrink: 0;
     }
     .nav-logo-inner { width: 24px; height: 24px; background: #fff; border-radius: 50%; }
-    .nav-links { display: flex; align-items: center; gap: 20px; flex: 1; justify-content: center; }
+    .nav-links { display: flex; align-items: center; gap: 18px; flex: 1; justify-content: center; }
     .nav-links a {
       font-size: 16px; font-weight: 700; color: #0b0b0b;
       text-decoration: none; transition: opacity 0.2s; white-space: nowrap;
@@ -482,6 +482,101 @@
     .about-point h3 { font-size: 20px; font-weight: 700; margin-bottom: 6px; }
     .about-point p  { color: #6b7280; font-size: 15px; line-height: 1.6; }
 
+    /* ── PROJECTS ── */
+    #projects { background: #FFFBEA; padding: 72px 16px 96px; border-top: 4px solid #000; }
+    .projects-inner { max-width: 1280px; margin: 0 auto; }
+    .projects-header {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 48px;
+      align-items: end;
+      margin-bottom: 36px;
+    }
+    .projects-header h2 { font-size: 48px; font-weight: 800; line-height: 1.2; }
+    .projects-header p { color: #393939; font-size: 18px; font-weight: 500; line-height: 1.7; }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .project-card {
+      background: #fff;
+      border: 3px solid #000;
+      border-radius: 18px;
+      padding: 24px;
+      min-height: 290px;
+      box-shadow: 6px 6px 0 #000;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .project-card:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: 9px 9px 0 #000;
+    }
+    .project-card.featured {
+      grid-column: span 2;
+      background: #EAF3FF;
+      min-height: 320px;
+    }
+    .project-card.moderate {
+      background: #FFFCF0;
+      box-shadow: 5px 5px 0 #000;
+    }
+    .project-topline {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .project-year {
+      display: inline-flex;
+      align-items: center;
+      background: #0b0b0b;
+      color: #fff;
+      border: 2px solid #000;
+      border-radius: 999px;
+      padding: 5px 12px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      white-space: nowrap;
+    }
+    .project-badge {
+      width: 46px;
+      height: 46px;
+      border: 2px solid #000;
+      border-radius: 50%;
+      box-shadow: 4px 4px 0 #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 800;
+      color: #fff;
+      flex-shrink: 0;
+    }
+    .project-card h3 { font-size: 22px; font-weight: 800; line-height: 1.25; }
+    .project-card p { color: #393939; font-size: 15px; font-weight: 500; line-height: 1.7; }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; }
+    .project-tags span {
+      display: inline-flex;
+      align-items: center;
+      background: #fff;
+      border: 2px solid #000;
+      border-radius: 999px;
+      padding: 5px 10px;
+      font-size: 12px;
+      font-weight: 800;
+      color: #0b0b0b;
+    }
+    .project-card.featured .project-tags span { background: #FDB927; }
+    .project-card.moderate .project-tags span { background: #EAF3FF; }
+    .projects-grid > .project-card:nth-child(n+7) { display: none; }
+    .projects-grid.show-all > .project-card:nth-child(n+7) { display: flex; }
+    .projects-show-more-wrap { display: flex; justify-content: center; margin-top: 36px; }
+
     /* ── EXPERIENCE ── */
     #experience { background: #000; padding: 64px 16px 96px; }
     .experience-inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
@@ -751,7 +846,7 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 960px) {
-      .hero-inner, .about-inner, .experience-inner, .contact-inner { grid-template-columns: 1fr; }
+      .hero-inner, .about-inner, .experience-inner, .contact-inner, .projects-header { grid-template-columns: 1fr; }
       .hero-h1 { font-size: 44px; }
       #home { padding: 40px 16px 64px; }
       .hero-avatar-wrap { justify-content: center; }
@@ -759,6 +854,8 @@
       .hero-text { order: 1; }
       .hero-avatar-wrap { order: 2; }
       .services-grid { grid-template-columns: 1fr 1fr; }
+      .projects-grid { grid-template-columns: 1fr 1fr; }
+      .project-card.featured { grid-column: span 2; }
       .about-inner { direction: ltr; }
       .about-img-wrap { justify-content: center; }
       .about-img { max-width: 300px; }
@@ -771,11 +868,14 @@
       .footer-grid { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 600px) {
+      .container { padding: 0; }
       nav { max-width: 100%; padding: 8px 12px; }
       .nav-links { display: none; }
       .nav-hamburger { display: flex; }
       #home { padding: 24px 16px 48px; }
+      .hero-inner { grid-template-columns: minmax(0, 1fr); }
       .hero-h1 { font-size: 32px; line-height: 1.2; }
+      .hero-h1 span[style*="white-space"] { white-space: normal !important; }
       .hero-desc { font-size: 16px; }
       .hero-cta { padding: 16px 32px; font-size: 16px; width: 100%; justify-content: center; }
       .hero-avatar { max-width: 240px; }
@@ -795,6 +895,13 @@
       .logos-carousel-wrap::before, .logos-carousel-wrap::after { width: 40px; }
       .section-title { font-size: 30px; }
       .section-desc { font-size: 16px; }
+      #projects { padding: 48px 16px 64px; }
+      .projects-header { gap: 16px; margin-bottom: 28px; }
+      .projects-header h2 { font-size: 30px; }
+      .projects-header p { font-size: 16px; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .project-card, .project-card.featured { grid-column: auto; min-height: auto; }
+      .project-card h3 { font-size: 19px; }
       #contact { padding: 48px 16px 64px; }
       .contact-left h2 { font-size: 32px; }
       .contact-right { justify-content: center; margin-top: 40px; }
@@ -831,6 +938,7 @@
       <a href="#home">Home</a>
       <a href="#services"><span class="pt">Serviços</span><span class="en">Services</span></a>
       <a href="#about"><span class="pt">Sobre</span><span class="en">About</span></a>
+      <a href="#projects"><span class="pt">Projetos</span><span class="en">Projects</span></a>
       <a href="#experience"><span class="pt">Experiência</span><span class="en">Experience</span></a>
       <a href="#contact"><span class="pt">Contato</span><span class="en">Contact</span></a>
     </div>
@@ -853,6 +961,7 @@
   <a href="#home"       onclick="document.getElementById('mobileMenu').classList.remove('open')">Home</a>
   <a href="#services"   onclick="document.getElementById('mobileMenu').classList.remove('open')"><span class="pt">Serviços</span><span class="en">Services</span></a>
   <a href="#about"      onclick="document.getElementById('mobileMenu').classList.remove('open')"><span class="pt">Sobre</span><span class="en">About</span></a>
+  <a href="#projects"   onclick="document.getElementById('mobileMenu').classList.remove('open')"><span class="pt">Projetos</span><span class="en">Projects</span></a>
   <a href="#experience" onclick="document.getElementById('mobileMenu').classList.remove('open')"><span class="pt">Experiência</span><span class="en">Experience</span></a>
   <a href="#contact"    onclick="document.getElementById('mobileMenu').classList.remove('open')"><span class="pt">Contato</span><span class="en">Contact</span></a>
   <div class="mobile-lang-toggle" role="group" aria-label="Language / Idioma">
@@ -1110,6 +1219,430 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════════════════════ PROJECTS ═══════════════════════ -->
+<section id="projects">
+  <div class="projects-inner">
+    <div class="projects-header">
+      <h2>
+        <span class="pt">Resumo de <span class="highlight-red">projetos</span></span>
+        <span class="en">Project <span class="highlight-red">summary</span></span>
+      </h2>
+      <p class="pt">Uma seleção de iniciativas do meu CV e portfólio, com foco em infraestrutura pública digital, GovTech inclusivo, dados, IA e sistemas nacionais para governos e organizações internacionais.</p>
+      <p class="en">A selected view of initiatives from my CV and portfolio, focused on digital public infrastructure, inclusive GovTech, data, AI, and national systems for governments and international organizations.</p>
+    </div>
+
+    <div class="projects-grid" id="projectCards">
+      <article class="project-card featured">
+        <div class="project-topline">
+          <span class="project-year">2026</span>
+          <div class="project-badge" style="background:#00A86B;">GS</div>
+        </div>
+        <h3>
+          <span class="pt">Women in GovTech Challenge — Moçambique</span>
+          <span class="en">Women in GovTech Challenge — Mozambique</span>
+        </h3>
+        <p class="pt">Speaker e instrutor no programa GovStack/Women in GovTech 2026, apoiando participantes em temas de DPI/DPG, IA aplicada ao governo digital, inclusão, gender divide, digital divide e desenho de serviços públicos digitais.</p>
+        <p class="en">Speaker and instructor for the 2026 GovStack/Women in GovTech programme, supporting participants on DPI/DPG, AI for digital government, inclusion, gender divide, digital divide, and digital public service design.</p>
+        <div class="project-tags">
+          <span>DPI/DPG</span>
+          <span>GovStack</span>
+          <span>AI</span>
+          <span>Gender divide</span>
+          <span>Mozambique</span>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-topline">
+          <span class="project-year">2026</span>
+          <div class="project-badge" style="background:#003399;">TB</div>
+        </div>
+        <h3>
+          <span class="pt">Digital Readiness Assessment</span>
+          <span class="en">Digital Readiness Assessment</span>
+        </h3>
+        <p class="pt">Diagnóstico whole-of-government para Timor-Leste no programa regional do UN Technology Bank, usando o ITU Digital Transformation Wheel em quatro países menos desenvolvidos.</p>
+        <p class="en">Whole-of-government diagnostic for Timor-Leste under the UN Technology Bank regional programme, using the ITU Digital Transformation Wheel across four Least Developed Countries.</p>
+        <div class="project-tags">
+          <span>Digital readiness</span>
+          <span>DPI roadmap</span>
+          <span>LDCs</span>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-topline">
+          <span class="project-year">2026</span>
+          <div class="project-badge" style="background:#0080FF;">UN</div>
+        </div>
+        <h3>
+          <span class="pt">Dalan ba Digital</span>
+          <span class="en">Dalan ba Digital</span>
+        </h3>
+        <p class="pt">Avaliação nacional de maturidade digital e AI readiness em 9 ministérios, com plataforma customizada para scoring, análise e recomendações alinhadas à Timor Digital 2032.</p>
+        <p class="en">National digital maturity and AI readiness assessment across 9 ministries, with a custom scoring and analysis platform aligned with Timor Digital 2032.</p>
+        <div class="project-tags">
+          <span>AI readiness</span>
+          <span>Digital maturity</span>
+          <span>Roadmap</span>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-topline">
+          <span class="project-year">2022–2023</span>
+          <div class="project-badge" style="background:#009EDB;">CNE</div>
+        </div>
+        <h3>
+          <span class="pt">Sistemas Eleitorais Nacionais</span>
+          <span class="en">National Election Systems</span>
+        </h3>
+        <p class="pt">Design e deploy do Centro Nacional de Tabulação e plataforma digital do CNE para eleições presidenciais e parlamentares, suportando 650.000+ eleitores e 1.400 centros de votação.</p>
+        <p class="en">Designed and deployed the CNE National Tabulation Centre and digital platform for presidential and parliamentary elections, supporting 650,000+ voters and 1,400 voting centres.</p>
+        <div class="project-tags">
+          <span>Elections</span>
+          <span>Dashboards</span>
+          <span>GovTech</span>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-topline">
+          <span class="project-year">2024–2025</span>
+          <div class="project-badge" style="background:#1CABE2;">UN</div>
+        </div>
+        <h3>
+          <span class="pt">CPIMS, CRVS & Saúde Digital</span>
+          <span class="en">CPIMS, CRVS & Digital Health</span>
+        </h3>
+        <p class="pt">Fortalecimento de sistemas nacionais de proteção infantil, registro civil e saúde, incluindo PRIMERO CPIMS, CRVS, DHIS2, dashboards EPI e workshops multissetoriais.</p>
+        <p class="en">Strengthened national child protection, civil registration, and health systems, including PRIMERO CPIMS, CRVS, DHIS2, EPI dashboards, and multi-sector workshops.</p>
+        <div class="project-tags">
+          <span>UNICEF</span>
+          <span>CRVS</span>
+          <span>DHIS2</span>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-topline">
+          <span class="project-year">2023–2025</span>
+          <div class="project-badge" style="background:#E84393;">BI</div>
+        </div>
+        <h3>
+          <span class="pt">Dados para Proteção Social</span>
+          <span class="en">Data for Social Protection</span>
+        </h3>
+        <p class="pt">Análise e migração de dados para PNDS e Jerasaun Foun Bolsa da Mãe, apoiando USD 8M+ em pagamentos, 50.000 crianças e mais de USD 100M em projetos rurais.</p>
+        <p class="en">Data analysis and migration for PNDS and Jerasaun Foun Bolsa da Mãe, supporting USD 8M+ in payments, 50,000 children, and over USD 100M in rural projects.</p>
+        <div class="project-tags">
+          <span>Power BI</span>
+          <span>Social protection</span>
+          <span>Data migration</span>
+        </div>
+      </article>
+
+      <article class="project-card moderate">
+        <div class="project-topline">
+          <span class="project-year">Social Protection</span>
+          <div class="project-badge" style="background:#FF6B7A;">KB</div>
+        </div>
+        <h3>Kartaun Bele</h3>
+        <p class="pt">Plataforma digital de transferência de dinheiro para famílias de baixa renda, apoiando proteção social, gestão de beneficiários e pagamentos seguros em Timor-Leste.</p>
+        <p class="en">Digital cash transfer platform for low-income households, supporting social protection, beneficiary management, and secure payments in Timor-Leste.</p>
+        <div class="project-tags">
+          <span>Cash transfer</span>
+          <span>Beneficiaries</span>
+          <span>Payments</span>
+        </div>
+      </article>
+
+      <article class="project-card moderate">
+        <div class="project-topline">
+          <span class="project-year">Social Protection</span>
+          <div class="project-badge" style="background:#E84393;">JF</div>
+        </div>
+        <h3>Jerasaun Foun</h3>
+        <p class="pt">Analytics e relatórios para programa nacional de proteção social, permitindo tomada de decisão baseada em evidências e validação de pagamentos em escala.</p>
+        <p class="en">Data analytics and reporting for a national social protection programme, enabling evidence-based decision-making and payment validation at scale.</p>
+        <div class="project-tags">
+          <span>Analytics</span>
+          <span>Payments</span>
+          <span>MSSI</span>
+        </div>
+      </article>
+
+      <article class="project-card moderate">
+        <div class="project-topline">
+          <span class="project-year">Banking</span>
+          <div class="project-badge" style="background:#0b0b0b;">IR</div>
+        </div>
+        <h3>
+          <span class="pt">Iris Recognition Banking System</span>
+          <span class="en">Iris Recognition Banking System</span>
+        </h3>
+        <p class="pt">Implantação de autenticação biométrica para fortalecer KYC, prevenção de fraude e segurança bancária em uma instituição financeira nacional.</p>
+        <p class="en">Biometric authentication deployment to strengthen KYC, fraud prevention, and banking security in a national financial institution.</p>
+        <div class="project-tags">
+          <span>BNCTL</span>
+          <span>KYC</span>
+          <span>Biometrics</span>
+        </div>
+      </article>
+
+      <article class="project-card moderate">
+        <div class="project-topline">
+          <span class="project-year">Education</span>
+          <div class="project-badge" style="background:#FDB927;color:#0b0b0b;">TR</div>
+        </div>
+        <h3>
+          <span class="pt">Teacher Recruitment & Hiring System</span>
+          <span class="en">Teacher Recruitment & Hiring System</span>
+        </h3>
+        <p class="pt">Primeira plataforma digital de recrutamento para o Ministério da Educação, melhorando transparência, planejamento de força de trabalho e eficiência do processo.</p>
+        <p class="en">First digital recruitment platform for the Ministry of Education, improving transparency, workforce planning, and process efficiency.</p>
+        <div class="project-tags">
+          <span>MOEYS</span>
+          <span>Recruitment</span>
+          <span>Transparency</span>
+        </div>
+      </article>
+
+      <article class="project-card moderate">
+        <div class="project-topline">
+          <span class="project-year">Education</span>
+          <div class="project-badge" style="background:#F59E0B;">SC</div>
+        </div>
+        <h3>
+          <span class="pt">School Census System</span>
+          <span class="en">School Census System</span>
+        </h3>
+        <p class="pt">Ferramentas e fluxos digitais de coleta de dados para censo escolar nacional e pesquisas de linha de base.</p>
+        <p class="en">Digital data collection tools and workflows for a nationwide education census and baseline surveys.</p>
+        <div class="project-tags">
+          <span>CAPI</span>
+          <span>1,700+ schools</span>
+          <span>World Bank</span>
+        </div>
+      </article>
+
+      <article class="project-card moderate">
+        <div class="project-topline">
+          <span class="project-year">Safeguarding</span>
+          <div class="project-badge" style="background:#C026D3;">RS</div>
+        </div>
+        <h3>
+          <span class="pt">UN Women ROSA Chatbot</span>
+          <span class="en">UN Women ROSA Chatbot</span>
+        </h3>
+        <p class="pt">Sistema digital seguro para denúncias de assédio sexual no setor público, fortalecendo accountability e reporte centrado nas sobreviventes.</p>
+        <p class="en">Secure digital reporting system for sexual harassment complaints in the public sector, strengthening accountability and survivor-centred reporting.</p>
+        <div class="project-tags">
+          <span>UN Women</span>
+          <span>Chatbot</span>
+          <span>Reporting</span>
+        </div>
+      </article>
+
+      <article class="project-card moderate">
+        <div class="project-topline">
+          <span class="project-year">Enterprise</span>
+          <div class="project-badge" style="background:#2F81F7;">SAP</div>
+        </div>
+        <h3>
+          <span class="pt">SAP ERP Implementations</span>
+          <span class="en">SAP ERP Implementations</span>
+        </h3>
+        <p class="pt">Integrações SAP ABAP em módulos MM, PP e PI para clientes de manufatura e varejo de grande escala no Brasil.</p>
+        <p class="en">SAP ABAP integrations across MM, PP, and PI modules for large-scale manufacturing and retail clients in Brazil.</p>
+        <div class="project-tags">
+          <span>ABAP</span>
+          <span>ERP</span>
+          <span>Brazil</span>
+        </div>
+      </article>
+
+      <article class="project-card moderate">
+        <div class="project-topline">
+          <span class="project-year">AI</span>
+          <div class="project-badge" style="background:#6366F1;">AI</div>
+        </div>
+        <h3>
+          <span class="pt">Tax Classification AI Tool</span>
+          <span class="en">Tax Classification AI Tool</span>
+        </h3>
+        <p class="pt">Piloto de IA/ML para classificação fiscal automatizada, aumentando produtividade de consultores e identificando oportunidades de otimização de alto valor.</p>
+        <p class="en">AI/ML pilot for automated tax classification, increasing consultant productivity and identifying high-value optimisation opportunities.</p>
+        <div class="project-tags">
+          <span>Becomex</span>
+          <span>ML</span>
+          <span>Tax</span>
+        </div>
+      </article>
+
+      <article class="project-card moderate">
+        <div class="project-topline">
+          <span class="project-year">Justice</span>
+          <div class="project-badge" style="background:#1A1A1A;">DR</div>
+        </div>
+        <h3>
+          <span class="pt">DRBI Asset Declaration System</span>
+          <span class="en">DRBI Asset Declaration System</span>
+        </h3>
+        <p class="pt">Plataforma digital de declaração de patrimônio e interesses para tribunais e órgãos anticorrupção, atendendo 37.000+ agentes públicos.</p>
+        <p class="en">Digital asset and interest declaration platform for courts and anti-corruption bodies, serving 37,000+ public officials.</p>
+        <div class="project-tags">
+          <span>37,000+</span>
+          <span>Courts</span>
+          <span>Integrity</span>
+        </div>
+      </article>
+
+      <article class="project-card moderate">
+        <div class="project-topline">
+          <span class="project-year">Justice</span>
+          <div class="project-badge" style="background:#4A90E2;">JM</div>
+        </div>
+        <h3>
+          <span class="pt">Justice Sector LMS & CMS Platforms</span>
+          <span class="en">Justice Sector LMS & CMS Platforms</span>
+        </h3>
+        <p class="pt">Learning Management Systems e Case Management Systems para procuradoria e unidades anticorrupção, melhorando gestão do conhecimento e rastreio de casos.</p>
+        <p class="en">Learning Management Systems and Case Management Systems for prosecution and anti-corruption units, improving knowledge management and case tracking.</p>
+        <div class="project-tags">
+          <span>LMS</span>
+          <span>CMS</span>
+          <span>Case tracking</span>
+        </div>
+      </article>
+
+      <article class="project-card moderate">
+        <div class="project-topline">
+          <span class="project-year">Security</span>
+          <div class="project-badge" style="background:#EF4444;">PN</div>
+        </div>
+        <h3>
+          <span class="pt">National Police Systems</span>
+          <span class="en">National Police Systems</span>
+        </h3>
+        <p class="pt">Escala e operação de 40+ servidores e 20+ bases de dados para sistemas de inteligência policial e gestão de casos.</p>
+        <p class="en">Scaled and operated 40+ servers and 20+ databases for police intelligence and case management systems.</p>
+        <div class="project-tags">
+          <span>PNTL</span>
+          <span>40+ servers</span>
+          <span>Databases</span>
+        </div>
+      </article>
+
+      <article class="project-card moderate">
+        <div class="project-topline">
+          <span class="project-year">Child Protection</span>
+          <div class="project-badge" style="background:#00AEEF;">CP</div>
+        </div>
+        <h3>
+          <span class="pt">PRIMERO CPIMS Dashboards</span>
+          <span class="en">PRIMERO CPIMS Dashboards</span>
+        </h3>
+        <p class="pt">Dashboards e analytics para gestão de casos de proteção infantil, apoiando decisões operacionais e políticas públicas.</p>
+        <p class="en">Dashboards and analytics for child protection case management, supporting policy and operational decisions.</p>
+        <div class="project-tags">
+          <span>MSSI</span>
+          <span>UNICEF</span>
+          <span>Power BI</span>
+        </div>
+      </article>
+
+      <article class="project-card moderate">
+        <div class="project-topline">
+          <span class="project-year">Civil Registry</span>
+          <div class="project-badge" style="background:#2F81F7;">CR</div>
+        </div>
+        <h3>
+          <span class="pt">CRVS & Civil Registration</span>
+          <span class="en">CRVS & Civil Registration</span>
+        </h3>
+        <p class="pt">Melhorias técnicas para fortalecer sistemas de registro de nascimento e qualidade dos dados de registro civil junto ao Ministério da Justiça.</p>
+        <p class="en">Technical improvements to strengthen birth registration systems and civil registration data quality with the Ministry of Justice.</p>
+        <div class="project-tags">
+          <span>MOJ</span>
+          <span>Birth registration</span>
+          <span>Data quality</span>
+        </div>
+      </article>
+
+      <article class="project-card moderate">
+        <div class="project-topline">
+          <span class="project-year">Health</span>
+          <div class="project-badge" style="background:#059669;">HI</div>
+        </div>
+        <h3>
+          <span class="pt">Health Information Systems</span>
+          <span class="en">Health Information Systems</span>
+        </h3>
+        <p class="pt">Refinamento de coleta, validação e relatórios no DHIS2, incluindo dashboards EPI para monitoramento de imunização.</p>
+        <p class="en">Refined DHIS2 data collection, validation, and reporting, including EPI dashboards for immunisation monitoring.</p>
+        <div class="project-tags">
+          <span>MOH</span>
+          <span>DHIS2</span>
+          <span>EPI</span>
+        </div>
+      </article>
+
+      <article class="project-card moderate">
+        <div class="project-topline">
+          <span class="project-year">Rural Dev</span>
+          <div class="project-badge" style="background:#10B981;">PN</div>
+        </div>
+        <h3>
+          <span class="pt">PNDS PARTISIPA Platform</span>
+          <span class="en">PNDS PARTISIPA Platform</span>
+        </h3>
+        <p class="pt">Gestão digital ponta a ponta para desenvolvimento rural, incluindo coleta de dados, análise, relatórios e migração de 9.000+ projetos.</p>
+        <p class="en">End-to-end digital project management for rural development, including data collection, analysis, reporting, and migration of 9,000+ projects.</p>
+        <div class="project-tags">
+          <span>PNDS</span>
+          <span>9,000+</span>
+          <span>Reporting</span>
+        </div>
+      </article>
+
+      <article class="project-card moderate">
+        <div class="project-topline">
+          <span class="project-year">M&E</span>
+          <div class="project-badge" style="background:#8B5CF6;">GB</div>
+        </div>
+        <h3>
+          <span class="pt">M&E Systems for CAJ</span>
+          <span class="en">M&E Systems for CAJ</span>
+        </h3>
+        <p class="pt">Desenho de sistema de Monitoramento e Avaliação para os Centros de Acesso à Justiça na Guiné-Bissau, definindo especificações, indicadores e arquitetura de dados.</p>
+        <p class="en">Monitoring & Evaluation system design for the Centres for Access to Justice in Guinea-Bissau, defining specifications, indicators, and data architecture.</p>
+        <div class="project-tags">
+          <span>Guinea-Bissau</span>
+          <span>M&E</span>
+          <span>Data architecture</span>
+        </div>
+      </article>
+    </div>
+
+    <div class="projects-show-more-wrap">
+      <button type="button" class="exp-show-more" id="projectShowMoreBtn" aria-expanded="false" aria-controls="projectCards" onclick="toggleProjectCards(this)">
+        <span class="exp-label-more">
+          <span class="pt">Ver mais projetos</span>
+          <span class="en">Show more projects</span>
+        </span>
+        <span class="exp-label-less">
+          <span class="pt">Mostrar menos</span>
+          <span class="en">Show less</span>
+        </span>
+        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
     </div>
   </div>
 </section>
@@ -1630,6 +2163,7 @@
           <li><a href="#home">Home</a></li>
           <li><a href="#services"><span class="pt">Serviços</span><span class="en">Services</span></a></li>
           <li><a href="#about"><span class="pt">Sobre</span><span class="en">About</span></a></li>
+          <li><a href="#projects"><span class="pt">Projetos</span><span class="en">Projects</span></a></li>
           <li><a href="#experience"><span class="pt">Experiência</span><span class="en">Experience</span></a></li>
         </ul>
       </div>
@@ -1661,6 +2195,15 @@
   // Experience cards: show more / show less
   function toggleExpCards(btn) {
     var cards = document.getElementById('experienceCards');
+    if (!cards) return;
+    var expanded = cards.classList.toggle('show-all');
+    btn.classList.toggle('is-expanded', expanded);
+    btn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+  }
+
+  // Project cards: show more / show less
+  function toggleProjectCards(btn) {
+    var cards = document.getElementById('projectCards');
     if (!cards) return;
     var expanded = cards.classList.toggle('show-all');
     btn.classList.toggle('is-expanded', expanded);

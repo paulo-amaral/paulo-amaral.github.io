@@ -27,7 +27,7 @@ Paulo Amaral is a senior Brazilian IT professional with over 20 years of experie
 **Apr 2026 -- Present**
 
 - Served as a GovMarket service provider, supporting digital transformation initiatives aligned with the GovStack approach.
-- Assigned by Kwantu/GIZ as a Digital Government and GovStack expert for the Mozambican Women in GovTech Challenge, providing strategic advisory support on inclusive GovTech and digital public service initiatives.
+- Assigned by Kwantu/GIZ as a Digital Government and GovStack expert, speaker, and instructor for the Mozambican Women in GovTech Challenge 2026, providing strategic advisory support on inclusive GovTech, DPI/DPG, AI for digital government, digital divide, gender divide, and digital public service initiatives.
 - Delivered operation and maintenance, service design, software development, system integration, and technical advisory services for Digital Public Infrastructure initiatives.
 
 ### UNDP
