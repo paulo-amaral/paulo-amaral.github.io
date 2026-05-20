@@ -13,7 +13,7 @@ https://paulo-amaral.github.io/
 - GovTech, e-government and public sector modernization
 - AI readiness, digital readiness and maturity assessments
 - Data systems, dashboards, CRVS, CPIMS, DHIS2 and election platforms
-- Open-source and GitHub contributions for DPI/DPG, including [Awesome Digital Public Infrastructure](https://paulo-amaral.github.io/awesome-digital-public-infrastructure/), [n8nverse](https://github.com/paulo-amaral/n8nverse), AI video translation/dubbing tooling, Easy-ELK, KoboToolbox integrations and Primero data extraction
+- Open-source and GitHub contributions for DPI/DPG, including [Awesome Digital Public Infrastructure](https://paulo-amaral.github.io/awesome-digital-public-infrastructure/), [n8nverse](https://github.com/paulo-amaral/n8nverse), [easy-sop-docs](https://github.com/paulo-amaral/easy-sop-docs), AI video translation/dubbing tooling, Easy-ELK, KoboToolbox integrations and Primero data extraction
 
 ## Key Files
 
