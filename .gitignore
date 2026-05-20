@@ -81,6 +81,14 @@ cv-*.pdf
 *resume*.pdf
 PERSONAL_*.pdf
 presentation*.pdf
+
+# Public website downloads
+!cv.md
+!documents/
+!documents/cv/
+!documents/cv/paulo-amaral-cv-2026-v7.pdf
+!documents/portfolio/
+!documents/portfolio/paulo-amaral-portfolio-2026-v2.pdf
 social_networks.md
 instructions.md
 
