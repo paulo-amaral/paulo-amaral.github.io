@@ -11,6 +11,22 @@
     html[lang="pt"] .en { display: none !important; }
     html[lang="en"] .pt { display: none !important; }
 
+    /* ── Skip link (visible on keyboard focus) ── */
+    .skip-link {
+      position: absolute;
+      left: 8px;
+      top: -40px;
+      background: #fff;
+      color: #0b0b0b;
+      border: 1px solid #0b0b0b;
+      padding: 4px 10px;
+      font-size: 12px;
+      border-radius: 4px;
+      z-index: 9999;
+      text-decoration: none;
+    }
+    .skip-link:focus { top: 8px; }
+
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; overflow-x: hidden; }
     body {
@@ -197,13 +213,13 @@
       margin-bottom: 18px;
       transform: rotate(-2deg);
     }
-    .logos-heading h3 {
+    .logos-heading h2 {
       font-size: 36px;
       font-weight: 800;
       color: #0b0b0b;
       line-height: 1.2;
     }
-    .logos-heading h3 .accent {
+    .logos-heading h2 .accent {
       background: #FDB927;
       padding: 2px 12px;
       display: inline-block;
@@ -1085,7 +1101,7 @@
       .lang-toggle .lang-btn { min-width: 34px; min-height: 26px; padding: 3px 9px; font-size: 11px; letter-spacing: 0.8px; }
       .logos-section { padding: 48px 0 40px; }
       .logos-heading { margin-bottom: 28px; }
-      .logos-heading h3 { font-size: 24px; }
+      .logos-heading h2 { font-size: 24px; }
       .logos-heading .eyebrow { font-size: 11px; }
       .logos-carousel-wrap { padding: 20px 0; }
       .logos-track { gap: 40px; }
