@@ -164,7 +164,7 @@
       display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;
     }
     .hero-h1 { font-size: 62px; font-weight: 800; line-height: 1.15; margin-bottom: 24px; }
-    .highlight-pink { background: #FF6B7A; color: #fff; padding: 2px 12px; display: inline-block; }
+    .highlight-pink { background: #FF6B7A; color: #0b0b0b; padding: 2px 12px; display: inline-block; }
     .highlight-blue { background: #2F81F7; color: #fff; padding: 2px 12px; display: inline-block; }
     .highlight-red  { background: #FF4A60; color: #fff; padding: 2px 12px; display: inline-block; }
     .highlight-purple { background: #6366F1; color: #fff; padding: 2px 12px; display: inline-block; }
@@ -414,7 +414,7 @@
       line-height: 1.7;
       max-width: 560px;
     }
-    #skills .highlight-blue { background: #2AA99A; color: #fff; }
+    #skills .highlight-blue { background: #2AA99A; color: #0b0b0b; }
     .skills-board {
       display: grid;
       grid-template-columns: minmax(280px, 0.84fr) minmax(0, 1.6fr);
@@ -857,8 +857,10 @@
     .trust-badge[data-tone="cream"]  { background: #fffdf9; transform: rotate(-1.5deg); }
     .trust-badge[data-tone="yellow"] { background: #fffdf9; transform: rotate(1deg); }
     .trust-badge[data-tone="pink"]   { background: #fffdf9; transform: rotate(-1deg); }
+    .trust-badge[data-tone="teal"]   { background: #fffdf9; transform: rotate(0.5deg); }
     .trust-badge[data-tone="yellow"] svg { stroke: #FDB927; }
     .trust-badge[data-tone="pink"]   svg { stroke: #FF6B7A; }
+    .trust-badge[data-tone="teal"]   svg { stroke: #2AA99A; }
     a.trust-badge:hover {
       transform: translate(-2px, -2px) rotate(0deg);
       box-shadow: 6px 6px 0 #000;
@@ -929,7 +931,7 @@
       letter-spacing: 0;
       text-transform: uppercase;
     }
-    #contact .highlight-pink { background: #2AA99A; color: #fff; }
+    #contact .highlight-pink { background: #2AA99A; color: #0b0b0b; }
     .contact-left h2 { font-size: 52px; font-weight: 800; line-height: 1.2; margin-bottom: 20px; max-width: 680px; }
     .contact-left > p { color: #34312d; font-size: 18px; line-height: 1.7; margin-bottom: 36px; max-width: 660px; }
     .contact-email-box {
