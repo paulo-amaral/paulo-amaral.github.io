@@ -825,6 +825,52 @@
     .footer-col ul li svg { width: 16px; height: 16px; stroke: #6b7280; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
     .footer-col ul li a { color: #6b7280; text-decoration: none; transition: color 0.2s; }
     .footer-col ul li a:hover { color: #000; }
+    .trust-badges {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin: 32px 0 24px;
+    }
+    .trust-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border: 3px solid #000;
+      border-radius: 10px;
+      box-shadow: 4px 4px 0 #000;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #0b0b0b;
+      text-decoration: none;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .trust-badge svg {
+      width: 18px; height: 18px;
+      stroke: #0b0b0b; fill: none;
+      stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round;
+      flex-shrink: 0;
+    }
+    .trust-badge[data-tone="cream"]  { background: #fffdf9; transform: rotate(-1.5deg); }
+    .trust-badge[data-tone="yellow"] { background: #fffdf9; transform: rotate(1deg); }
+    .trust-badge[data-tone="pink"]   { background: #fffdf9; transform: rotate(-1deg); }
+    .trust-badge[data-tone="yellow"] svg { stroke: #FDB927; }
+    .trust-badge[data-tone="pink"]   svg { stroke: #FF6B7A; }
+    a.trust-badge:hover {
+      transform: translate(-2px, -2px) rotate(0deg);
+      box-shadow: 6px 6px 0 #000;
+    }
+    a.trust-badge:active {
+      transform: translate(2px, 2px) rotate(0deg);
+      box-shadow: 1px 1px 0 #000;
+    }
+    a.trust-badge:focus-visible {
+      outline: 3px solid #0b0b0b;
+      outline-offset: 4px;
+    }
     .footer-divider { border-top: 1px solid #e5e7eb; padding-top: 32px; text-align: center; color: #6b7280; font-size: 14px; }
     .footer-made {
       display: inline-flex;
