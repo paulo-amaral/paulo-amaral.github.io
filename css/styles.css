@@ -201,10 +201,10 @@
       display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;
     }
     .hero-h1 { font-size: 62px; font-weight: 800; line-height: 1.15; margin-bottom: 24px; }
-    .highlight-pink { background: #FF6B7A; color: #0b0b0b; padding: 2px 12px; display: inline-block; }
-    .highlight-blue { background: #2F81F7; color: #fff; padding: 2px 12px; display: inline-block; }
-    .highlight-red  { background: #FF4A60; color: #fff; padding: 2px 12px; display: inline-block; }
-    .highlight-purple { background: #6366F1; color: #fff; padding: 2px 12px; display: inline-block; }
+    .highlight-pink   { background: #FF6B7A; color: #0b0b0b; padding: 2px 12px; display: inline-block; }
+    .highlight-blue   { background: #2F81F7; color: #0b0b0b; padding: 2px 12px; display: inline-block; }
+    .highlight-red    { background: #FF4A60; color: #0b0b0b; padding: 2px 12px; display: inline-block; }
+    .highlight-purple { background: #6366F1; color: #0b0b0b; padding: 2px 12px; display: inline-block; }
     .hero-desc {
       color: #393939; font-size: 18px; font-weight: 500; line-height: 1.7;
       max-width: 540px; margin-bottom: 40px;
@@ -232,6 +232,7 @@
       background: #fff;
       padding: 80px 0 64px;
       overflow: hidden;
+      border-top: 4px solid #0b0b0b;
     }
     .logos-heading {
       text-align: center;
@@ -338,7 +339,7 @@
     }
 
     /* ── SERVICES ── */
-    #services { background: #F7F2EC; padding: 64px 16px 96px; }
+    #services { background: #F7F2EC; padding: 64px 16px 96px; border-top: 4px solid #0b0b0b; }
     .section-header { text-align: center; margin-bottom: 56px; }
     .section-title { font-size: 52px; font-weight: 800; line-height: 1.15; margin-bottom: 16px; }
     .section-desc { color: #393939; font-size: 18px; font-weight: 500; line-height: 1.7; max-width: 640px; margin: 0 auto; }
@@ -429,7 +430,7 @@
     .contact-btn svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 
     /* ── SKILLS ── */
-    #skills { background: #fffdf9; padding: 72px 16px 104px; }
+    #skills { background: #fffdf9; padding: 72px 16px 104px; border-top: 4px solid #0b0b0b; }
     .skills-inner { max-width: 1280px; margin: 0 auto; }
     .skills-header {
       display: grid;
@@ -564,7 +565,7 @@
     .skill-card.accent-dark { --skill-accent: #202020; }
 
     /* ── ABOUT ── */
-    #about { padding: 64px 16px 96px; }
+    #about { padding: 64px 16px 96px; border-top: 4px solid #0b0b0b; }
     .about-inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
     .about-img-wrap { display: flex; justify-content: center; }
     .about-img {
@@ -705,7 +706,7 @@
     .projects-show-more-wrap { display: flex; justify-content: center; margin-top: 36px; }
 
     /* ── EXPERIENCE ── */
-    #experience { background: #000; padding: 64px 16px 96px; }
+    #experience { background: #000; padding: 64px 16px 96px; border-top: 4px solid #0b0b0b; }
     .experience-inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
     .experience-left { color: #fff; padding-top: 48px; position: sticky; top: 48px; }
     .experience-left h2 { font-size: 50px; font-weight: 800; line-height: 1.25; margin-bottom: 24px; }
@@ -768,7 +769,7 @@
     .exp-show-more.is-expanded .chev { transform: rotate(180deg); }
 
     /* ── FOOTER ── */
-    footer { background: #fffdf9; padding: 64px 16px; }
+    footer { background: #fffdf9; padding: 64px 16px; border-top: 4px solid #0b0b0b; }
     .footer-inner { max-width: 1280px; margin: 0 auto; }
     .footer-newsletter {
       display: grid;
@@ -956,7 +957,7 @@
     }
 
     /* ── CONTACT SECTION ── */
-    #contact { background: #F7F2EC; padding: 88px 16px 104px; }
+    #contact { background: #F7F2EC; padding: 88px 16px 104px; border-top: 4px solid #0b0b0b; }
     .contact-inner {
       max-width: 1280px; margin: 0 auto;
       display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr); gap: 72px; align-items: center;
