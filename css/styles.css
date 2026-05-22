@@ -816,8 +816,12 @@
       outline: 3px solid #FDB927;
       outline-offset: 4px;
     }
-    .footer-social.github  { background: #000; }
-    .footer-social.linkedin { background: #2F81F7; }
+    .footer-social.github    { background: #000; }
+    .footer-social.linkedin  { background: #2F81F7; }
+    .footer-social.x         { background: #000; }
+    .footer-social.instagram { background: #E1306C; color: #fff; }
+    .footer-social.medium    { background: #FDB927; }
+    .footer-social.medium svg { stroke: #0b0b0b; fill: #0b0b0b; }
     .footer-social svg { width: 20px; height: 20px; stroke: #fff; fill: none; stroke-width: 2.3; stroke-linecap: round; stroke-linejoin: round; }
     .footer-col h3 { font-size: 16px; font-weight: 800; color: #000; margin-bottom: 16px; }
     .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
@@ -909,6 +913,13 @@
       line-height: 1;
       transform: rotate(2deg);
     }
+    .footer-made .made-chip svg {
+      width: 16px; height: 16px;
+      stroke: #0b0b0b; fill: #0b0b0b;
+      stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round;
+    }
+    .footer-made .made-chip:nth-of-type(2) svg { fill: none; stroke-width: 2; }
+    .footer-made .made-chip:nth-of-type(3) svg { width: 22px; }
 
     /* ── CONTACT SECTION ── */
     #contact { background: #F7F2EC; padding: 88px 16px 104px; }
