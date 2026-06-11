@@ -85,13 +85,14 @@
     .skip-link:focus { top: 8px; }
 
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; overflow-x: hidden; }
+    html { scroll-behavior: smooth; overflow-x: hidden; overflow-x: clip; scroll-padding-top: 112px; }
     body {
       font-family: 'Sora', -apple-system, BlinkMacSystemFont, sans-serif;
       background: #fff;
       color: #0b0b0b;
       line-height: 1.6;
       overflow-x: hidden;
+      overflow-x: clip;
       -webkit-font-smoothing: antialiased;
     }
 
@@ -137,8 +138,15 @@
 
     .container { max-width: 1280px; margin: 0 auto; padding: 0 16px; }
 
-    /* ── NAV ── */
-    .nav-wrap { padding: 32px 16px 16px; }
+    /* ── NAV (sticky floating pill) ── */
+    .nav-wrap {
+      padding: 20px 16px 12px;
+      position: sticky;
+      top: 0;
+      z-index: 150;
+      pointer-events: none;
+    }
+    .nav-wrap nav, .mobile-menu { pointer-events: auto; }
     nav {
       display: flex;
       align-items: center;
@@ -218,7 +226,11 @@
     }
 
     /* ── HERO ── */
-    #home { padding: 64px 16px 96px; }
+    #home {
+      padding: 64px 16px 96px;
+      background-image: radial-gradient(rgba(11,11,11,0.14) 1.5px, transparent 1.5px);
+      background-size: 26px 26px;
+    }
     .hero-inner {
       max-width: 1280px; margin: 0 auto;
       display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;
@@ -252,6 +264,54 @@
     .hero-cta--secondary:hover { background: #FDB927; }
     .hero-cta svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
     .hero-avatar-wrap { display: flex; justify-content: flex-end; }
+    .hero-avatar-frame {
+      position: relative;
+      width: 100%;
+      max-width: 400px;
+    }
+    .hero-avatar-frame::before {
+      content: "";
+      position: absolute;
+      inset: 22px -20px -20px 22px;
+      background: #FDB927;
+      border: 4px solid #000;
+      border-radius: 24px;
+      transform: rotate(2deg);
+      z-index: 0;
+    }
+    .hero-avatar-frame .hero-avatar { position: relative; z-index: 1; }
+    .hero-sticker {
+      position: absolute;
+      bottom: -18px;
+      left: -26px;
+      z-index: 2;
+      background: #fff;
+      border: 3px solid #000;
+      border-radius: 999px;
+      box-shadow: 4px 4px 0 #000;
+      padding: 10px 18px;
+      font-size: 14px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+      transform: rotate(-4deg);
+    }
+    .hero-spark {
+      position: absolute;
+      z-index: 2;
+      line-height: 1;
+      color: #FDB927;
+      text-shadow: 2px 2px 0 #000;
+      animation: spark-spin 6s ease-in-out infinite;
+      pointer-events: none;
+    }
+    .hero-spark--1 { top: -26px; left: -30px; font-size: 46px; }
+    .hero-spark--2 { bottom: 42px; right: -24px; font-size: 30px; color: #FF6B7A; animation-delay: 1.5s; }
+    @keyframes spark-spin {
+      0%, 100% { transform: rotate(0deg) scale(1); }
+      50% { transform: rotate(20deg) scale(1.15); }
+    }
     .hero-avatar {
       width: 100%; max-width: 400px; aspect-ratio: 3/4;
       background: transparent; border: 4px solid #000; border-radius: 24px;
@@ -1303,13 +1363,109 @@
       box-shadow: inset 0 0 0 3px #000;
     }
 
+    /* ── TICKER (marquee divider) ── */
+    .ticker {
+      position: relative;
+      z-index: 5;
+      overflow: hidden;
+      background: #0b0b0b;
+      border-top: 3px solid #000;
+      border-bottom: 3px solid #000;
+      padding: 13px 0;
+      width: 104%;
+      margin: -12px 0 -12px -2%;
+      transform: rotate(-1.2deg);
+    }
+    .ticker--alt {
+      background: #2AA99A;
+      transform: rotate(1.2deg);
+    }
+    .ticker-track {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      width: max-content;
+      animation: ticker-scroll 28s linear infinite;
+    }
+    .ticker span {
+      color: #fffdf9;
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .ticker b { color: #FDB927; font-size: 16px; font-weight: 800; }
+    .ticker--alt span { color: #0b0b0b; }
+    .ticker--alt b { color: #fffdf9; }
+    @keyframes ticker-scroll {
+      to { transform: translateX(calc(-50% - 14px)); }
+    }
+
+    /* ── SECTION EYEBROWS ── */
+    .section-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--eyebrow-bg, #FDB927);
+      color: #0b0b0b;
+      border: 3px solid #000;
+      border-radius: 999px;
+      box-shadow: 3px 3px 0 #000;
+      padding: 6px 16px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      line-height: 1.2;
+      margin-bottom: 18px;
+      transform: rotate(-2deg);
+    }
+    .section-eyebrow--on-dark { box-shadow: 3px 3px 0 #fffdf9; }
+
+    /* ── QR CARD (scan effects) ── */
+    .qr-card-frame { position: relative; }
+    .qr-scanline {
+      position: absolute;
+      left: 12px;
+      right: 12px;
+      height: 4px;
+      background: #25D366;
+      border: 1px solid #0b0b0b;
+      border-radius: 999px;
+      top: 12px;
+      opacity: 0.85;
+      animation: qr-scan 2.8s ease-in-out infinite;
+      pointer-events: none;
+    }
+    @keyframes qr-scan {
+      0%, 100% { top: 12px; }
+      50% { top: calc(100% - 17px); }
+    }
+    .qr-sticker {
+      position: absolute;
+      bottom: -14px;
+      right: -16px;
+      z-index: 2;
+      background: #FDB927;
+      color: #0b0b0b;
+      border: 2px solid #262522;
+      border-radius: 999px;
+      box-shadow: 3px 3px 0 #262522;
+      padding: 6px 12px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      white-space: nowrap;
+      transform: rotate(6deg);
+    }
     /* ── RESPONSIVE ── */
     @media (max-width: 960px) {
       .hero-inner, .about-inner, .experience-inner, .contact-inner, .projects-header, .skills-header, .skills-board { grid-template-columns: 1fr; }
       .hero-h1 { font-size: 44px; }
       #home { padding: 40px 16px 64px; }
       .hero-avatar-wrap { justify-content: center; }
-      .hero-avatar { max-width: 280px; }
+      .hero-avatar-frame { max-width: 280px; }
       .hero-text { order: 1; }
       .hero-avatar-wrap { order: 2; }
       .services-grid { grid-template-columns: 1fr 1fr; }
@@ -1332,6 +1488,8 @@
     }
     @media (max-width: 600px) {
       .container { padding: 0; }
+      html { scroll-padding-top: 92px; }
+      .nav-wrap { padding: 12px 12px 8px; }
       nav { max-width: 100%; padding: 8px 12px; }
       .nav-links { display: none; }
       .nav-hamburger { display: flex; }
@@ -1341,7 +1499,16 @@
       .hero-h1 span[style*="white-space"] { white-space: normal !important; }
       .hero-desc { font-size: 16px; }
       .hero-cta { padding: 16px 32px; font-size: 16px; width: 100%; justify-content: center; }
-      .hero-avatar { max-width: 240px; }
+      .hero-avatar-frame { max-width: 240px; }
+      .hero-avatar-frame::before { inset: 14px -12px -12px 14px; }
+      .hero-sticker { font-size: 11px; padding: 7px 12px; left: -10px; bottom: -12px; box-shadow: 3px 3px 0 #000; }
+      .hero-spark--1 { font-size: 32px; top: -18px; left: -12px; }
+      .hero-spark--2 { font-size: 22px; right: -10px; bottom: 30px; }
+      .ticker { padding: 10px 0; }
+      .ticker span { font-size: 12px; }
+      .ticker b { font-size: 13px; }
+      .section-eyebrow { font-size: 10px; padding: 5px 12px; letter-spacing: 1.5px; margin-bottom: 12px; }
+      .qr-sticker { font-size: 10px; padding: 5px 10px; right: -8px; }
       /* tighter nav lang pill on very small screens */
       .lang-toggle { padding: 2px; box-shadow: 2px 2px 0 #000; }
       .lang-toggle .lang-btn { min-width: 34px; min-height: 26px; padding: 3px 9px; font-size: 11px; letter-spacing: 0.8px; }
