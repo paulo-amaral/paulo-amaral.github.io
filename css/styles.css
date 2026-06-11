@@ -1,10 +1,30 @@
     /* ── Sora Variable Font (self-hosted) ── */
     @font-face {
       font-family: 'Sora';
-      src: url('../fonts/Sora/Sora-VariableFont_wght.ttf') format('truetype');
+      src: url('../fonts/Sora/Sora-VariableFont_wght.woff2') format('woff2-variations'),
+           url('../fonts/Sora/Sora-VariableFont_wght.ttf') format('truetype');
       font-weight: 100 800;
       font-style: normal;
       font-display: swap;
+    }
+
+    /* ── Neo-brutalist global touches ── */
+    ::selection { background: #FDB927; color: #0b0b0b; }
+    a:focus-visible, button:focus-visible, input:focus-visible {
+      outline: 3px solid #2F81F7;
+      outline-offset: 3px;
+    }
+    html { scrollbar-color: #0b0b0b #F7F2EC; }
+    ::-webkit-scrollbar { width: 14px; }
+    ::-webkit-scrollbar-track { background: #F7F2EC; border-left: 2px solid #0b0b0b; }
+    ::-webkit-scrollbar-thumb { background: #0b0b0b; border-radius: 8px; border: 3px solid #F7F2EC; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
     }
 
     /* ── Language switching ── */
@@ -144,7 +164,10 @@
       font-size: 16px; font-weight: 700; color: #0b0b0b;
       text-decoration: none; transition: opacity 0.2s; white-space: nowrap;
     }
-    .nav-links a:hover { opacity: 0.6; }
+    .nav-links a:hover {
+      text-decoration: underline 3px #FDB927;
+      text-underline-offset: 6px;
+    }
     .nav-actions { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
 
 
@@ -200,21 +223,33 @@
       max-width: 1280px; margin: 0 auto;
       display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;
     }
-    .hero-h1 { font-size: 62px; font-weight: 800; line-height: 1.15; margin-bottom: 24px; }
-    .highlight-pink   { background: #FF6B7A; color: #0b0b0b; padding: 2px 12px; display: inline-block; }
-    .highlight-blue   { background: #2F81F7; color: #0b0b0b; padding: 2px 12px; display: inline-block; }
-    .highlight-red    { background: #FF4A60; color: #0b0b0b; padding: 2px 12px; display: inline-block; }
-    .highlight-purple { background: #6366F1; color: #0b0b0b; padding: 2px 12px; display: inline-block; }
+    .hero-h1 { font-size: 62px; font-weight: 800; line-height: 1.18; margin-bottom: 24px; }
+    .highlight-pink   { background: #FF6B7A; color: #0b0b0b; padding: 2px 12px; display: inline-block; border: 3px solid #000; border-radius: 10px; box-shadow: 4px 4px 0 #000; transform: rotate(-1deg); }
+    .highlight-blue   { background: #2F81F7; color: #0b0b0b; padding: 2px 12px; display: inline-block; border: 3px solid #000; border-radius: 10px; box-shadow: 4px 4px 0 #000; transform: rotate(0.75deg); }
+    .highlight-red    { background: #FF4A60; color: #0b0b0b; padding: 2px 12px; display: inline-block; border: 3px solid #000; border-radius: 10px; box-shadow: 4px 4px 0 #000; transform: rotate(-1deg); }
+    .highlight-purple { background: #6366F1; color: #0b0b0b; padding: 2px 12px; display: inline-block; border: 3px solid #000; border-radius: 10px; box-shadow: 4px 4px 0 #000; transform: rotate(0.75deg); }
     .hero-desc {
       color: #393939; font-size: 18px; font-weight: 500; line-height: 1.7;
       max-width: 540px; margin-bottom: 40px;
     }
     .hero-cta {
       display: inline-flex; align-items: center; gap: 8px;
-      background: #0b0b0b; color: #fff; font-size: 18px; font-weight: 600;
-      padding: 20px 48px; border-radius: 12px; text-decoration: none; transition: opacity 0.2s;
+      background: #0b0b0b; color: #fff; font-size: 18px; font-weight: 700;
+      padding: 17px 45px; border-radius: 12px; text-decoration: none;
+      border: 3px solid #000;
+      box-shadow: 5px 5px 0 #000;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
-    .hero-cta:hover { opacity: 0.85; }
+    .hero-cta:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 7px 7px 0 #000;
+    }
+    .hero-cta:active {
+      transform: translate(2px, 2px);
+      box-shadow: 1px 1px 0 #000;
+    }
+    .hero-cta--secondary { background: #fff; color: #0b0b0b; }
+    .hero-cta--secondary:hover { background: #FDB927; }
     .hero-cta svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
     .hero-avatar-wrap { display: flex; justify-content: flex-end; }
     .hero-avatar {
@@ -269,7 +304,6 @@
     }
     .logos-carousel-wrap {
       position: relative;
-      border-top: 4px solid #000;
       border-bottom: 4px solid #000;
       background: #FFFBEA;
       padding: 28px 0;
@@ -567,15 +601,114 @@
     /* ── ABOUT ── */
     #about { padding: 64px 16px 96px; border-top: 4px solid #0b0b0b; }
     .about-inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
-    .about-img-wrap { display: flex; justify-content: center; }
-    .about-img {
-      width: 100%; max-width: 480px; aspect-ratio: 1;
-      border: 4px solid #000; border-radius: 50%; overflow: hidden;
-      background: transparent; box-shadow: -8px 8px 0px 0px rgba(0,0,0,1);
+    .about-impact-wrap { display: flex; justify-content: center; }
+    .about-impact {
+      width: 100%; max-width: 480px;
+      background: #FFFBEA;
+      border: 4px solid #000;
+      border-radius: 24px;
+      box-shadow: -8px 8px 0 #000;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
     }
-    .about-img img {
-      width: 100%; height: 100%;
-      object-fit: cover; object-position: top center;
+    .impact-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      align-self: flex-start;
+      background: #fff;
+      border: 3px solid #000;
+      border-radius: 999px;
+      box-shadow: 3px 3px 0 #000;
+      padding: 8px 16px;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transform: rotate(-1deg);
+    }
+    .impact-dot {
+      width: 12px; height: 12px;
+      background: #2AA99A;
+      border: 2px solid #000;
+      border-radius: 50%;
+      flex-shrink: 0;
+      animation: impact-pulse 2s ease-in-out infinite;
+    }
+    @keyframes impact-pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.25); }
+    }
+    .impact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .impact-tile {
+      border: 3px solid #000;
+      border-radius: 16px;
+      box-shadow: 5px 5px 0 #000;
+      padding: 18px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .impact-tile:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 7px 7px 0 #000;
+    }
+    .impact-tile strong {
+      font-size: 32px;
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: #0b0b0b;
+    }
+    .impact-tile span {
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.35;
+      color: #0b0b0b;
+    }
+    .tile-yellow { background: #FDB927; transform: rotate(-0.6deg); }
+    .tile-pink   { background: #FF6B7A; transform: rotate(0.6deg); }
+    .tile-blue   { background: #8EA3F2; transform: rotate(0.6deg); }
+    .tile-teal   { background: #2AA99A; transform: rotate(-0.6deg); }
+    .tile-yellow:hover, .tile-pink:hover, .tile-blue:hover, .tile-teal:hover {
+      transform: translate(-2px, -2px) rotate(0deg);
+    }
+    .impact-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: #0b0b0b;
+      color: #fff;
+      font-size: 17px;
+      font-weight: 800;
+      padding: 16px 24px;
+      border: 3px solid #000;
+      border-radius: 14px;
+      box-shadow: 5px 5px 0 #FDB927;
+      text-decoration: none;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .impact-cta:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 7px 7px 0 #FDB927;
+    }
+    .impact-cta:active {
+      transform: translate(2px, 2px);
+      box-shadow: 1px 1px 0 #FDB927;
+    }
+    .impact-cta svg {
+      width: 20px; height: 20px;
+      stroke: currentColor; fill: none;
+      stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+      flex-shrink: 0;
     }
     .about-content h2 { font-size: 46px; font-weight: 800; line-height: 1.2; margin-bottom: 16px; }
     .about-content > p { color: #6b7280; font-size: 18px; line-height: 1.7; margin-bottom: 40px; }
@@ -713,13 +846,31 @@
     .experience-left > p { color: #9ca3af; font-size: 18px; line-height: 1.7; margin-bottom: 40px; }
     .experience-left a {
       display: inline-flex; align-items: center; gap: 8px;
-      background: #fff; color: #000; font-size: 18px; font-weight: 600;
-      padding: 20px 48px; border-radius: 12px; text-decoration: none; transition: opacity 0.2s;
+      background: #fff; color: #000; font-size: 18px; font-weight: 700;
+      padding: 17px 45px; border-radius: 12px; text-decoration: none;
+      border: 3px solid #fff;
+      box-shadow: 5px 5px 0 #FDB927;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
-    .experience-left a:hover { opacity: 0.85; }
+    .experience-left a:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 7px 7px 0 #FDB927;
+    }
+    .experience-left a:active {
+      transform: translate(2px, 2px);
+      box-shadow: 1px 1px 0 #FDB927;
+    }
     .experience-left a svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
     .experience-cards { display: flex; flex-direction: column; gap: 24px; }
-    .exp-card { background: #fff; border: 4px solid #000; border-radius: 24px; }
+    .exp-card {
+      background: #fff; border: 4px solid #000; border-radius: 24px;
+      box-shadow: 6px 6px 0 rgba(255,255,255,0.22);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .exp-card:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: 9px 9px 0 rgba(255,255,255,0.32);
+    }
     .exp-card-header { display: flex; align-items: center; justify-content: space-between; padding: 28px 32px 20px; }
     .exp-card-date { font-size: 17px; font-weight: 700; color: #0b0b0b; line-height: 1.4; }
     .exp-card-logo {
@@ -818,6 +969,7 @@
       font-size: 16px; font-family: inherit; outline: none; color: #202020; background: transparent;
     }
     .newsletter-input::placeholder { color: #7b746d; }
+    .newsletter-input:focus { border-bottom-color: #FDB927; outline: none; }
     .newsletter-submit {
       position: static;
       min-height: 46px;
@@ -1167,8 +1319,9 @@
       .projects-grid { grid-template-columns: 1fr 1fr; }
       .project-card.featured { grid-column: span 2; }
       .about-inner { direction: ltr; }
-      .about-img-wrap { justify-content: center; }
-      .about-img { max-width: 300px; }
+      .about-impact-wrap { justify-content: center; order: 2; }
+      .about-content { order: 1; }
+      .about-impact { max-width: 480px; }
       .experience-left { position: static; padding-top: 0; }
       .contact-inner { gap: 40px; }
       .contact-right { justify-content: flex-start; }
@@ -1282,6 +1435,13 @@
       #about { padding: 40px 16px 64px; }
       .about-content h2 { font-size: 28px; }
       .about-content > p { font-size: 16px; }
+      .about-impact { padding: 20px; gap: 18px; box-shadow: -6px 6px 0 #000; border-radius: 20px; }
+      .impact-grid { gap: 12px; }
+      .impact-tile { padding: 14px 12px; box-shadow: 4px 4px 0 #000; }
+      .impact-tile strong { font-size: 25px; }
+      .impact-badge { font-size: 11px; padding: 7px 12px; }
+      .impact-cta { width: 100%; font-size: 15px; padding: 14px 18px; }
+      .highlight-pink, .highlight-blue, .highlight-red, .highlight-purple { box-shadow: 3px 3px 0 #000; border-width: 2px; }
       #experience { padding: 40px 16px 64px; }
       .experience-left h2 { font-size: 30px; }
       .experience-left > p { font-size: 16px; }
