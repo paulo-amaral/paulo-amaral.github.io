@@ -367,6 +367,9 @@
       background: #FFFBEA;
       padding: 28px 0;
       overflow: hidden;
+      width: 104%;
+      margin-left: -2%;
+      transform: rotate(-1.2deg);
     }
     .logos-carousel-wrap::before,
     .logos-carousel-wrap::after {
